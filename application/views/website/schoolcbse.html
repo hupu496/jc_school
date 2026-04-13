@@ -1,0 +1,472 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Jagadish Chandra High School | Ghatsila | English | हिंदी | বাংলা</title>
+    <meta name="description" content="CBSE School Website with English, Hindi and Bengali language support">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- all css here -->
+    <link rel="stylesheet" href="https://rcsindia.co.in/newcbse19/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://rcsindia.co.in/newcbse19/css/animate.css">
+    <link rel="stylesheet" href="https://rcsindia.co.in/newcbse19/css/owl.carousel.css">
+    <link rel="stylesheet" href="https://rcsindia.co.in/newcbse19/css/slicknav.min.css">
+    <link rel="stylesheet" href="https://rcsindia.co.in/newcbse19/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://rcsindia.co.in/newcbse19/css/video-js.css">
+    <link rel="stylesheet" href="https://rcsindia.co.in/newcbse19/style.css">
+    <link rel="stylesheet" href="https://rcsindia.co.in/newcbse19/css/responsive.css">
+    
+    <!-- Google Fonts for better multilingual support -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Trilingual styles */
+        body {
+            font-family: 'Poppins', 'Hind Siliguri', sans-serif;
+        }
+        .lang-selector {
+            display: flex;
+            gap: 8px;
+            margin-left: 15px;
+        }
+        .lang-btn {
+            background: transparent;
+            border: 1px solid #fff;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 25px;
+            font-size: 12px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .lang-btn:hover {
+            background: #ff6b6b;
+            border-color: #ff6b6b;
+        }
+        .lang-btn.active {
+            background: #ff6b6b;
+            border-color: #ff6b6b;
+        }
+        .header-top-right ul {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+        /* Language visibility classes */
+        .hindi-text, .bengali-text {
+            display: none;
+        }
+        body.lang-english .english-text { display: inline; }
+        body.lang-english .english-block { display: block; }
+        body.lang-english .hindi-text, body.lang-english .bengali-text { display: none; }
+        body.lang-english .hindi-block, body.lang-english .bengali-block { display: none; }
+        
+        body.lang-hindi .hindi-text { display: inline; }
+        body.lang-hindi .hindi-block { display: block; }
+        body.lang-hindi .english-text, body.lang-hindi .bengali-text { display: none; }
+        body.lang-hindi .english-block, body.lang-hindi .bengali-block { display: none; }
+        
+        body.lang-bengali .bengali-text { display: inline; }
+        body.lang-bengali .bengali-block { display: block; }
+        body.lang-bengali .english-text, body.lang-bengali .hindi-text { display: none; }
+        body.lang-bengali .english-block, body.lang-bengali .hindi-block { display: none; }
+        
+        .hindi-block, .bengali-block, .english-block {
+            display: none;
+        }
+        body.lang-english .english-block { display: block; }
+        body.lang-hindi .hindi-block { display: block; }
+        body.lang-bengali .bengali-block { display: block; }
+        
+        .slider-content h2 {
+            font-size: 48px;
+            font-weight: 700;
+        }
+        @media (max-width: 768px) {
+            .lang-selector { gap: 5px; margin-left: 5px; }
+            .lang-btn { padding: 2px 8px; font-size: 10px; }
+            .slider-content h2 { font-size: 28px; }
+        }
+        .flag-icon {
+            margin-right: 4px;
+        }
+        .course-content p {
+            text-align: justify;
+        }
+        .preview-wrap img {
+            width: 100%;
+            max-width: 200px;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+        .footer-widget h2 {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body class="lang-english">
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    
+    <!-- header area start -->
+    <header>
+        <div class="header-top bg-1 ptb-20">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="header-top-left">
+                            <ul class="socil-icon">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
+                                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="header-top-right text-right">
+                            <ul>
+                                <li><a href="#"><i class="fa fa-user"></i> <span class="english-text">Admin</span><span class="hindi-text">प्रशासक</span><span class="bengali-text">প্রশাসক</span></a></li>
+                                <li><a href="#"><i class="fa fa-envelope-o"></i> info@domain.com</a></li>
+                                <li><a href="#"><i class="fa fa-phone"></i> +1234-567-890</a></li>
+                                <li>
+                                    <div class="lang-selector">
+                                        <button class="lang-btn" data-lang="english">🇬🇧 EN</button>
+                                        <button class="lang-btn" data-lang="hindi">🇮🇳 हिंदी</button>
+                                        <button class="lang-btn" data-lang="bengali">🇧🇩 বাংলা</button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-bottom" id="sticky-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-3 col-xs-8">
+                        <div class=""><a href="#"><img src="assets/img/logo.png" alt="School Logo" width="120px"/></a></div>
+                    </div>
+                    <div class="col-md-8 col-sm-9 hidden-xs">
+                        <div class="mainmenu text-right">
+                            <ul id="navigation">
+                                <li class="active"><a href="#"><span class="english-text">Home</span><span class="hindi-text">मुखपृष्ठ</span><span class="bengali-text">হোম</span></a></li>
+                                <li><a href="#"><span class="english-text">About Us</span><span class="hindi-text">हमारे बारे में</span><span class="bengali-text">আমাদের সম্পর্কে</span> &raquo;</a>
+                                    <ul>
+                                        <li><a href="#"><span class="english-text">About Our School</span><span class="hindi-text">हमारा विद्यालय</span><span class="bengali-text">আমাদের স্কুল</span></a></li>
+                                        <li><a href="#"><span class="english-text">President</span><span class="hindi-text">प्रबंधन समिति</span><span class="bengali-text">স্কুল ম্যানেজমেন্ট</span></a></li>
+                                        <li><a href="#"><span class="english-text">Principal</span><span class="hindi-text">प्रधानाचार्य</span><span class="bengali-text">প্রধান শিক্ষক</span></a></li>
+                                        <li><a href="#"><span class="english-text">Secretary</span><span class="hindi-text">अध्यक्ष</span><span class="bengali-text">চেয়ারম্যান</span></a></li>
+                                        
+                                    </ul>
+                                </li>
+                                <li><a href="#"><span class="english-text">Admission</span><span class="hindi-text">प्रवेश</span><span class="bengali-text">ভর্তি</span> &raquo;</a>
+                                    <ul>
+                                        <li><a href="#"><span class="english-text">Admission Guidelines</span><span class="hindi-text">प्रवेश दिशानिर्देश</span><span class="bengali-text">ভর্তি নির্দেশিকা</span></a></li>
+                                        <li><a href="#"><span class="english-text">Discipline</span><span class="hindi-text">अनुशासन</span><span class="bengali-text">শৃঙ্খলা</span></a></li>
+                                        <li><a href="#"><span class="english-text">Admission Period</span><span class="hindi-text">प्रवेश अवधि</span><span class="bengali-text">ভর্তির সময়কাল</span></a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#"><span class="english-text">ICT</span><span class="hindi-text">आईसीटी</span><span class="bengali-text">আইসিটি</span></a></li>
+                                <li><a href="#"><span class="english-text">Enrolment</span><span class="hindi-text">नामांकन</span><span class="bengali-text">নাম নথিভুক্তি</span></a></li>
+                                <li><a href="#"><span class="english-text">Achievements</span><span class="hindi-text">उपलब्धियाँ</span><span class="bengali-text">অর্জন</span> &raquo;</a>
+                                    <ul class="right">
+                                        <li><a href="#"><span class="english-text">Alumni</span><span class="hindi-text">पूर्व छात्र</span><span class="bengali-text">প্রাক্তন ছাত্র</span></a></li>
+                                        <li><a href="#"><span class="english-text">Board Results</span><span class="hindi-text">बोर्ड परिणाम</span><span class="bengali-text">বোর্ড ফলাফল</span></a></li>
+                                        <li><a href="#"><span class="english-text">Olympiad</span><span class="hindi-text">ओलंपियाड</span><span class="bengali-text">অলিম্পিয়াড</span></a></li>
+                                        <li><a href="#"><span class="english-text">Game & Sports</span><span class="hindi-text">खेलकूद</span><span class="bengali-text">খেলা ও ক্রীড়া</span></a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#"><span class="english-text">Staff</span><span class="hindi-text">स्टाफ</span><span class="bengali-text">স্টাফ</span></a></li>
+                                <li><a href="#"><span class="english-text">Affiliation</span><span class="hindi-text">संबद्धता</span><span class="bengali-text">অনুমোদন</span></a></li>
+                                <li><a href="#"><span class="english-text">Reports</span><span class="hindi-text">रिपोर्टें</span><span class="bengali-text">প্রতিবেদন</span></a></li>
+                                <li><a href="#"><span class="english-text">Gallery</span><span class="hindi-text">गैलरी</span><span class="bengali-text">গ্যালারি</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xs-4 hidden-lg hidden-md hidden-sm">
+                        <div class="responsive-menu-wrap floatright"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header area end -->
+    
+    <!-- slider-area start -->
+    <div class="slider-area">
+        <div class="slider-active">
+            <div class="single-slider">
+                <img src="https://rcsindia.co.in/newcbse19/img/slider/1.jpg" alt="Slider" />
+                <div class="slider-content">
+                    <div class="table"><div class="table-cell"><div class="container">
+                        <div class="row"><div class="col-md-8 col-xs-12">
+                            <h2><span class="english-text">CBSE Education</span><span class="hindi-text">सीबीएसई शिक्षा</span><span class="bengali-text">সিবিএসই শিক্ষা</span></h2>
+                        </div></div>
+                    </div></div></div>
+                </div>
+            </div>
+            <div class="single-slider">
+                <img src="https://rcsindia.co.in/newcbse19/img/slider/2.jpg" alt="Slider" />
+                <div class="slider-content">
+                    <div class="table"><div class="table-cell"><div class="container">
+                        <div class="row"><div class="col-md-8 col-xs-12">
+                            <h2><span class="english-text">Quality Education</span><span class="hindi-text">गुणवत्तापूर्ण शिक्षा</span><span class="bengali-text">গুণগত শিক্ষা</span></h2>
+                        </div></div>
+                    </div></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- slider-area end -->
+    
+    <!-- course-area start -->
+    <div class="course-area bg-2 ptb-120">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-xs-12">
+                    <div class="course-wrap">
+                        <h2 class="section-title"><span class="english-text">Welcome to Our School</span><span class="hindi-text">हमारी वेबसाइट पर आपका स्वागत है</span><span class="bengali-text">আমাদের ওয়েবসাইটে স্বাগতম</span></h2>
+                        <div class="row"><div class="col-xs-12">
+                            <div class="course-item">
+                                <div class="course-img"><img src="https://rcsindia.co.in/newcbse19/img/hh.jpg" alt="School" /></div>
+                                <div class="course-content">
+                                    <p class="english-text"><strong>Jagadish Chandra High School</strong>, Ghatsila, was founded as a middle school in 1927-28 by local Bengali-speaking community, catering to multilingual students from Hindu, Sikh, Muslim, Tribal and Christian families. During 1936-37, Raja Bahadur Jagadish Chandra Deo Dhabaldeb helped the school bountifully — the school was named in his honour.</p>
+                                    <p class="hindi-text">प्रत्येक छात्र को एक विविध शिक्षा प्रदान करना जो आत्म-अनुशासन, जिम्मेदारी की भावना, सामाजिक और वैश्विक चेतना तथा शिक्षण में उत्कृष्टता को बढ़ावा दे। हम एक ऐसा वातावरण बनाने का प्रयास करते हैं जहाँ हर बच्चा अपनी क्षमता को खोजे और एक जिम्मेदार वैश्विक नागरिक के रूप में विकसित हो।</p>
+                                    <p class="bengali-text">প্রত্যেক শিক্ষার্থীকে এমন একটি বৈচিত্র্যময় শিক্ষা প্রদান করা যা আত্ম-শৃঙ্খলা, দায়িত্ববোধ, সামাজিক ও বৈশ্বিক সচেতনতা এবং শেখার ক্ষেত্রে উৎকর্ষতা বৃদ্ধি করে। আমরা এমন একটি পরিবেশ তৈরি করতে চাই যেখানে প্রতিটি শিশু তার সম্ভাবনা আবিষ্কার করে এবং একজন দায়িত্বশীল বৈশ্বিক নাগরিক হিসেবে গড়ে ওঠে।</p>
+                                    <p class="english-text">Our mission is to nurture young minds with values, knowledge, and skills to face the challenges of tomorrow. We believe in holistic education that balances academics, sports, and cultural activities.</p>
+                                    <p class="hindi-text">हमारा मिशन युवा दिमागों को मूल्यों, ज्ञान और कौशल से पोषित करना है ताकि वे कल की चुनौतियों का सामना कर सकें। हम समग्र शिक्षा में विश्वास करते हैं जो शिक्षा, खेल और सांस्कृतिक गतिविधियों को संतुलित करती है।</p>
+                                    <p class="bengali-text">আমাদের লক্ষ্য হল তরুণ মনকে মূল্যবোধ, জ্ঞান এবং দক্ষতা দিয়ে লালন করা যাতে তারা আগামীকালের চ্যালেঞ্জ মোকাবেলা করতে পারে। আমরা সামগ্রিক শিক্ষায় বিশ্বাস করি যা একাডেমিক, খেলাধুলা এবং সাংস্কৃতিক কার্যক্রমের মধ্যে ভারসাম্য রক্ষা করে।</p>
+                                    <a href="#" class="btn-style"><span class="english-text">Read more...</span><span class="hindi-text">और पढ़ें...</span><span class="bengali-text">আরও পড়ুন...</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 col-xs-12">
+                <div class="course-sidebar-area">
+                    <div class="course-sidebar-wrap">
+                        <div class="course-sidebar-menu">
+                            <ul>
+                                <li class="active"><a href="#details" data-toggle="tab"><span class="english-text">Principal</span><span class="hindi-text">प्रधानाचार्य</span><span class="bengali-text">প্রধান শিক্ষক</span></a></li>
+                                <li><a href="#preview" data-toggle="tab"><span class="english-text">Chairman</span><span class="hindi-text">अध्यक्ष</span><span class="bengali-text">চেয়ারম্যান</span></a></li>
+                            </ul>
+                        </div>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="details">
+                                <div class="preview-wrap">
+                                    <h3><span class="english-text">Principal</span><span class="hindi-text">प्रधानाचार्य</span><span class="bengali-text">প্রধান শিক্ষক</span></h3>
+                                    <img src="https://rcsindia.co.in/newcbse19/img/4.jpg" alt="Principal" />
+                                    <span class="english-text">Name: Dr. Anjali Sharma</span>
+                                    <span class="hindi-text">नाम: डॉ. अंजलि शर्मा</span>
+                                    <span class="bengali-text">নাম: ডা. অঞ্জলি শর্মা</span>
+                                    <p class="english-text" style="margin-top:10px;">M.A., B.Ed., Ph.D. - 25+ years of experience in education.</p>
+                                    <p class="hindi-text" style="margin-top:10px;">एम.ए., बी.एड., पीएच.डी. - शिक्षा में 25+ वर्षों का अनुभव।</p>
+                                    <p class="bengali-text" style="margin-top:10px;">এম.এ., বি.এড., পিএইচ.ডি. - শিক্ষায় 25+ বছরের অভিজ্ঞতা।</p>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="preview">
+                                <div class="preview-wrap">
+                                    <h3><span class="english-text">Chairman</span><span class="hindi-text">अध्यक्ष</span><span class="bengali-text">চেয়ারম্যান</span></h3>
+                                    <img src="https://rcsindia.co.in/newcbse19/img/5.jpg" alt="Chairman" />
+                                    <span class="english-text">Name: Shri Ramesh Gupta</span>
+                                    <span class="hindi-text">नाम: श्री रमेश गुप्ता</span>
+                                    <span class="bengali-text">নাম: শ্রী রমেশ গুপ্ত</span>
+                                    <p class="english-text" style="margin-top:10px;">Visionary leader committed to academic excellence and innovation.</p>
+                                    <p class="hindi-text" style="margin-top:10px;">शैक्षणिक उत्कृष्टता और नवाचार के लिए प्रतिबद्ध दूरदर्शी नेता।</p>
+                                    <p class="bengali-text" style="margin-top:10px;">শিক্ষাগত উৎকর্ষতা এবং উদ্ভাবনের প্রতি প্রতিশ্রুতিবদ্ধ দূরদর্শী নেতা।</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- latest news -->
+                <div class="latest-news-wrap">
+                    <h2 class="news-title"><span class="english-text">News & Events</span><span class="hindi-text">समाचार और कार्यक्रम</span><span class="bengali-text">খবর ও ইভেন্ট</span></h2>
+                    <div class="latest-news">
+                        <div id="marqueecontainer" onMouseover="copyspeed=pausespeed" onMouseout="copyspeed=marqueespeed">
+                            <div id="vmarquee" style="position: absolute;left: 13px; top: 65px;">
+                                <span class="english-text">
+                                    ★ CBSE Latest Announcements<br><br>
+                                    ★ World Environment Day Celebration - June 5<br><br>
+                                    ★ Health & Physical Education Workshop<br><br>
+                                    ★ Parent-Teacher Meeting: April 20, 2026<br><br>
+                                    ★ Annual Sports Day: March 15, 2026<br><br>
+                                    ★ Summer Camp Registration Open
+                                </span>
+                                <span class="hindi-text">
+                                    ★ सीबीएसई नवीनतम घोषणाएं<br><br>
+                                    ★ विश्व पर्यावरण दिवस समारोह - 5 जून<br><br>
+                                    ★ स्वास्थ्य और शारीरिक शिक्षा कार्यशाला<br><br>
+                                    ★ अभिभावक-शिक्षक बैठक: 20 अप्रैल, 2026<br><br>
+                                    ★ वार्षिक खेल दिवस: 15 मार्च, 2026<br><br>
+                                    ★ ग्रीष्मकालीन शिविर पंजीकरण खुला
+                                </span>
+                                <span class="bengali-text">
+                                    ★ সিবিএসইর সর্বশেষ ঘোষণা<br><br>
+                                    ★ বিশ্ব পরিবেশ দিবস উদযাপন - ৫ জুন<br><br>
+                                    ★ স্বাস্থ্য ও শারীরিক শিক্ষা কর্মশালা<br><br>
+                                    ★ অভিভাবক-শিক্ষক বৈঠক: ২০ এপ্রিল, ২০২৬<br><br>
+                                    ★ বার্ষিক ক্রীড়া দিবস: ১৫ মার্চ, ২০২৬<br><br>
+                                    ★ গ্রীষ্মকালীন ক্যাম্পের নিবন্ধন শুরু
+                                </span>
+                            </div>
+                        </div>
+                        <span><a style="font-size:16px;" href="#"><span class="english-text">More News...</span><span class="hindi-text">और समाचार...</span><span class="bengali-text">আরও খবর...</span></a></span>
+                    </div>
+                </div>
+                
+                <div class="latest-news-wrap">
+                    <h2 class="news-title"><span class="english-text">Downloads</span><span class="hindi-text">डाउनलोड</span><span class="bengali-text">ডাউনলোড</span></h2>
+                    <div class="latest-news">
+                        <div class="sidebar-menu">
+                            <ul>
+                                <li><a href="#"><span class="english-text">📄 OASIS Data</span><span class="hindi-text">📄 ओएसिस डेटा</span><span class="bengali-text">📄 ওএসআইএস ডেটা</span></a></li>
+                                <li><a href="#"><span class="english-text">📋 Latest Evaluation Scheme</span><span class="hindi-text">📋 नवीनतम मूल्यांकन योजना</span><span class="bengali-text">📋 সর্বশেষ মূল্যায়ন স্কিম</span></a></li>
+                                <li><a href="#"><span class="english-text">📑 Tenders List</span><span class="hindi-text">📑 निविदा सूची</span><span class="bengali-text">📑 দরপত্রের তালিকা</span></a></li>
+                                <li><a href="#"><span class="english-text">🎓 CBSE Results 2025</span><span class="hindi-text">🎓 सीबीएसई परिणाम 2025</span><span class="bengali-text">🎓 সিবিএসই ফলাফল ২০২৫</span></a></li>
+                                <li><a href="#"><span class="english-text">📘 Holiday List</span><span class="hindi-text">📘 अवकाश सूची</span><span class="bengali-text">📘 ছুটির তালিকা</span></a></li>
+                            </ul>
+                        </div>
+                        <span><a style="font-size:16px;" href="#"><span class="english-text">More Downloads...</span><span class="hindi-text">और डाउनलोड...</span><span class="bengali-text">আরও ডাউনলোড...</span></a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- course-area end -->
+    
+    <!-- footer-area start -->
+    <footer>
+        <div class="footer-top ptb-120">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="footer-widget">
+                            <h2><span class="english-text">Contact Us</span><span class="hindi-text">संपर्क करें</span><span class="bengali-text">যোগাযোগ করুন</span></h2>
+                            <p><i class="fa fa fa-home"></i>&nbsp; <span class="english-text">CBSE School, Education City</span><span class="hindi-text">सीबीएसई स्कूल, एजुकेशन सिटी</span><span class="bengali-text">সিবিএসই স্কুল, এডুকেশন সিটি</span></p>
+                            <p><i class="fa fa-phone"></i>&nbsp; +91-1234-567890</p>
+                            <p><i class="fa fa-envelope-o"></i>&nbsp; info@cbseschool.edu</p>
+                            <div class="socil-icon">
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="footer-widget footer-menu">
+                            <h2><span class="english-text">Useful Links</span><span class="hindi-text">उपयोगी लिंक</span><span class="bengali-text">উপযোগী লিঙ্ক</span></h2>
+                            <ul>
+                                <li><a href="#"><span class="english-text">About School</span><span class="hindi-text">विद्यालय के बारे में</span><span class="bengali-text">স্কুল সম্পর্কে</span></a></li>
+                                <li><a href="#"><span class="english-text">Courses Details</span><span class="hindi-text">पाठ्यक्रम विवरण</span><span class="bengali-text">কোর্সের বিবরণ</span></a></li>
+                                <li><a href="#"><span class="english-text">Events Gallery</span><span class="hindi-text">कार्यक्रम गैलरी</span><span class="bengali-text">ইভেন্ট গ্যালারি</span></a></li>
+                                <li><a href="#"><span class="english-text">Teachers Details</span><span class="hindi-text">शिक्षक विवरण</span><span class="bengali-text">শিক্ষকদের বিবরণ</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="footer-widget">
+                            <h2><span class="english-text">Visitor Count</span><span class="hindi-text">आगंतुक संख्या</span><span class="bengali-text">দর্শনার্থী সংখ্যা</span></h2>
+                            <div align="center"><img src="https://rcsindia.co.in/newcbse19/img/vc.png" alt="Visitor Counter"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="footer-widget">
+                            <h2><span class="english-text">School Timings</span><span class="hindi-text">विद्यालय समय</span><span class="bengali-text">স্কুলের সময়সূচি</span></h2>
+                            <p class="english-text">Mon-Fri: 8:00 AM - 2:30 PM<br>Saturday: 8:00 AM - 12:30 PM</p>
+                            <p class="hindi-text">सोम-शुक्र: सुबह 8:00 - दोपहर 2:30<br>शनिवार: सुबह 8:00 - दोपहर 12:30</p>
+                            <p class="bengali-text">সোম-শুক্র: সকাল ৮:০০ - দুপুর ২:৩০<br>শনিবার: সকাল ৮:০০ - দুপুর ১২:৩০</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="copyright">
+                            <span class="english-text">&copy; 2026 CBSE School. Designed by <a href="https://comsysit.in" target="_blank">ComSys IT</a></span>
+                            <span class="hindi-text">&copy; 2026 सीबीएसई स्कूल। डिज़ाइन द्वारा <a href="https://comsysit.in" target="_blank">कॉमसिस्टम आईटी</a></span>
+                            <span class="bengali-text">&copy; ২০২৬ সিবিএসই স্কুল। ডিজাইন করেছেন <a href="https://comsysit.in" target="_blank">कॉमसिस्टम आईटी</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer-area end -->
+    
+    <!-- all js here -->
+    <script src="https://rcsindia.co.in/newcbse19/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="https://rcsindia.co.in/newcbse19/js/bootstrap.min.js"></script>
+    <script src="https://rcsindia.co.in/newcbse19/js/owl.carousel.min.js"></script>
+    <script src="https://rcsindia.co.in/newcbse19/js/video.js"></script>
+    <script src="https://rcsindia.co.in/newcbse19/js/jquery.slicknav.min.js"></script>
+    <script src="https://rcsindia.co.in/newcbse19/js/jquery.waypoints.min.js"></script>
+    <script src="https://rcsindia.co.in/newcbse19/js/counterup.main.js"></script>
+    <script src="https://rcsindia.co.in/newcbse19/js/videojs-ie8.min.js"></script>
+    <script src="https://rcsindia.co.in/newcbse19/js/wow.min.js"></script>
+    <script src="https://rcsindia.co.in/newcbse19/js/plugins.js"></script>
+    <script src="https://rcsindia.co.in/newcbse19/js/main.js"></script>
+    <script src="https://rcsindia.co.in/newcbse19/js/home.js"></script>
+    
+    <!-- Trilingual Toggle Script -->
+    <script>
+        $(document).ready(function() {
+            // Check localStorage for language preference
+            var savedLang = localStorage.getItem('schoolLang');
+            if (savedLang && (savedLang === 'english' || savedLang === 'hindi' || savedLang === 'bengali')) {
+                $('body').removeClass('lang-english lang-hindi lang-bengali').addClass('lang-' + savedLang);
+                $('.lang-btn').removeClass('active');
+                $('.lang-btn[data-lang="' + savedLang + '"]').addClass('active');
+            } else {
+                $('body').addClass('lang-english');
+                $('.lang-btn[data-lang="english"]').addClass('active');
+            }
+            
+            // Language switch functionality
+            $('.lang-btn').click(function() {
+                var lang = $(this).data('lang');
+                $('body').removeClass('lang-english lang-hindi lang-bengali').addClass('lang-' + lang);
+                $('.lang-btn').removeClass('active');
+                $(this).addClass('active');
+                localStorage.setItem('schoolLang', lang);
+            });
+            
+            // Fix for marquee scrolling
+            var pausespeed = 0;
+            var marqueespeed = 1;
+            var copyspeed = marqueespeed;
+            
+            var marqueeContent = $('#vmarquee');
+            var startPosition = 65;
+            var currentPosition = startPosition;
+            setInterval(function() {
+                if (copyspeed !== pausespeed) {
+                    currentPosition -= 0.5;
+                    if (currentPosition < -350) {
+                        currentPosition = startPosition + 150;
+                    }
+                    marqueeContent.css('top', currentPosition + 'px');
+                }
+            }, 50);
+        });
+    </script>
+</body>
+</html>
