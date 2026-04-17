@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
+date_default_timezone_set('Asia/Kolkata');
 /*
 |--------------------------------------------------------------------------
 | Base Site URL
@@ -23,7 +23,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = '';
+if(isset($_SERVER['HTTP_HOST']) && ($_SERVER['HTTP_HOST']=='localhost') ){
+	$config['base_url'] = "https://$_SERVER[HTTP_HOST]/jc_school/";
+}
+else{
+	$config['base_url'] = "https://6c31-59-97-166-32.ngrok-free.app/teachnicalseaservice/";
+}
 
 /*
 |--------------------------------------------------------------------------
@@ -35,7 +40,7 @@ $config['base_url'] = '';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -383,15 +388,25 @@ $config['encryption_key'] = '';
 | except for 'cookie_prefix' and 'cookie_httponly', which are ignored here.
 |
 */
+// $config['sess_driver'] = 'files';
+// $config['sess_cookie_name'] = 'ci_session';
+// $config['sess_samesite'] = 'Lax';
+// $config['sess_expiration'] = 7200;
+// $config['sess_save_path'] = NULL;
+// $config['sess_match_ip'] = FALSE;
+// $config['sess_time_to_update'] = 300;
+// $config['sess_regenerate_destroy'] = FALSE;
+$sessDir = session_save_path();
+$sessDir = "{$sessDir}/sessionPath";
+is_dir($sessDir)?:mkdir($sessDir);
+
 $config['sess_driver'] = 'files';
 $config['sess_cookie_name'] = 'ci_session';
-$config['sess_samesite'] = 'Lax';
 $config['sess_expiration'] = 7200;
-$config['sess_save_path'] = NULL;
+$config['sess_save_path'] = $sessDir;
 $config['sess_match_ip'] = FALSE;
 $config['sess_time_to_update'] = 300;
 $config['sess_regenerate_destroy'] = FALSE;
-
 /*
 |--------------------------------------------------------------------------
 | Cookie Related Variables
@@ -532,9 +547,3 @@ $config['rewrite_short_tags'] = FALSE;
 $config['proxy_ips'] = '';
 
 
-if(isset($_SERVER['HTTP_HOST']) && ($_SERVER['HTTP_HOST']=='localhost') ){
-	$config['base_url'] = "https://$_SERVER[HTTP_HOST]/jc_school/";
-}
-else{
-	$config['base_url'] = "https://6c31-59-97-166-32.ngrok-free.app/teachnicalseaservice/";
-}

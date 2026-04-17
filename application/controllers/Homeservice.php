@@ -14,6 +14,22 @@ class Homeservice extends CI_Controller {
 		$this->load->view('website/index',$data);
         $this->load->view('website/footer');
 	}
+    public function aboutus(){
+        $data['title'] = "About Us";
+        $data['aboutus'] = $this->db->get_where('about')->result_array();
+        $this->load->view('website/top-section');
+        $this->load->view('website/abouts');
+        $this->load->view('website/footer');
+    }
+	public function officemember($role = null){
+    $data['title'] = "Office Member";
+    $data['aboutus'] = $this->db->get_where('about')->result_array();
+    $data['role'] = $role; // 'president', 'principal', or 'secretary'
+    
+    $this->load->view('website/top-section');
+    $this->load->view('website/office_member', $data);
+    $this->load->view('website/footer');
+}
 
 }
 ?>
