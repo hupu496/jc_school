@@ -48,5 +48,11 @@ public function guideline(){
     $this->load->view('website/guideline',$data);
     $this->load->view('website/footer');
 }
+public function holiday_list(){
+    $data['title'] = "Holiday List";
+    $this->load->view('website/top-section',$data);
+    $this->load->view('website/holiday_list',$data);
+    $this->load->view('website/footer');
+}
 }
 ?>

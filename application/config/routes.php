@@ -54,6 +54,7 @@ $route['our_school'] = 'homeservice/aboutus';
 $route['officemember/(:any)'] = 'homeservice/officemember/$1';
 $route['displine']='homeservice/displine';
 $route['guideline'] = 'homeservice/guideline';
+$route['holiday_list'] = 'homeservice/holiday_list';
 $route['officemember'] = 'homeservice/officemember';
 $route['admission_guide'] = 'homeservice/admission_guide';
 $route['404_override'] = 'comsysit/error404';

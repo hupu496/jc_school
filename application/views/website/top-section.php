@@ -182,7 +182,7 @@
         <span class="bengali-text">নির্দেশিকা</span>
     </a>
 </li>
-                                <li><a href="#"><span class="english-text">Holiday Calendar</span><span class="hindi-text">अवकाश कैलेंडर</span><span class="bengali-text">ছুটির ক্যালেন্ডার</span></a></li>
+                                <li><a href="<?php echo base_url('holiday_list'); ?>"><span class="english-text">Holiday Calendar</span><span class="hindi-text">अवकाश कैलेंडर</span><span class="bengali-text">ছুটির ক্যালেন্ডার</span></a></li>
                                 <li><a href="#"><span class="english-text">Achievements</span><span class="hindi-text">उपलब्धियाँ</span><span class="bengali-text">অর্জন</span> &raquo;</a>
                                     <ul class="right">
                                         <li><a href="#"><span class="english-text">Alumni</span><span class="hindi-text">पूर्व छात्र</span><span class="bengali-text">প্রাক্তন ছাত্র</span></a></li>
