@@ -6,9 +6,9 @@
                     <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="footer-widget">
                             <h2><span class="english-text">Contact Us</span><span class="hindi-text">संपर्क करें</span><span class="bengali-text">যোগাযোগ করুন</span></h2>
-                            <p><i class="fa fa fa-home"></i>&nbsp; <span class="english-text">CBSE School, Education City</span><span class="hindi-text">सीबीएसई स्कूल, एजुकेशन सिटी</span><span class="bengali-text">সিবিএসই স্কুল, এডুকেশন সিটি</span></p>
-                            <p><i class="fa fa-phone"></i>&nbsp; +91-1234-567890</p>
-                            <p><i class="fa fa-envelope-o"></i>&nbsp; info@cbseschool.edu</p>
+                            <p><i class="fa fa fa-home"></i>&nbsp; <span class="english-text"JAGADISH CHANDRA HIGH / PRIMARY SCHOOL</span><span class="hindi-text">जगदीश चंद्र हाई / प्राइमरी स्कूल।</span><span class="bengali-text">জগদীশ চন্দ্র হাই / প্রাইমারি স্কুল। ডিজাইন</span></p>
+                            <p><i class="fa fa-phone"></i>&nbsp; 06585 295539</p>
+                            <p><i class="fa fa-envelope-o"></i>&nbsp; info@jagadishschool.in</p>
                             <div class="socil-icon">
                                 <ul>
                                     <li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -24,8 +24,8 @@
                         <div class="footer-widget footer-menu">
                             <h2><span class="english-text">Useful Links</span><span class="hindi-text">उपयोगी लिंक</span><span class="bengali-text">উপযোগী লিঙ্ক</span></h2>
                             <ul>
-                                <li><a href="#"><span class="english-text">About School</span><span class="hindi-text">विद्यालय के बारे में</span><span class="bengali-text">স্কুল সম্পর্কে</span></a></li>
-                                <li><a href="#"><span class="english-text">Courses Details</span><span class="hindi-text">पाठ्यक्रम विवरण</span><span class="bengali-text">কোর্সের বিবরণ</span></a></li>
+                                <li><a href="<?php echo base_url('our_school'); ?>"><span class="english-text">About School</span><span class="hindi-text">विद्यालय के बारे में</span><span class="bengali-text">স্কুল সম্পর্কে</span></a></li>
+                                <li><a href="<?php echo base_url('guidelines'); ?>"><span class="english-text">Guideline Details</span><span class="hindi-text">पाठ्यक्रम विवरण</span><span class="bengali-text">কোর্সের বিবরণ</span></a></li>
                                 <li><a href="#"><span class="english-text">Events Gallery</span><span class="hindi-text">कार्यक्रम गैलरी</span><span class="bengali-text">ইভেন্ট গ্যালারি</span></a></li>
                                 <li><a href="#"><span class="english-text">Teachers Details</span><span class="hindi-text">शिक्षक विवरण</span><span class="bengali-text">শিক্ষকদের বিবরণ</span></a></li>
                             </ul>
@@ -39,10 +39,26 @@
                     </div>
                     <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="footer-widget">
-                            <h2><span class="english-text">School Timings</span><span class="hindi-text">विद्यालय समय</span><span class="bengali-text">স্কুলের সময়সূচি</span></h2>
-                            <p class="english-text">Mon-Fri: 8:00 AM - 2:30 PM<br>Saturday: 8:00 AM - 12:30 PM</p>
-                            <p class="hindi-text">सोम-शुक्र: सुबह 8:00 - दोपहर 2:30<br>शनिवार: सुबह 8:00 - दोपहर 12:30</p>
-                            <p class="bengali-text">সোম-শুক্র: সকাল ৮:০০ - দুপুর ২:৩০<br>শনিবার: সকাল ৮:০০ - দুপুর ১২:৩০</p>
+                            <h2>
+                                <span class="english-text">School Timings</span>
+                                <span class="hindi-text">विद्यालय का समय</span>
+                                <span class="bengali-text">স্কুলের সময়সূচি</span>
+                            </h2>
+                            
+                            <p class="english-text">
+                                Mon-Fri: 9:00 AM - 2:00 PM<br>
+                                3rd Saturday will be Holiday
+                            </p>
+                            
+                            <p class="hindi-text">
+                                सोम-शुक्र: सुबह 9:00 - दोपहर 2:00<br>
+                                तीसरा शनिवार अवकाश रहेगा
+                            </p>
+                            
+                            <p class="bengali-text">
+                                সোম-শুক্র: সকাল ৯:০০ - দুপুর ২:০০<br>
+                                তৃতীয় শনিবার ছুটি থাকবে
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -53,9 +69,11 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="copyright">
-                            <span class="english-text">&copy; 2026 CBSE School. Designed by <a href="https://comsysit.in" target="_blank">ComSys IT</a></span>
-                            <span class="hindi-text">&copy; 2026 सीबीएसई स्कूल। डिज़ाइन द्वारा <a href="https://comsysit.in" target="_blank">कॉमसिस्टम आईटी</a></span>
-                            <span class="bengali-text">&copy; ২০২৬ সিবিএসই স্কুল। ডিজাইন করেছেন <a href="https://comsysit.in" target="_blank">कॉमसिस्टम आईटी</a></span>
+                            <span class="english-text">&copy; 2026 JAGADISH CHANDRA HIGH / PRIMARY School. Designed by <a href="https://comsysit.in" target="_blank">ComSys IT</a></span>
+                            
+                            <span class="hindi-text">&copy; 2026 जगदीश चंद्र हाई / प्राइमरी स्कूल। डिज़ाइन: <a href="https://comsysit.in" target="_blank">ComSys IT</a></span>
+                            
+                            <span class="bengali-text">&copy; ২০২৬ জগদীশ চন্দ্র হাই / প্রাইমারি স্কুল। ডিজাইন করেছেন: <a href="https://comsysit.in" target="_blank">ComSys IT</a></span>
                         </div>
                     </div>
                 </div>

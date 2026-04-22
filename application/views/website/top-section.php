@@ -134,8 +134,8 @@
                         <div class="header-top-right text-right">
                             <ul>
                                 <li><a href="#"><i class="fa fa-user"></i> <span class="english-text">Admin</span><span class="hindi-text">प्रशासक</span><span class="bengali-text">প্রশাসক</span></a></li>
-                                <li><a href="#"><i class="fa fa-envelope-o"></i> info@domain.com</a></li>
-                                <li><a href="#"><i class="fa fa-phone"></i> +1234-567-890</a></li>
+                                <li><a href="#"><i class="fa fa-envelope-o"></i> info@jadishchandra.com</a></li>
+                                <li><a href="#"><i class="fa fa-phone"></i> 06585-295539</a></li>
                                 <li>
                                     <div class="lang-selector">
                                         <button class="lang-btn" data-lang="english">🇬🇧 EN</button>
@@ -170,13 +170,19 @@
                                 </li>
                                 <li><a href="#"><span class="english-text">Admission</span><span class="hindi-text">प्रवेश</span><span class="bengali-text">ভর্তি</span> &raquo;</a>
                                     <ul>
-                                        <li><a href="#"><span class="english-text">Admission Guidelines</span><span class="hindi-text">प्रवेश दिशानिर्देश</span><span class="bengali-text">ভর্তি নির্দেশিকা</span></a></li>
-                                        <li><a href="#"><span class="english-text">Discipline</span><span class="hindi-text">अनुशासन</span><span class="bengali-text">শৃঙ্খলা</span></a></li>
+                                        <li><a href="<?php echo base_url('admission_guide'); ?>"><span class="english-text">Admission Form</span><span class="hindi-text">प्रवेश फॉर्म</span><span class="bengali-text">ভর্তির ফর্ম</span></a></li>
+                                        <li><a href="<?php echo base_url('displine'); ?>"><span class="english-text">Discipline</span><span class="hindi-text">अनुशासन</span><span class="bengali-text">শৃঙ্খলা</span></a></li>
                                         <li><a href="#"><span class="english-text">Admission Period</span><span class="hindi-text">प्रवेश अवधि</span><span class="bengali-text">ভর্তির সময়কাল</span></a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#"><span class="english-text">ICT</span><span class="hindi-text">आईसीटी</span><span class="bengali-text">আইসিটি</span></a></li>
-                                <li><a href="#"><span class="english-text">Enrolment</span><span class="hindi-text">नामांकन</span><span class="bengali-text">নাম নথিভুক্তি</span></a></li>
+                               <li>
+    <a href="<?php echo base_url('guidelines'); ?>">
+        <span class="english-text">Guideline</span>
+        <span class="hindi-text">दिशा-निर्देश</span>
+        <span class="bengali-text">নির্দেশিকা</span>
+    </a>
+</li>
+                                <li><a href="#"><span class="english-text">Holiday Calendar</span><span class="hindi-text">अवकाश कैलेंडर</span><span class="bengali-text">ছুটির ক্যালেন্ডার</span></a></li>
                                 <li><a href="#"><span class="english-text">Achievements</span><span class="hindi-text">उपलब्धियाँ</span><span class="bengali-text">অর্জন</span> &raquo;</a>
                                     <ul class="right">
                                         <li><a href="#"><span class="english-text">Alumni</span><span class="hindi-text">पूर्व छात्र</span><span class="bengali-text">প্রাক্তন ছাত্র</span></a></li>
@@ -185,9 +191,9 @@
                                         <li><a href="#"><span class="english-text">Game & Sports</span><span class="hindi-text">खेलकूद</span><span class="bengali-text">খেলা ও ক্রীড়া</span></a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#"><span class="english-text">Staff</span><span class="hindi-text">स्टाफ</span><span class="bengali-text">স্টাফ</span></a></li>
+                               
                                 <li><a href="#"><span class="english-text">Affiliation</span><span class="hindi-text">संबद्धता</span><span class="bengali-text">অনুমোদন</span></a></li>
-                                <li><a href="#"><span class="english-text">Reports</span><span class="hindi-text">रिपोर्टें</span><span class="bengali-text">প্রতিবেদন</span></a></li>
+                               
                                 <li><a href="#"><span class="english-text">Gallery</span><span class="hindi-text">गैलरी</span><span class="bengali-text">গ্যালারি</span></a></li>
                             </ul>
                         </div>

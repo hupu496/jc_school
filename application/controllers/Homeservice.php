@@ -30,6 +30,23 @@ class Homeservice extends CI_Controller {
     $this->load->view('website/office_member', $data);
     $this->load->view('website/footer');
 }
-
+public function admission_guide(){
+    $data['title'] = "Admission Guide";
+    $this->load->view('website/top-section',$data);
+    $this->load->view('website/admission_guide',$data);
+    $this->load->view('website/footer');
+}
+public function displine(){
+    $data['title'] = "Displine";
+    $this->load->view('website/top-section',$data);
+    $this->load->view('website/displine',$data);
+    $this->load->view('website/footer');
+}
+public function guideline(){
+    $data['title'] = "Guideline";
+    $this->load->view('website/top-section',$data);
+    $this->load->view('website/guideline',$data);
+    $this->load->view('website/footer');
+}
 }
 ?>

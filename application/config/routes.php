@@ -52,7 +52,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'homeservice';
 $route['our_school'] = 'homeservice/aboutus';
 $route['officemember/(:any)'] = 'homeservice/officemember/$1';
+$route['displine']='homeservice/displine';
+$route['guidelines'] = 'homeservice/guidelines';
 $route['officemember'] = 'homeservice/officemember';
+$route['admission_guide'] = 'homeservice/admission_guide';
 $route['404_override'] = 'comsysit/error404';
 $route['translate_uri_dashes'] = FALSE;
 
