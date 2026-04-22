@@ -176,7 +176,7 @@
                                     </ul>
                                 </li>
                                <li>
-    <a href="<?php echo base_url('guidelines'); ?>">
+    <a href="<?php echo base_url('guideline'); ?>">
         <span class="english-text">Guideline</span>
         <span class="hindi-text">दिशा-निर्देश</span>
         <span class="bengali-text">নির্দেশিকা</span>
