@@ -138,5 +138,62 @@
             }, 50);
         });
     </script>
+        <script>
+    // 
+    const whatsappIcon = document.createElement("div");
+whatsappIcon.innerHTML = `
+  <a href="https://wa.me/06585295539?text=Hello%2C%20I%20am%20interested%20in%20your%20School For admission." target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="50" height="50">
+  </a>
+`;
+
+// Apply styles to keep it fixed
+whatsappIcon.style.position = "fixed";
+whatsappIcon.style.bottom = "20px";
+whatsappIcon.style.right = "20px";
+whatsappIcon.style.zIndex = "1000";
+
+// Append to the body
+document.body.appendChild(whatsappIcon);
+// 
+const callicon = document.createElement("div");
+callicon.innerHTML = `
+   <a href="tel:06585295539" target="_blank">
+   <img width="40" height="40" src="<?php echo base_url('assets/images/call.webp'); ?>" alt="phone"/>
+  </a>
+`;
+
+// Apply styles to keep it fixed
+callicon.style.position = "fixed";
+callicon.style.bottom = "80px";
+callicon.style.right = "20px";
+callicon.style.zIndex = "1000";
+
+// Append to the body
+document.body.appendChild(callicon);
+// fkldjsf
+document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll(".dropdown").forEach(function(dropdown) {
+        dropdown.addEventListener("mouseenter", function() {
+            let menu = this.querySelector(".dropdown-menu");
+            menu.style.display = "block";
+            setTimeout(() => {
+                menu.style.opacity = "1";
+                menu.style.transform = "translateY(0)";
+            }, 10);
+        });
+
+        dropdown.addEventListener("mouseleave", function() {
+            let menu = this.querySelector(".dropdown-menu");
+            menu.style.opacity = "0";
+            menu.style.transform = "translateY(-10px)";
+            setTimeout(() => {
+                menu.style.display = "none";
+            }, 500);
+        });
+    });
+});
+
+</script>
 </body>
 </html>

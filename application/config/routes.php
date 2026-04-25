@@ -57,6 +57,7 @@ $route['guideline'] = 'homeservice/guideline';
 $route['holiday_list'] = 'homeservice/holiday_list';
 $route['officemember'] = 'homeservice/officemember';
 $route['admission_guide'] = 'homeservice/admission_guide';
+$route['alumini'] = 'homeservice/alumini';
 $route['404_override'] = 'comsysit/error404';
 $route['translate_uri_dashes'] = FALSE;
 

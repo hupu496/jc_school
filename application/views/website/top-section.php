@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://rcsindia.co.in/newcbse19/css/slicknav.min.css">
     <link rel="stylesheet" href="https://rcsindia.co.in/newcbse19/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://rcsindia.co.in/newcbse19/css/video-js.css">
-    <link rel="stylesheet" href="https://rcsindia.co.in/newcbse19/style.css">
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/style.css'); ?>">
     <link rel="stylesheet" href="https://rcsindia.co.in/newcbse19/css/responsive.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
@@ -46,9 +46,34 @@
             background: #ff6b6b;
             border-color: #ff6b6b;
         }
+.green-hover {
+    transition: 0.3s; /* Optional: makes the color change smooth */
+  }
+  .green-hover:hover {
+    background: #14e926;
+    border-color: #14e926;
+  }
+  .bengali-hover{
+    transition: 0.3s;
+  }
+  .bengali-hover:hover{
+    background: #fff;
+    border-color: #fff;
+    color: black;
+  }
         .lang-btn.active {
             background: #ff6b6b;
             border-color: #ff6b6b;
+        }
+         .green-hover.active {
+            background: #14e926;
+            border-color: #14e926;
+            
+        }
+        .bengali-hover.active {
+            background: #fff;
+            border-color: #fff;
+            color: black;
         }
         .header-top-right ul {
             display: flex;
@@ -107,6 +132,34 @@
             font-size: 18px;
             margin-bottom: 20px;
         }
+        /* Mobile Header Buttons */
+.mobile-icons {
+    display: flex;
+    gap: 8px;
+}
+
+.mobile-btn {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+   
+    padding: 5px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700; /* BOLD */
+    color: #000;
+    background: #fff;
+}
+
+.mobile-btn i {
+    font-size: 14px;
+}
+
+.mobile-btn:hover {
+    background: #ff6b6b;
+    color: #fff;
+    border-color: #ff6b6b;
+}
     </style>
 </head>
 <body class="lang-english">
@@ -121,13 +174,8 @@
                 <div class="row">
                     <div class="col-md-6 col-sm-6 col-xs-12">
                         <div class="header-top-left">
-                            <ul class="socil-icon">
-                                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-                                <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
-                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                            </ul>
+                        <div class=""><a href="<?php echo base_url('/'); ?>"><img src="<?php echo base_url('assets\images\logo.png'); ?>" alt="School Logo" width="120px"/></a><span style="color:white; font-weight:500; font-size:18px; text-shadow: 2px 2px 6px rgba(0,0,0,0.9);">JAGADISH CHANDRA HIGH/ PRIMARY SCHOOL</span></div>
+                  
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-6 col-xs-12">
@@ -139,8 +187,8 @@
                                 <li>
                                     <div class="lang-selector">
                                         <button class="lang-btn" data-lang="english">🇬🇧 EN</button>
-                                        <button class="lang-btn" data-lang="hindi">🇮🇳 हिंदी</button>
-                                        <button class="lang-btn" data-lang="bengali">🇧🇩 বাংলা</button>
+                                        <button class="lang-btn bengali-hover" data-lang="bengali">🇧🇩 বাংলা</button>
+                                         <button class="lang-btn  green-hover" data-lang="hindi">🇮🇳 हिंदी</button>
                                     </div>
                                 </li>
                             </ul>
@@ -152,13 +200,24 @@
         <div class="header-bottom" id="sticky-header">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4 col-sm-3 col-xs-8">
-                        <div class=""><a href="#"><img src="<?php echo base_url('assets\images\logo.png'); ?>" alt="School Logo" width="120px"/></a></div>
-                    </div>
+                  
+                <div class="col-md-4 col-sm-3 col-xs-8 hidden-lg hidden-md hidden-sm">
+    <div class="mobile-icons">
+
+        <!-- Home Icon -->
+        <a href="<?php echo base_url('/'); ?>" class="mobile-btn">
+            <i class="fa fa-home"></i>
+            <span>Home</span>
+        </a>
+
+       
+
+    </div>
+</div>
                     <div class="col-md-8 col-sm-9 hidden-xs">
-                        <div class="mainmenu text-right">
+                        <div class="mainmenu text-right text-bold" style="font-weight:800;">
                             <ul id="navigation">
-                                <li class="active"><a href="#"><span class="english-text">Home</span><span class="hindi-text">मुखपृष्ठ</span><span class="bengali-text">হোম</span></a></li>
+                                <li class="active"><a href="<?php echo base_url('/'); ?>"><span class="english-text">Home</span><span class="hindi-text">मुखपृष्ठ</span><span class="bengali-text">হোম</span></a></li>
                                 <li><a href="#"><span class="english-text">About Us</span><span class="hindi-text">हमारे बारे में</span><span class="bengali-text">আমাদের সম্পর্কে</span> &raquo;</a>
                                     <ul>
                                         <li><a href="<?php echo base_url('/our_school'); ?>"><span class="english-text">About Our School</span><span class="hindi-text">हमारा विद्यालय</span><span class="bengali-text">আমাদের স্কুল</span></a></li>
@@ -185,7 +244,7 @@
                                 <li><a href="<?php echo base_url('holiday_list'); ?>"><span class="english-text">Holiday Calendar</span><span class="hindi-text">अवकाश कैलेंडर</span><span class="bengali-text">ছুটির ক্যালেন্ডার</span></a></li>
                                 <li><a href="#"><span class="english-text">Achievements</span><span class="hindi-text">उपलब्धियाँ</span><span class="bengali-text">অর্জন</span> &raquo;</a>
                                     <ul class="right">
-                                        <li><a href="#"><span class="english-text">Alumni</span><span class="hindi-text">पूर्व छात्र</span><span class="bengali-text">প্রাক্তন ছাত্র</span></a></li>
+                                        <li><a href="<?php echo base_url('/alumini'); ?>"><span class="english-text">Alumni</span><span class="hindi-text">पूर्व छात्र</span><span class="bengali-text">প্রাক্তন ছাত্র</span></a></li>
                                         <li><a href="#"><span class="english-text">Board Results</span><span class="hindi-text">बोर्ड परिणाम</span><span class="bengali-text">বোর্ড ফলাফল</span></a></li>
                                         <li><a href="#"><span class="english-text">Olympiad</span><span class="hindi-text">ओलंपियाड</span><span class="bengali-text">অলিম্পিয়াড</span></a></li>
                                         <li><a href="#"><span class="english-text">Game & Sports</span><span class="hindi-text">खेलकूद</span><span class="bengali-text">খেলা ও ক্রীড়া</span></a></li>
@@ -198,8 +257,8 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-xs-4 hidden-lg hidden-md hidden-sm">
-                        <div class="responsive-menu-wrap floatright"></div>
+                    <div class="col-xs-4 hidden-lg hidden-md hidden-sm ">
+                        <div class="mobile-icons responsive-menu-wrap floatright"></div>
                     </div>
                 </div>
             </div>

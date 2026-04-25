@@ -54,5 +54,11 @@ public function holiday_list(){
     $this->load->view('website/holiday_list',$data);
     $this->load->view('website/footer');
 }
+public function alumini(){
+    $data['title'] = "Holiday List";
+    $this->load->view('website/top-section',$data);
+    $this->load->view('website/alumini',$data);
+    $this->load->view('website/footer');
+}
 }
 ?>

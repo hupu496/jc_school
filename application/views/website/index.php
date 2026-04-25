@@ -59,7 +59,7 @@
                         <div class="course-sidebar-menu">
                             <ul>
                                 <li class="active"><a href="#details" data-toggle="tab"><span class="english-text">Principal</span><span class="hindi-text">प्रधानाचार्य</span><span class="bengali-text">প্রধান শিক্ষক</span></a></li>
-                                <li><a href="#preview" data-toggle="tab"><span class="english-text">Chairman</span><span class="hindi-text">अध्यक्ष</span><span class="bengali-text">চেয়ারম্যান</span></a></li>
+                                <li><a href="#preview" data-toggle="tab"><span class="english-text">President</span><span class="hindi-text">अध्यक्ष</span><span class="bengali-text">চেয়ারম্যান</span></a></li>
                             </ul>
                         </div>
                         <div class="tab-content">
@@ -67,9 +67,9 @@
                                 <div class="preview-wrap">
                                     <h3><span class="english-text">Principal</span><span class="hindi-text">प्रधानाचार्य</span><span class="bengali-text">প্রধান শিক্ষক</span></h3>
                                     <img src="https://rcsindia.co.in/newcbse19/img/4.jpg" alt="Principal" />
-                                    <span class="english-text">Name: Dr. Anjali Sharma</span>
-                                    <span class="hindi-text">नाम: डॉ. अंजलि शर्मा</span>
-                                    <span class="bengali-text">নাম: ডা. অঞ্জলি শর্মা</span>
+                                    <span class="english-text">Name:Mr. Rupnath Tiwari,</span>
+                                    <span class="hindi-text">नाम: श्री रूपनाथ तिवारी</span>
+                                    <span class="bengali-text">নাম: শ্রী রূপনাথ তিওয়ারি (বা তিওয়ারী)</span>
                                     <p class="english-text" style="margin-top:10px;">M.A., B.Ed., Ph.D. - 25+ years of experience in education.</p>
                                     <p class="hindi-text" style="margin-top:10px;">एम.ए., बी.एड., पीएच.डी. - शिक्षा में 25+ वर्षों का अनुभव।</p>
                                     <p class="bengali-text" style="margin-top:10px;">এম.এ., বি.এড., পিএইচ.ডি. - শিক্ষায় 25+ বছরের অভিজ্ঞতা।</p>
@@ -77,11 +77,11 @@
                             </div>
                             <div role="tabpanel" class="tab-pane" id="preview">
                                 <div class="preview-wrap">
-                                    <h3><span class="english-text">Chairman</span><span class="hindi-text">अध्यक्ष</span><span class="bengali-text">চেয়ারম্যান</span></h3>
-                                    <img src="https://rcsindia.co.in/newcbse19/img/5.jpg" alt="Chairman" />
-                                    <span class="english-text">Name: Shri Ramesh Gupta</span>
-                                    <span class="hindi-text">नाम: श्री रमेश गुप्ता</span>
-                                    <span class="bengali-text">নাম: শ্রী রমেশ গুপ্ত</span>
+                                    <h3><span class="english-text">President</span><span class="hindi-text">अध्यक्ष</span><span class="bengali-text">চেয়ারম্যান</span></h3>
+                                    <img src="https://rcsindia.co.in/newcbse19/img/5.jpg" alt="President" />
+                                    <span class="english-text">Name:Mr. Tapas Chatterjee</span>
+                                    <span class="hindi-text">नाम: श्री तापस चटर्जी</span>
+                                    <span class="bengali-text">নাম: শ্রী তাপস চ্যাটার্জি (বা চ্যাটার্জী)</span>
                                     <p class="english-text" style="margin-top:10px;">Visionary leader committed to academic excellence and innovation.</p>
                                     <p class="hindi-text" style="margin-top:10px;">शैक्षणिक उत्कृष्टता और नवाचार के लिए प्रतिबद्ध दूरदर्शी नेता।</p>
                                     <p class="bengali-text" style="margin-top:10px;">শিক্ষাগত উৎকর্ষতা এবং উদ্ভাবনের প্রতি প্রতিশ্রুতিবদ্ধ দূরদর্শী নেতা।</p>
@@ -126,7 +126,6 @@
                         <span><a style="font-size:16px;" href="#"><span class="english-text">More News...</span><span class="hindi-text">और समाचार...</span><span class="bengali-text">আরও খবর...</span></a></span>
                     </div>
                 </div>
-                
                 <div class="latest-news-wrap">
                     <h2 class="news-title"><span class="english-text">Downloads</span><span class="hindi-text">डाउनलोड</span><span class="bengali-text">ডাউনলোড</span></h2>
                     <div class="latest-news">
@@ -136,7 +135,7 @@
                                 <li><a href="#"><span class="english-text">📋 Latest Evaluation Scheme</span><span class="hindi-text">📋 नवीनतम मूल्यांकन योजना</span><span class="bengali-text">📋 সর্বশেষ মূল্যায়ন স্কিম</span></a></li>
                                 <li><a href="#"><span class="english-text">📑 Tenders List</span><span class="hindi-text">📑 निविदा सूची</span><span class="bengali-text">📑 দরপত্রের তালিকা</span></a></li>
                                 <li><a href="#"><span class="english-text">🎓 CBSE Results 2025</span><span class="hindi-text">🎓 सीबीएसई परिणाम 2025</span><span class="bengali-text">🎓 সিবিএসই ফলাফল ২০২৫</span></a></li>
-                                <li><a href="#"><span class="english-text">📘 Holiday List</span><span class="hindi-text">📘 अवकाश सूची</span><span class="bengali-text">📘 ছুটির তালিকা</span></a></li>
+                                <li><a href="<?php echo base_url('holiday_list'); ?>"><span class="english-text">📘 Holiday List</span><span class="hindi-text">📘 अवकाश सूची</span><span class="bengali-text">📘 ছুটির তালিকা</span></a></li>
                             </ul>
                         </div>
                         <span><a style="font-size:16px;" href="#"><span class="english-text">More Downloads...</span><span class="hindi-text">और डाउनलोड...</span><span class="bengali-text">আরও ডাউনলোড...</span></a></span>
