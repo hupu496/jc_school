@@ -22,6 +22,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
     /* ========== 3D LANGUAGE BUTTONS CUSTOMIZATION ========== */
+         body {
+            font-family: 'Poppins', 'Hind Siliguri', sans-serif;
+            background: linear-gradient(135deg, #f0f2f5 0%, #e8ecf1 100%);
+            min-height: 100vh;
+        }
     .lang-selector {
         display: flex;
         gap: 12px;
@@ -374,7 +379,7 @@
     font-size: 12px;
     font-weight: 700; /* BOLD */
     color: #000;
-    background: #fff;
+    background: #f1f1f1;
 }
 
 .mobile-btn i {
@@ -452,7 +457,15 @@
                                         <button class="lang-btn" data-lang="english">🇬🇧 EN</button>
                                     </div>
                                 </li>
+                             
+                                    <li><a href="#" ><img src="<?php echo base_url('assets/facebook.png'); ?>" style="border:2px solid #fff;border-radius:100px;" alt=""></a></li>
+                                    <li><a href="#"><img src="<?php echo base_url('assets/instagram.png'); ?>" style="border:2px solid #fff;border-radius:100px;" alt=""></a></li>
+                                    <li><a href="#"><img src="<?php echo base_url('assets/linkedin.png'); ?>" style="border:2px solid #fff;border-radius:100px;" alt=""></a></li>
+                                    <li><a href="#"><img src="<?php echo base_url('assets/youtube.png'); ?>" style="border:2px solid #fff;border-radius:100px;" alt=""></a></li>
+                                  
+                              
                             </ul>
+                            
                         </div>
                     </div>
                 </div>
@@ -478,7 +491,7 @@
                     <div class="col-md-8 col-sm-9 hidden-xs">
                         <div class="mainmenu text-right text-bold" style="font-weight:800;">
                             <ul id="navigation">
-                                <li class="active"><a href="<?php echo base_url('/'); ?>"><span class="english-text">Home</span><span class="hindi-text">मुखपृष्ठ</span><span class="bengali-text">হোম</span></a></li>
+                                <li class=""><a href="<?php echo base_url('/'); ?>"><span class="english-text">Home</span><span class="hindi-text">मुखपृष्ठ</span><span class="bengali-text">হোম</span></a></li>
                                 <li><a href="#"><span class="english-text">About Us</span><span class="hindi-text">हमारे बारे में</span><span class="bengali-text">আমাদের সম্পর্কে</span> &raquo;</a>
                                     <ul>
                                         <li><a href="<?php echo base_url('/our_school'); ?>"><span class="english-text">About Our School</span><span class="hindi-text">हमारा विद्यालय</span><span class="bengali-text">আমাদের স্কুল</span></a></li>
@@ -518,7 +531,7 @@
                                     </ul>
                                 </li>
                                <li><a href="<?php echo base_url('/alumini'); ?>"><span class="english-text">Alumni</span><span class="hindi-text">पूर्व छात्र</span><span class="bengali-text">প্রাক্তন ছাত্র</span></a></li>
-                                <li><a href="#"><span class="english-text">Affiliation</span><span class="hindi-text">संबद्धता</span><span class="bengali-text">অনুমোদন</span></a></li>
+                                <li><a href="<?php echo base_url('/affiliation'); ?>"><span class="english-text">Affiliation</span><span class="hindi-text">संबद्धता</span><span class="bengali-text">অনুমোদন</span></a></li>
                                
                                 <li><a href="<?php echo base_url('gallery'); ?>"><span class="english-text">Gallery</span><span class="hindi-text">गैलरी</span><span class="bengali-text">গ্যালারি</span></a></li>
                             </ul>

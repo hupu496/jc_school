@@ -1,47 +1,52 @@
 <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Inter', 'Hind Siliguri', sans-serif;
-            background-color: #f8fafc;
-            scroll-behavior: smooth;
-        }
-        /* Language visibility classes */
-        .hindi-text, .bengali-text { display: none; }
-        body.lang-english .english-text { display: inline-block; }
-        body.lang-english .english-block { display: block; }
-        body.lang-english .hindi-text, body.lang-english .bengali-text { display: none; }
-        body.lang-english .hindi-block, body.lang-english .bengali-block { display: none; }
-        
-        body.lang-hindi .hindi-text { display: inline-block; }
-        body.lang-hindi .hindi-block { display: block; }
-        body.lang-hindi .english-text, body.lang-hindi .bengali-text { display: none; }
-        body.lang-hindi .english-block, body.lang-hindi .bengali-block { display: none; }
-        
-        body.lang-bengali .bengali-text { display: inline-block; }
-        body.lang-bengali .bengali-block { display: block; }
-        body.lang-bengali .english-text, body.lang-bengali .hindi-text { display: none; }
-        body.lang-bengali .english-block, body.lang-bengali .hindi-block { display: none; }
-        
-        .hindi-block, .bengali-block, .english-block { display: none; }
-        body.lang-english .english-block { display: block; }
-        body.lang-hindi .hindi-block { display: block; }
-        body.lang-bengali .bengali-block { display: block; }
-        
+
+   
         /* alumni header */
         .alumni-header {
-            background: linear-gradient(135deg, #2c3e50, #3498db);
-            padding: 2.5rem 0;
+            z-index:-1;
+            position: relative;
+            background: linear-gradient(135deg, #1a2a3a 0%, #2c3e50 25%, #1a5276 50%, #2980b9 75%, #1a2a3a 100%);
+            background-size: 200% 200%;
+            padding: 50px 0;
+            margin-bottom: 60px;
             color: white;
             text-align: center;
-            margin-bottom: 2rem;
-            border-radius: 0 0 2rem 2rem;
-            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+            overflow: hidden;
+            animation: gradientShift 8s ease infinite;
         }
-        .alumni-header h1 { font-weight: 800; font-size: 2.4rem; letter-spacing: -0.5px; }
+         @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .alumni-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 40%, rgba(255,255,255,0.08) 2px, transparent 2px),
+                radial-gradient(circle at 80% 70%, rgba(255,255,255,0.06) 1px, transparent 1px);
+            background-size: 50px 50px, 30px 30px;
+            pointer-events: none;
+            animation: floatDots 20s linear infinite;
+        }
+
+        @keyframes floatDots {
+            0% { background-position: 0 0, 0 0; }
+            100% { background-position: 100px 100px, 60px 60px; }
+        }
+        .alumni-header h1{
+            font-size: 56px;
+            color:white;
+            font-weight: 800;
+            margin: 0 0 20px 0;
+            letter-spacing: -0.5px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            animation: fadeInUp 0.8s ease;
+        }
         .alumni-header p { font-size: 1.1rem; opacity: 0.9; }
         .stats-badge {
             background: rgba(255,255,255,0.2);
@@ -86,18 +91,18 @@
             color: #2a5a3a;
             margin-bottom: 1rem;
         }
-        .alumni-name { font-size: 1.35rem; font-weight: 700; margin-bottom: 0.25rem; color: #0f2b1d; }
+        .alumni-name { font-size: 18px; font-weight: 700; margin-bottom: 0.25rem; color: #0f2b1d; }
         .alumni-batch {
             background: #eef2ff;
             display: inline-block;
             padding: 0.2rem 0.9rem;
             border-radius: 30px;
-            font-size: 0.75rem;
+            font-size: 0.95rem;
             font-weight: 600;
             color: #1e4620;
             margin: 0.5rem 0;
         }
-        .detail-item { font-size: 0.85rem; margin-bottom: 0.5rem; color: #334155; display: flex; align-items: center; gap: 8px; }
+        .detail-item { font-size: 12px; margin-bottom: 0.5rem; color: #334155; display: flex; align-items: center; gap: 8px; }
         .detail-item i { width: 22px; color: #2a5a3a; }
         .btn-outline-alumni {
             border-radius: 60px;
@@ -162,9 +167,10 @@
     <!-- filter section -->
     <div class="filter-section">
         <div class="row align-items-center g-3">
-            <div class="col-md-5">
+            <div class="col-md-1"></div>
+            <div class="col-md-6">
                 <div class="input-group">
-                    <span class="input-group-text bg-white border-end-0"><i class="fas fa-search"></i></span>
+                   
                     <input type="text" class="form-control border-start-0" id="searchInput" placeholder="🔍 Search by name, city, profession...">
                 </div>
             </div>
@@ -173,14 +179,8 @@
                     <option value="all">All Batches</option>
                 </select>
             </div>
-            <div class="col-md-3 text-md-end">
-                <button class="btn btn-primary-alumni" id="openModalBtn" data-bs-toggle="modal" data-bs-target="#alumniModal">
-                    <i class="fas fa-plus-circle me-1"></i> 
-                    <span class="english-text">Join Alumni Network</span>
-                    <span class="hindi-text">पूर्व छात्र नेटवर्क से जुड़ें</span>
-                    <span class="bengali-text">প্রাক্তন নেটওয়ার্কে যোগ দিন</span>
-                </button>
-            </div>
+            <div class="col-md-1"></div>
+           
         </div>
     </div>
 

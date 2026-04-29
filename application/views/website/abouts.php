@@ -204,7 +204,7 @@
                 <div class="row">
                     <div class="col-md-8">
                         <div class="english-block">
-                            <h3>Welcome to Jagadish Chandra High School</h3>
+                            <h2 style="font-weight:800;">Welcome to Jagadish Chandra High School</h2>
                             <p>Amidst this beautiful surroundings our school JAGADISH CHANDRA HIGH SCHOOL is grandly situated on the link road of Ghatsila and Jamshedpur near the NH-18 highway.</p>
                             <p>The school started as a middle school in the year 1927/1928 as Ghatsila school with the efforts of the local Bengali speaking people but catering to educational needs of multilingual students coming from the Hindu, Sikh, Muslim, tribal and even Christian populace.</p>
                             <p>During the period of 1936-1937 the then local raja named Raja Bahadur Jagadish Chandra Deo Dhabaldeb helped the school bountifully in cash and kind for its development, so the management named the school bearing his name in his honour and recognition of his services.

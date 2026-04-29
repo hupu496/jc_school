@@ -66,5 +66,11 @@ public function gallery(){
     $this->load->view('website/gallery',$data);
     $this->load->view('website/footer');
 }
+public function affiliation(){
+    $data['title'] = "Affiliation";
+    $this->load->view('website/top-section',$data);
+    $this->load->view('website/affiliation',$data);
+    $this->load->view('website/footer');
+}
 }
 ?>

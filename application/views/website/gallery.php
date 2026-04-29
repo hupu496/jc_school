@@ -1,52 +1,47 @@
 <style>
-        /* ----- Color Scheme: #3498db & gradient (#2c3e50, #3498db) ----- */
-         /* Language visibility classes */
-        .hindi-text, .bengali-text { display: none; }
-        body.lang-english .english-text { display: inline-block; }
-        body.lang-english .english-block { display: block; }
-        body.lang-english .hindi-text, body.lang-english .bengali-text { display: none; }
-        body.lang-english .hindi-block, body.lang-english .bengali-block { display: none; }
         
-        body.lang-hindi .hindi-text { display: inline-block; }
-        body.lang-hindi .hindi-block { display: block; }
-        body.lang-hindi .english-text, body.lang-hindi .bengali-text { display: none; }
-        body.lang-hindi .english-block, body.lang-hindi .bengali-block { display: none; }
-        
-        body.lang-bengali .bengali-text { display: inline-block; }
-        body.lang-bengali .bengali-block { display: block; }
-        body.lang-bengali .english-text, body.lang-bengali .hindi-text { display: none; }
-        body.lang-bengali .english-block, body.lang-bengali .hindi-block { display: none; }
-        
-        .hindi-block, .bengali-block, .english-block { display: none; }
-        body.lang-english .english-block { display: block; }
-        body.lang-hindi .hindi-block { display: block; }
-        body.lang-bengali .bengali-block { display: block; }
         .gallery-header {
-            background: linear-gradient(135deg, #2c3e50, #3498db);
-            padding: 3rem 0 2.5rem;
+            z-index: -1;
+            position: relative;
+            background: linear-gradient(135deg, #1a2a3a 0%, #2c3e50 25%, #1a5276 50%, #2980b9 75%, #1a2a3a 100%);
+            background-size: 200% 200%;
+            padding: 60px 0;
             color: white;
             text-align: center;
-            margin-bottom: 2rem;
-            border-radius: 0 0 2rem 2rem;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-            position: relative;
             overflow: hidden;
+            animation: gradientShift 8s ease infinite;
+        }
+          @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
         .gallery-header::before {
-            content: '';
+             content: '';
             position: absolute;
-            top: -30%;
-            left: -20%;
-            width: 140%;
-            height: 140%;
-            background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 40%, rgba(255,255,255,0.08) 2px, transparent 2px),
+                radial-gradient(circle at 80% 70%, rgba(255,255,255,0.06) 1px, transparent 1px);
+            background-size: 50px 50px, 30px 30px;
             pointer-events: none;
+            animation: floatDots 20s linear infinite;
+        }
+          @keyframes floatDots {
+            0% { background-position: 0 0, 0 0; }
+            100% { background-position: 100px 100px, 60px 60px; }
         }
         .gallery-header h1 {
+           font-size: 56px;
             font-weight: 800;
-            font-size: 2.8rem;
+            color: #fff;
+            margin: 0 0 15px 0;
             letter-spacing: -0.5px;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            position: relative;
         }
         .gallery-header p {
             font-size: 1.2rem;

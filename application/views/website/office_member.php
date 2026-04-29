@@ -236,9 +236,9 @@
                         <li><i class="fa fa-user-circle"></i> <strong>Mr. Jaharlal Soren</strong> - G.R.</li>
                     </ul>
                 </div>
-                <div class="col-md-6">
+                <!-- <div class="col-md-6">
                     <div class="english-block"><p><i class="fa fa-info-circle"></i> The school was established in 1927/28, upgraded to high school in 1943, and declared a Bengali Minority High School in 1972. Affiliated to CBSE pattern, following state curriculum.</p><p><strong>Origin:</strong> Amidst beautiful surroundings on NH-18 link road, Ghatsila. The school continues to contribute glorious achievements in academic and cultural pursuits.</p></div>
-                </div>
+                </div> -->
             </div>
         </div>
 

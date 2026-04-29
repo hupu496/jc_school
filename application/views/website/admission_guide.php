@@ -269,8 +269,8 @@
         </div>
 
         <div style="text-align:center; margin-top:30px;">
-            <button class="btn" id="saveBtn" onclick="saveFormData()">💾 Save Form Data (with Images)</button>
-            <button class="btn btn-success" id="loadBtn" onclick="loadFormData()">📂 Load Saved Form</button>
+            <!-- <button class="btn" id="saveBtn" onclick="saveFormData()">💾 Save Form Data (with Images)</button> -->
+            <!-- <button class="btn btn-success" id="loadBtn" onclick="loadFormData()">📂 Load Saved Form</button> -->
             <button class="btn" id="generateBtn" onclick="generatePrint()">Generate Print Format</button>
             <button class="btn" id="printBtn" onclick="window.print()" style="background:#0066cc;">🖨️ Print Now</button>
         </div>

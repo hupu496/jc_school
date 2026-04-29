@@ -10,13 +10,13 @@
                             <p><i class="fa fa-phone"></i>&nbsp;+91 9234676905</p>
                             <p><i class="fa fa-envelope-o"></i>&nbsp;j.c.hs.ghatsila.e.singhubhum@gmail.com</p>
                             <div class="socil-icon">
-                                <!-- <ul>
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                </ul> -->
+                                <ul>
+                                    <li><a href="#" ><img src="<?php echo base_url('assets/facebook.png'); ?>" style="border:2px solid #fff;border-radius:100px;" alt=""></a></li>
+                                    <li><a href="#"><img src="<?php echo base_url('assets/instagram.png'); ?>" style="border:2px solid #fff;border-radius:100px;" alt=""></a></li>
+                                    <li><a href="#"><img src="<?php echo base_url('assets/linkedin.png'); ?>" style="border:2px solid #fff;border-radius:100px;" alt=""></a></li>
+                                    <li><a href="#"><img src="<?php echo base_url('assets/youtube.png'); ?>" style="border:2px solid #fff;border-radius:100px;" alt=""></a></li>
+                                  
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -31,7 +31,7 @@
                             </ul>
                         </div>
                     </div>
-                   <div class="col-md-3 col-sm-6 col-xs-12">
+<div class="col-md-3 col-sm-6 col-xs-12">
     <div class="footer-widget">
         <h2>
             <span class="english-text">Visitor Count</span>
@@ -42,7 +42,7 @@
            
             <div class="visitor-counter-box" style="margin-top: 10px;">
                 <div class="counter-display" id="visitorCounterDisplay" style="background: #df2525; padding: 8px 15px; border-radius: 30px; display: inline-block; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
-                    <span id="visitorNumber" style="font-size: 50px; font-weight: 800; color: #ffd966; font-family: monospace; letter-spacing: 2px;">9999</span>
+                    <span id="visitorNumber" style="font-size: 30px; font-weight: 800; color: #ffd966; font-family: monospace; letter-spacing: 2px;">9999</span>
                 </div>
                 <p class="mt-2 mb-0" style="font-size: 12px; color: #aaa;">
                     <span class="english-text">Total Visits</span>
@@ -53,6 +53,7 @@
         </div>
     </div>
 </div>
+
 
 <style>
     .visitor-counter-box {
@@ -154,7 +155,13 @@
                             </p>
                         </div>
                     </div>
+                    
                 </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+   
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.647367782935!2d86.4708093743538!3d22.592288532250247!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f61d91e5a0dfb9%3A0x507f0525ec2fd8b4!2sJ.%20C.%20HIGH%20SCHOOL!5e0!3m2!1sen!2sin!4v1777448954873!5m2!1sen!2sin" width="200" height="100" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  
+</div>
             </div>
         </div>
         <div class="footer-bottom">

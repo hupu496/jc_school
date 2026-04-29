@@ -68,8 +68,8 @@
                                 <div class="preview-wrap">
                                     <h3><span class="english-text">President</span><span class="hindi-text">अध्यक्ष</span><span class="bengali-text">চেয়ারম্যান</span></h3>
                                     <img src="<?php echo base_url('assets/images/seceratory.jpeg'); ?>" alt="President" />
-                                    <span class="english-text">Name:Mr. Tapas Chatterjee</span>
-                                    <span class="hindi-text">नाम: श्री तापस चटर्जी</span>
+                                    <span class="english-text">Mr. Tapas Chatterjee</span>
+                                    <span class="hindi-text">श्री तापस चटर्जी</span>
                                     <span class="bengali-text">নাম: শ্রী তাপস চ্যাটার্জি (বা চ্যাটার্জী)</span>
                                     <p class="english-text" style="margin-top:10px;">Visionary leader committed to academic excellence and innovation.</p>
                                     <p class="hindi-text" style="margin-top:10px;">शैक्षणिक उत्कृष्टता और नवाचार के लिए प्रतिबद्ध दूरदर्शी नेता।</p>
@@ -82,7 +82,7 @@
                                 <div class="preview-wrap">
                                     <h3><span class="english-text">Secretary</span><span class="hindi-text">सचिव</span><span class="bengali-text">সম্পাদক</span></h3>
                                     <img src="<?php echo base_url('assets/images/principal.jpeg'); ?>" alt="Principal" />
-                                    <span class="english-text">Name:Manoranjan Bakshi,</span>
+                                    <span class="english-text">Manoranjan Bakshi,</span>
                                     <span class="hindi-text">नाम: मनोरंजन बक्शी</span>
                                     <span class="bengali-text">নাম: মনোরঞ্জন বক্সী</span>
                                     <p class="english-text" style="margin-top:10px;">M.A., B.Ed., Ph.D. - 25+ years of experience in education.</p>

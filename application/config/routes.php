@@ -60,6 +60,7 @@ $route['officemember'] = 'homeservice/officemember';
 $route['admission_guide'] = 'homeservice/admission_guide';
 $route['alumini'] = 'homeservice/alumini';
 $route['gallery'] = 'homeservice/gallery';
+$route['affiliation'] = 'homeservice/affiliation';
 $route['404_override'] = 'comsysit/error404';
 $route['translate_uri_dashes'] = FALSE;
 
