@@ -138,7 +138,7 @@
                                 <li><a href="#"><span class="english-text">📄 OASIS Data</span><span class="hindi-text">📄 ओएसिस डेटा</span><span class="bengali-text">📄 ওএসআইএস ডেটা</span></a></li>
                                 <li><a href="#"><span class="english-text">📋 Latest Evaluation Scheme</span><span class="hindi-text">📋 नवीनतम मूल्यांकन योजना</span><span class="bengali-text">📋 সর্বশেষ মূল্যায়ন স্কিম</span></a></li>
                                 <li><a href="#"><span class="english-text">📑 Tenders List</span><span class="hindi-text">📑 निविदा सूची</span><span class="bengali-text">📑 দরপত্রের তালিকা</span></a></li>
-                                <li><a href="#"><span class="english-text">🎓 CBSE Results 2025</span><span class="hindi-text">🎓 सीबीएसई परिणाम 2025</span><span class="bengali-text">🎓 সিবিএসই ফলাফল ২০২৫</span></a></li>
+                                <!-- <li><a href="#"><span class="english-text">🎓 CBSE Results 2025</span><span class="hindi-text">🎓 सीबीएसई परिणाम 2025</span><span class="bengali-text">🎓 সিবিএসই ফলাফল ২০২৫</span></a></li> -->
                                 <li><a href="<?php echo base_url('holiday_list'); ?>"><span class="english-text">📘 Holiday List</span><span class="hindi-text">📘 अवकाश सूची</span><span class="bengali-text">📘 ছুটির তালিকা</span></a></li>
                             </ul>
                         </div>

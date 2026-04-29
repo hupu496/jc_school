@@ -496,8 +496,9 @@
                                     <ul>
                                         <li><a href="<?php echo base_url('/our_school'); ?>"><span class="english-text">About Our School</span><span class="hindi-text">हमारा विद्यालय</span><span class="bengali-text">আমাদের স্কুল</span></a></li>
                                         <li><a href="<?php echo base_url('/officemember/president'); ?>"><span class="english-text">President</span><span class="hindi-text">प्रबंधन समिति</span><span class="bengali-text">স্কুল ম্যানেজমেন্ট</span></a></li>
+                                         <li><a href="<?php echo base_url('/officemember/secretary'); ?>"><span class="english-text">Secretary</span><span class="hindi-text">अध्यक्ष</span><span class="bengali-text">চেয়ারম্যান</span></a></li>
                                         <li><a href="<?php echo base_url('/officemember/principal'); ?>"><span class="english-text">Principal</span><span class="hindi-text">प्रधानाचार्य</span><span class="bengali-text">প্রধান শিক্ষক</span></a></li>
-                                        <li><a href="<?php echo base_url('/officemember/secretary'); ?>"><span class="english-text">Secretary</span><span class="hindi-text">अध्यक्ष</span><span class="bengali-text">চেয়ারম্যান</span></a></li>
+                                       
                                         <li><a href="<?php echo base_url('/officemember/man_commite'); ?>"><span class="english-text">Management Committee</span><span class="hindi-text">प्रबंध समिति</span><span class="bengali-text">ব্যবস্থাপনা কমিটি</span></a></li>
                                     </ul>
                                 </li>
@@ -524,7 +525,7 @@
                                 <li><a href="#"><span class="english-text">Achievements</span><span class="hindi-text">उपलब्धियाँ</span><span class="bengali-text">অর্জন</span> &raquo;</a>
                                     <ul class="right">
                                         
-                                        <li><a href="#"><span class="english-text">Board Results</span><span class="hindi-text">बोर्ड परिणाम</span><span class="bengali-text">বোর্ড ফলাফল</span></a></li>
+                                        <li><a href="<?php echo base_url('achievements/board_result'); ?>"><span class="english-text">Board Results</span><span class="hindi-text">बोर्ड परिणाम</span><span class="bengali-text">বোর্ড ফলাফল</span></a></li>
                                         <!-- <li><a href="#"><span class="english-text">Olympiad</span><span class="hindi-text">ओलंपियाड</span><span class="bengali-text">অলিম্পিয়াড</span></a></li> -->
                                         <li><a href="#"><span class="english-text">Game & Sports</span><span class="hindi-text">खेलकूद</span><span class="bengali-text">খেলা ও ক্রীড়া</span></a></li>
                                         <li><a href="#"><span class="english-text">Other curriculum</span><span class="hindi-text">अन्य पाठ्यक्रम</span><span class="bengali-text">অন্যান্য পাঠ্যক্রম</span></a></li>

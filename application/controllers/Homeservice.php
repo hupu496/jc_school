@@ -72,5 +72,12 @@ public function affiliation(){
     $this->load->view('website/affiliation',$data);
     $this->load->view('website/footer');
 }
+public function achievements($role = null){
+    $data['title'] = "achievements";
+    $data['role'] = $role;
+    $this->load->view('website/top-section',$data);
+    $this->load->view('website/achievements',$data);
+    $this->load->view('website/footer');
+}
 }
 ?>
