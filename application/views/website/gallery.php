@@ -1,3 +1,4 @@
+
 <style>
         
         .gallery-header {
@@ -185,6 +186,23 @@
             .gallery-header h1 { font-size: 1.9rem; }
             .btn-category { padding: 0.3rem 1rem; font-size: 0.8rem; }
         }
+        #modalThumbnailContainer img {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 6px;
+    cursor: pointer;
+    opacity: 0.6;
+    border: 2px solid transparent;
+    transition: 0.3s;
+}
+#modalThumbnailContainer img.active {
+    opacity: 1;
+    border-color: #3498db;
+}
+#modalThumbnailContainer img:hover {
+    opacity: 1;
+}
     </style>
 <!-- Header with gradient (#2c3e50 to #3498db) -->
 <div class="gallery-header">
@@ -233,7 +251,9 @@
 
 <!-- Lightbox Modal for detailed view -->
 <div class="modal fade modal-gallery" id="eventModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-dialog modal-dialog-centered modal-xl" style="
+    margin-top: 100px;
+">
         <div class="modal-content bg-dark text-white">
             <div class="modal-header border-0">
                 <h5 class="modal-title" id="modalEventTitle">
@@ -244,15 +264,17 @@
             <div class="modal-body p-4">
                 <div class="row">
                     <div class="col-md-8">
-                        <div class="modal-image-container">
-                            <img id="modalEventImg" src="" alt="Event" class="modal-img">
-                            <button class="modal-nav-btn modal-nav-prev" onclick="navigateImage(-1)">
-                                <i class="fas fa-chevron-left"></i>
-                            </button>
-                            <button class="modal-nav-btn modal-nav-next" onclick="navigateImage(1)">
-                                <i class="fas fa-chevron-right"></i>
-                            </button>
-                        </div>
+                        <div class="modal-image-container position-relative">
+    <img id="modalEventImg" src="" class="modal-img">
+
+    <button class="modal-nav-btn modal-nav-prev" onclick="navigateImage(-1)">
+        <i class="fas fa-chevron-left"></i>
+    </button>
+    <button class="modal-nav-btn modal-nav-next" onclick="navigateImage(1)">
+        <i class="fas fa-chevron-right"></i>
+    </button>
+</div>
+<div id="modalThumbnailContainer" class="d-flex gap-2 mt-3 overflow-auto"></div>
                     </div>
                     <div class="col-md-4">
                         <div class="ps-md-3 mt-3 mt-md-0">
@@ -278,7 +300,8 @@
     </div>
 </div>
 
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://rcsindia.co.in/newcbse19/js/bootstrap.min.js"></script>
 <script>
     // ====================== MULTI LANGUAGE HANDLER ======================
    
@@ -362,7 +385,7 @@
                         <div class="card-content">
                             <div class="event-date"><i class="fas fa-calendar-alt" style="color:#3498db;"></i> ${ev.date}</div>
                             <h3 class="event-title">${escapeHtml(ev.title)}</h3>
-                            <p class="event-desc">${escapeHtml(ev.desc.length > 90 ? ev.desc.substring(0,90)+"..." : ev.desc)}</p>
+                        
                         </div>
                     </div>
                 </div>
@@ -388,52 +411,49 @@
         });
     }
     
-    // Open modal with specific image
-    function openModal(index) {
-        if (!filteredEventsList[index]) return;
-        
-        const event = filteredEventsList[index];
-        const modal = new bootstrap.Modal(document.getElementById('eventModal'));
-        
-        // Update modal content
-        document.getElementById('modalEventImg').src = event.img;
-        document.getElementById('modalEventTitle').innerHTML = `<i class="fas fa-image me-2" style="color:#3498db;"></i> ${event.title}`;
-        document.getElementById('modalEventTitleText').innerText = event.title;
-        document.getElementById('modalEventDesc').innerText = event.desc;
-        document.getElementById('modalEventDate').innerText = event.date;
-        
-        let categoryDisplay = event.category.charAt(0).toUpperCase() + event.category.slice(1);
-        document.getElementById('modalEventCategory').innerHTML = `<span class="badge" style="background: #3498db;">${categoryDisplay}</span>`;
-        
-        modal.show();
-    }
+function openModal(index) {
+    if (!filteredEventsList[index]) return;
+
+    currentModalIndex = index;
+
+    renderModalContent();
+    renderThumbnails();
+
+    // ✅ Bootstrap 3 / jQuery way
+    $('#eventModal').modal('show');
+}
+function renderModalContent() {
+    const event = filteredEventsList[currentModalIndex];
+
+    document.getElementById('modalEventImg').src = event.img;
+    document.getElementById('modalEventTitle').innerHTML =
+        `<i class="fas fa-image me-2" style="color:#3498db;"></i> ${event.title}`;
+    document.getElementById('modalEventTitleText').innerText = event.title;
+    document.getElementById('modalEventDesc').innerText = event.desc;
+    document.getElementById('modalEventDate').innerText = event.date || "N/A";
+
+    let categoryDisplay = event.category.charAt(0).toUpperCase() + event.category.slice(1);
+    document.getElementById('modalEventCategory').innerHTML =
+        `<span class="badge" style="background:#3498db;">${categoryDisplay}</span>`;
+}
+function renderThumbnails() {
+    const container = document.getElementById('modalThumbnailContainer');
+
+    container.innerHTML = "";
+
+   
+}
     
     // Navigate between images in modal
-    function navigateImage(direction) {
-        let newIndex = currentModalIndex + direction;
-        
-        if (newIndex >= 0 && newIndex < filteredEventsList.length) {
-            currentModalIndex = newIndex;
-            const event = filteredEventsList[currentModalIndex];
-            
-            // Animate image change
-            const imgElement = document.getElementById('modalEventImg');
-            imgElement.style.opacity = '0.5';
-            
-            setTimeout(() => {
-                imgElement.src = event.img;
-                document.getElementById('modalEventTitle').innerHTML = `<i class="fas fa-image me-2" style="color:#3498db;"></i> ${event.title}`;
-                document.getElementById('modalEventTitleText').innerText = event.title;
-                document.getElementById('modalEventDesc').innerText = event.desc;
-                document.getElementById('modalEventDate').innerText = event.date;
-                
-                let categoryDisplay = event.category.charAt(0).toUpperCase() + event.category.slice(1);
-                document.getElementById('modalEventCategory').innerHTML = `<span class="badge" style="background: #3498db;">${categoryDisplay}</span>`;
-                
-                imgElement.style.opacity = '1';
-            }, 200);
-        }
+  function navigateImage(direction) {
+    let newIndex = currentModalIndex + direction;
+
+    if (newIndex >= 0 && newIndex < filteredEventsList.length) {
+        currentModalIndex = newIndex;
+        renderModalContent();
+        renderThumbnails();
     }
+}
     
     function escapeHtml(str) { 
         if(!str) return '';

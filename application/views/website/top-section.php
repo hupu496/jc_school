@@ -513,7 +513,7 @@
                                     <ul class="right">
                                         <li><a href="<?php echo base_url('guideline/all_guide'); ?>"><span class="english-text">Guidelines</span><span class="hindi-text">दिशा-निर्देश</span><span class="bengali-text">নির্দেশিকা</span></a></li>
                                         <li><a href="<?php echo base_url('guideline/teacher');?>"><span class="english-text">Teacher & Staff</span><span class="hindi-text">शिक्षक और कर्मचारी</span><span class="bengali-text">শিক্ষক এবং কর্মী</span></a></li>
-                                        <!-- <li><a href="#"><span class="english-text">Olympiad</span><span class="hindi-text">ओलंपियाड</span><span class="bengali-text">অলিম্পিয়াড</span></a></li> -->
+                                        <li><a href="<?php echo base_url('guideline/housedress'); ?>"><span class="english-text">House Club</span><span class="hindi-text">ओलंपियाड</span><span class="bengali-text">অলিম্পিয়াড</span></a></li>
                                         <li><a href="<?php echo base_url('holiday_list'); ?>"><span class="english-text">Holiday Calendar</span><span class="hindi-text">खेलकूद</span><span class="bengali-text">খেলা ও ক্রীড়া</span></a></li>
                                        
                                     </ul>

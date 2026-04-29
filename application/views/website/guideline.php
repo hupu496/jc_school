@@ -239,6 +239,210 @@
         @media (max-width: 768px) { .profile-img { width: 130px; height: 130px; } .lang-btn { padding: 2px 8px; font-size: 10px; } }
         .footer-widget h2 { font-size: 18px; }
         .message-box { background: #f8f9fa; border-radius: 15px; padding: 25px; font-style: italic; border-left: 5px solid #ff6b6b; margin-top: 20px; }
+
+
+              /* House Grid */
+        .house-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            padding: 50px 0;
+        }
+
+        /* House Cards */
+        .house-card {
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .house-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 50px rgba(0,0,0,0.2);
+        }
+
+        /* House Header Colors */
+        .house-card.red { border-top: 8px solid #dc3545; }
+        .house-card.blue { border-top: 8px solid #007bff; }
+        .house-card.green { border-top: 8px solid #28a745; }
+        .house-card.yellow { border-top: 8px solid #ffc107; }
+
+        .house-header {
+            padding: 25px;
+            text-align: center;
+            position: relative;
+        }
+
+        .house-header.red { background: linear-gradient(135deg, #dc3545, #ff6b6b); }
+        .house-header.blue { background: linear-gradient(135deg, #007bff, #4da8ff); }
+        .house-header.green { background: linear-gradient(135deg, #28a745, #5cb85c); }
+        .house-header.yellow { background: linear-gradient(135deg, #e6a017, #ffc107); }
+
+        .house-header h2 {
+            color: white;
+            font-size: 28px;
+            font-weight: 800;
+            margin-top: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .house-header h3 {
+            color: rgba(255,255,255,0.9);
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        /* SVG Icon */
+        .house-svg {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 15px;
+            background: white;
+            border-radius: 50%;
+            padding: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .house-body {
+            padding: 25px;
+        }
+
+        .member-list {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .member-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #e0e0e0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+        }
+
+        .member-list li:last-child {
+            border-bottom: none;
+        }
+
+        .member-list li i {
+            width: 25px;
+            color: #1a4a6f;
+            font-size: 14px;
+        }
+
+        .supervisor-badge {
+            background: #ffd700;
+            color: #1a4a6f;
+            padding: 2px 8px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: 700;
+            margin-left: 8px;
+        }
+
+        .house-master-badge {
+            background: #28a745;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: 700;
+            margin-left: 8px;
+        }
+
+        /* Overall Supervisor Section */
+        .supervisor-section {
+            background: linear-gradient(135deg, #1a4a6f, #2a5298);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            margin: 20px 0 50px;
+            color: white;
+        }
+
+        .supervisor-section i {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .supervisor-section h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .supervisor-section p {
+            font-size: 18px;
+            margin-top: 10px;
+            opacity: 0.9;
+        }
+
+        /* Dress Code Section */
+        .dress-code-section {
+            background: white;
+            border-radius: 25px;
+            padding: 35px;
+            margin: 30px 0;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .dress-code-section h2 {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #1a4a6f, #ff6b35);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 30px;
+        }
+
+        .dress-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .dress-card {
+            background: #f8f9fa;
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .dress-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .dress-color {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            border: 3px solid white;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .dress-card h4 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .dress-card p {
+            font-size: 14px;
+            color: #555;
+        }
+ @media (max-width: 768px) {
+            .page-title h1 { font-size: 28px; }
+            .house-grid { grid-template-columns: 1fr; }
+            .dress-grid { grid-template-columns: 1fr; }
+        }
     </style>
 
 
@@ -401,6 +605,149 @@
      </div>
             
 
+
+    <?php endif; ?>
+   
+    <?php if($role == 'housedress'): ?>
+
+          <!-- Page Title -->
+    <div class="page-title">
+        <div class="container">
+            <h1>🏠 HOUSE DISTRIBUTION 2025-26</h1>
+            <p>Jagadish Chandra High School, Ghatsila | Four Pillars of Excellence</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- House Grid -->
+        <div class="house-grid">
+            
+            <!-- RED HOUSE - NETAJI HOUSE -->
+            <div class="house-card red">
+                <div class="house-header red">
+                    <div class="house-svg">
+                         <img src="<?php echo base_url('assets/netaji.png'); ?>" alt="Netaji" style="width: 100%; height: 100%; object-fit: contain; display: block; margin: 0 auto;">
+                    </div>
+                    <h2>RED HOUSE</h2>
+                    <h3>🏆 NETAJI HOUSE</h3>
+                </div>
+                <div class="house-body">
+                    <ul class="member-list">
+                        <li><i class="fas fa-crown"></i> Mrs. M. Bhattacherjee <span class="supervisor-badge">Supervisor</span></li>
+                        <li><i class="fas fa-star"></i> Mr. R. Sharma <span class="house-master-badge">House Master</span></li>
+                        <li><i class="fas fa-user"></i> Mr. S. L. Mahato</li>
+                        <li><i class="fas fa-user"></i> Mrs. B. Shaw</li>
+                        <li><i class="fas fa-user"></i> Mr. S. Sarkar</li>
+                        <li><i class="fas fa-user"></i> Mr. R. D. Namata</li>
+                        <li><i class="fas fa-user"></i> Mr. R. P. Mandal</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- BLUE HOUSE - GANDHI HOUSE -->
+            <div class="house-card blue">
+                <div class="house-header blue">
+                    <div class="house-svg">
+                          <img src="<?php echo base_url('assets/gandhi.png'); ?>" alt="Netaji" style="width: 100%; height: 100%; object-fit: contain; display: block; margin: 0 auto;">
+                    </div>
+                    <h2>BLUE HOUSE</h2>
+                    <h3>🏆 GANDHI HOUSE</h3>
+                </div>
+                <div class="house-body">
+                    <ul class="member-list">
+                        <li><i class="fas fa-crown"></i> Mrs. A. R. Sharma <span class="supervisor-badge">Supervisor</span></li>
+                        <li><i class="fas fa-star"></i> Mr. G. Barik <span class="house-master-badge">House Master</span></li>
+                        <li><i class="fas fa-user"></i> Miss S. Baskey</li>
+                        <li><i class="fas fa-user"></i> Mr. A. Choudhury</li>
+                        <li><i class="fas fa-user"></i> Mr. S. Das</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- GREEN HOUSE - RABINDRA HOUSE -->
+            <div class="house-card green">
+                <div class="house-header green">
+                    <div class="house-svg">
+                          <img src="<?php echo base_url('assets/rabidra.png'); ?>" alt="Netaji" style="width: 100%; height: 100%; object-fit: contain; display: block; margin: 0 auto;">
+                    </div>
+                    <h2>GREEN HOUSE</h2>
+                    <h3>🏆 RABINDRA HOUSE</h3>
+                </div>
+                <div class="house-body">
+                    <ul class="member-list">
+                        <li><i class="fas fa-crown"></i> Mr. P. K. Kuila <span class="supervisor-badge">Supervisor</span></li>
+                        <li><i class="fas fa-star"></i> Mr. T. Giri <span class="house-master-badge">House Master</span></li>
+                        <li><i class="fas fa-user"></i> Mrs. P. Guin</li>
+                        <li><i class="fas fa-user"></i> Mr. S. C. Dey</li>
+                        <li><i class="fas fa-user"></i> Mr. D. K. Gantait</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- YELLOW HOUSE - VIVEKANANDA HOUSE -->
+            <div class="house-card yellow">
+                <div class="house-header yellow">
+                    <div class="house-svg">
+                         <img src="<?php echo base_url('assets/vivekanand.png'); ?>" alt="Netaji" style="width: 100%; height: 100%; object-fit: contain; display: block; margin: 0 auto;">
+                    </div>
+                    <h2>YELLOW HOUSE</h2>
+                    <h3>🏆 VIVEKANANDA HOUSE</h3>
+                </div>
+                <div class="house-body">
+                    <ul class="member-list">
+                        <li><i class="fas fa-crown"></i> Mrs. A. Roy <span class="supervisor-badge">Supervisor</span></li>
+                        <li><i class="fas fa-star"></i> Mr. U. Bhagat <span class="house-master-badge">House Master</span></li>
+                        <li><i class="fas fa-user"></i> Mr. M. Mal</li>
+                        <li><i class="fas fa-user"></i> Mrs. R. Kumari</li>
+                        <li><i class="fas fa-user"></i> Mrs. T. Rajak</li>
+                        <li><i class="fas fa-user"></i> Mr. Suman Das</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Overall Supervisor -->
+        <div class="supervisor-section">
+            <i class="fas fa-user-graduate"></i>
+            <h3>Overall House Supervisor</h3>
+            <p>🏅 Responsibility for the supervision of all houses has been assigned to <strong>Mr. Rupnath Tiwary Sir</strong></p>
+        </div>
+
+        <!-- Dress Code Section -->
+        <div class="dress-code-section">
+            <h2><i class="fas fa-tshirt"></i> HOUSE DRESS CODE</h2>
+            <div class="dress-grid">
+                <div class="dress-card">
+                    <div class="dress-color" style="background: #dc3545;"></div>
+                    <h4>RED HOUSE</h4>
+                    <p>Netaji House</p>
+                    <p><strong>Dress:</strong> White Shirt + White Pant + Red Tie/Belt + Red Sash</p>
+                    <p><strong>House Day:</strong> Red Accessories</p>
+                </div>
+                <div class="dress-card">
+                    <div class="dress-color" style="background: #007bff;"></div>
+                    <h4>BLUE HOUSE</h4>
+                    <p>Gandhi House</p>
+                    <p><strong>Dress:</strong> White Shirt + White Pant + Blue Tie/Belt + Blue Sash</p>
+                    <p><strong>House Day:</strong> Blue Accessories</p>
+                </div>
+                <div class="dress-card">
+                    <div class="dress-color" style="background: #28a745;"></div>
+                    <h4>GREEN HOUSE</h4>
+                    <p>Rabindra House</p>
+                    <p><strong>Dress:</strong> White Shirt + White Pant + Green Tie/Belt + Green Sash</p>
+                    <p><strong>House Day:</strong> Green Accessories</p>
+                </div>
+                <div class="dress-card">
+                    <div class="dress-color" style="background: #ffc107;"></div>
+                    <h4>YELLOW HOUSE</h4>
+                    <p>Vivekananda House</p>
+                    <p><strong>Dress:</strong> White Shirt + White Pant + Yellow Tie/Belt + Yellow Sash</p>
+                    <p><strong>House Day:</strong> Yellow Accessories</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <?php endif; ?>
     <script>
