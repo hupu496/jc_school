@@ -5,7 +5,7 @@
     <div class="slider-area">
         <div class="slider-active">
             <div class="single-slider">
-                <img src="https://rcsindia.co.in/newcbse19/img/slider/1.jpg" alt="Slider" />
+                <img src="<?php echo base_url('assets/images/banner8.jpeg');  ?>" alt="Slider" />
                 <div class="slider-content">
                     <div class="table"><div class="table-cell"><div class="container">
                         <div class="row"><div class="col-md-8 col-xs-12">
@@ -14,8 +14,9 @@
                     </div></div></div>
                 </div>
             </div>
-            <div class="single-slider">
-                <img src="https://rcsindia.co.in/newcbse19/img/slider/2.jpg" alt="Slider" />
+            
+             <div class="single-slider">
+                <img src="<?php echo base_url('assets/images/banner10.jpeg');  ?>" alt="Slider" />
                 <div class="slider-content">
                     <div class="table"><div class="table-cell"><div class="container">
                         <div class="row"><div class="col-md-8 col-xs-12">
@@ -37,7 +38,7 @@
                         <h2 class="section-title"><span class="english-text">Welcome to Our School</span><span class="hindi-text">हमारी वेबसाइट पर आपका स्वागत है</span><span class="bengali-text">আমাদের ওয়েবসাইটে স্বাগতম</span></h2>
                         <div class="row"><div class="col-xs-12">
                             <div class="course-item">
-                                <div class="course-img"><img src="https://rcsindia.co.in/newcbse19/img/hh.jpg" alt="School" /></div>
+                                <div class="course-img"><img src="<?php echo base_url('assets/images/gallery11.jpeg'); ?>" alt="School" /></div>
                                 <div class="course-content">
                                     <p class="english-text"><strong>Jagadish Chandra High School</strong>, Ghatsila, was founded as a middle school in 1927-28 by local Bengali-speaking community, catering to multilingual students from Hindu, Sikh, Muslim, Tribal and Christian families. During 1936-37, Raja Bahadur Jagadish Chandra Deo Dhabaldeb helped the school bountifully — the school was named in his honour.</p>
                                     <p class="hindi-text">प्रत्येक छात्र को एक विविध शिक्षा प्रदान करना जो आत्म-अनुशासन, जिम्मेदारी की भावना, सामाजिक और वैश्विक चेतना तथा शिक्षण में उत्कृष्टता को बढ़ावा दे। हम एक ऐसा वातावरण बनाने का प्रयास करते हैं जहाँ हर बच्चा अपनी क्षमता को खोजे और एक जिम्मेदार वैश्विक नागरिक के रूप में विकसित हो।</p>
@@ -58,33 +59,36 @@
                     <div class="course-sidebar-wrap">
                         <div class="course-sidebar-menu">
                             <ul>
-                                <li class="active"><a href="#details" data-toggle="tab"><span class="english-text">Principal</span><span class="hindi-text">प्रधानाचार्य</span><span class="bengali-text">প্রধান শিক্ষক</span></a></li>
-                                <li><a href="#preview" data-toggle="tab"><span class="english-text">President</span><span class="hindi-text">अध्यक्ष</span><span class="bengali-text">চেয়ারম্যান</span></a></li>
+                                <li class="active"><a href="#details" data-toggle="tab"><span class="english-text">President</span><span class="hindi-text">अध्यक्ष</span><span class="bengali-text">চেয়ারম্যান</span></a></li>
+                                <li><a href="#preview" data-toggle="tab"><span class="english-text">Secretary</span><span class="hindi-text">सचिव</span><span class="bengali-text">সম্পাদক</span></a></li>
                             </ul>
                         </div>
                         <div class="tab-content">
                             <div role="tabpanel" class="tab-pane active" id="details">
                                 <div class="preview-wrap">
-                                    <h3><span class="english-text">Principal</span><span class="hindi-text">प्रधानाचार्य</span><span class="bengali-text">প্রধান শিক্ষক</span></h3>
-                                    <img src="https://rcsindia.co.in/newcbse19/img/4.jpg" alt="Principal" />
-                                    <span class="english-text">Name:Mr. Rupnath Tiwari,</span>
-                                    <span class="hindi-text">नाम: श्री रूपनाथ तिवारी</span>
-                                    <span class="bengali-text">নাম: শ্রী রূপনাথ তিওয়ারি (বা তিওয়ারী)</span>
-                                    <p class="english-text" style="margin-top:10px;">M.A., B.Ed., Ph.D. - 25+ years of experience in education.</p>
-                                    <p class="hindi-text" style="margin-top:10px;">एम.ए., बी.एड., पीएच.डी. - शिक्षा में 25+ वर्षों का अनुभव।</p>
-                                    <p class="bengali-text" style="margin-top:10px;">এম.এ., বি.এড., পিএইচ.ডি. - শিক্ষায় 25+ বছরের অভিজ্ঞতা।</p>
-                                </div>
-                            </div>
-                            <div role="tabpanel" class="tab-pane" id="preview">
-                                <div class="preview-wrap">
                                     <h3><span class="english-text">President</span><span class="hindi-text">अध्यक्ष</span><span class="bengali-text">চেয়ারম্যান</span></h3>
-                                    <img src="https://rcsindia.co.in/newcbse19/img/5.jpg" alt="President" />
+                                    <img src="<?php echo base_url('assets/images/seceratory.jpeg'); ?>" alt="President" />
                                     <span class="english-text">Name:Mr. Tapas Chatterjee</span>
                                     <span class="hindi-text">नाम: श्री तापस चटर्जी</span>
                                     <span class="bengali-text">নাম: শ্রী তাপস চ্যাটার্জি (বা চ্যাটার্জী)</span>
                                     <p class="english-text" style="margin-top:10px;">Visionary leader committed to academic excellence and innovation.</p>
                                     <p class="hindi-text" style="margin-top:10px;">शैक्षणिक उत्कृष्टता और नवाचार के लिए प्रतिबद्ध दूरदर्शी नेता।</p>
                                     <p class="bengali-text" style="margin-top:10px;">শিক্ষাগত উৎকর্ষতা এবং উদ্ভাবনের প্রতি প্রতিশ্রুতিবদ্ধ দূরদর্শী নেতা।</p>
+                                    <!--  -->
+                                    
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="preview">
+                                <div class="preview-wrap">
+                                    <h3><span class="english-text">Secretary</span><span class="hindi-text">सचिव</span><span class="bengali-text">সম্পাদক</span></h3>
+                                    <img src="<?php echo base_url('assets/images/principal.jpeg'); ?>" alt="Principal" />
+                                    <span class="english-text">Name:Manoranjan Bakshi,</span>
+                                    <span class="hindi-text">नाम: मनोरंजन बक्शी</span>
+                                    <span class="bengali-text">নাম: মনোরঞ্জন বক্সী</span>
+                                    <p class="english-text" style="margin-top:10px;">M.A., B.Ed., Ph.D. - 25+ years of experience in education.</p>
+                                    <p class="hindi-text" style="margin-top:10px;">एम.ए., बी.एड., पीएच.डी. - शिक्षा में 25+ वर्षों का अनुभव।</p>
+                                    <p class="bengali-text" style="margin-top:10px;">এম.এ., বি.এড., পিএইচ.ডি. - শিক্ষায় 25+ বছরের অভিজ্ঞতা।</p>
+                                    
                                 </div>
                             </div>
                         </div>

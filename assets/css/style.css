@@ -136,7 +136,8 @@ a#scrollUp:hover{
 	background:#14a5e4;
 }
 .header-bottom.sticky {
-	background: #fff none repeat scroll 0 0;
+	background: rgba(23, 72, 115, 1) none repeat scroll 0 0;
+	color:#fff !important;
 	left: 0;
 	position: fixed;
 	top: 0;
@@ -251,6 +252,7 @@ a#scrollUp:hover{
 	margin: 0 10px;
 	padding: 36px 0;
 	position: relative;
+	
 }
 .mainmenu ul li:last-child{
 	margin-right:0px;	
@@ -1006,7 +1008,7 @@ a#scrollUp:hover{
  --------------------------*/
  
 .footer-top{
-	background:#242424;
+	background:#174873;
 	color:#fff;
 }
 .footer-widget img{
@@ -1038,7 +1040,7 @@ a#scrollUp:hover{
 }
 .footer-bottom{
 	padding:15px 0px;
-	background:#2e2d2d;
+	background: rgba(20, 166, 228, 1);
 }
 .copyright {
 	text-align:center;

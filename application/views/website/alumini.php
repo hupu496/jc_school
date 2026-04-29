@@ -33,7 +33,7 @@
         
         /* alumni header */
         .alumni-header {
-            background: linear-gradient(135deg, #1e3c2c 0%, #2a5a3a 100%);
+            background: linear-gradient(135deg, #2c3e50, #3498db);
             padding: 2.5rem 0;
             color: white;
             text-align: center;
@@ -109,19 +109,19 @@
         }
         .btn-outline-alumni:hover { background: #2a5a3a; color: white; }
         .btn-primary-alumni {
-            background: #1e3c2c;
+            background: #337ab7;
             border: none;
             border-radius: 2rem;
             padding: 0.6rem 1.6rem;
             font-weight: 600;
             color: white;
         }
-        .btn-primary-alumni:hover { background: #0f2b1d; }
+        .btn-primary-alumni:hover { background: #3498db; }
         .modal-custom .modal-content { border-radius: 1.5rem; border: none; box-shadow: 0 25px 40px rgba(0,0,0,0.2); }
         .form-control, .form-select { border-radius: 0.9rem; padding: 0.65rem 1rem; border: 1px solid #e2e8f0; }
         .form-control:focus, .form-select:focus { border-color: #2a5a3a; box-shadow: 0 0 0 0.2rem rgba(42,90,58,0.2); }
         .empty-state { text-align: center; padding: 3rem; background: white; border-radius: 2rem; }
-        footer { background: #0f2b1d; color: #cbd5e1; margin-top: 4rem; padding: 2rem 0; text-align: center; }
+        footer { background: #3498db; color: #cbd5e1; margin-top: 4rem; padding: 2rem 0; text-align: center; }
         .lang-btn {
             background: transparent;
             border: 1px solid white;
@@ -143,6 +143,21 @@
         }
     </style>
 <!-- Alumni Header with Language Selector -->
+ <div class="alumni-header">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center flex-wrap">
+            <div class="mb-2 mb-md-0">
+                <h1><i class="fas fa-graduation-cap me-2"></i> <span class="english-text">Our Pride, Our Alumni</span><span class="hindi-text">हमारा गौरव, हमारे पूर्व छात्र</span><span class="bengali-text">আমাদের গর্ব, আমাদের প্রাক্তন ছাত্র</span></h1>
+                <p><span class="english-text">Celebrating the legacy of Jagadish Chandra High School</span><span class="hindi-text">जगदीश चंद्र हाई स्कूल की विरासत का जश्न</span><span class="bengali-text">জগদীশ চন্দ্র হাই স্কুলের উত্তরাধিকার উদযাপন</span></p>
+            </div>
+          
+        </div>
+        <div class="stats-badge">
+            <i class="fas fa-users"></i> <span id="alumniCountDisplay">0</span> 
+            <span class="english-text">Registered Alumni</span><span class="hindi-text">पंजीकृत पूर्व छात्र</span><span class="bengali-text">নিবন্ধিত প্রাক্তন ছাত্র</span>
+        </div>
+    </div>
+</div>
 <div class="container mb-5">
     <!-- filter section -->
     <div class="filter-section">

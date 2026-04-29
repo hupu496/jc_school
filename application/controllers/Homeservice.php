@@ -25,7 +25,6 @@ class Homeservice extends CI_Controller {
     $data['title'] = "Office Member";
     $data['aboutus'] = $this->db->get_where('about')->result_array();
     $data['role'] = $role; // 'president', 'principal', or 'secretary'
-    
     $this->load->view('website/top-section');
     $this->load->view('website/office_member', $data);
     $this->load->view('website/footer');
@@ -42,8 +41,9 @@ public function displine(){
     $this->load->view('website/displine',$data);
     $this->load->view('website/footer');
 }
-public function guideline(){
+public function guideline($role = null){
     $data['title'] = "Guideline";
+    $data['role'] = $role;
     $this->load->view('website/top-section',$data);
     $this->load->view('website/guideline',$data);
     $this->load->view('website/footer');
@@ -58,6 +58,12 @@ public function alumini(){
     $data['title'] = "Holiday List";
     $this->load->view('website/top-section',$data);
     $this->load->view('website/alumini',$data);
+    $this->load->view('website/footer');
+}
+public function gallery(){
+    $data['title'] = "Event Gallery List";
+    $this->load->view('website/top-section',$data);
+    $this->load->view('website/gallery',$data);
     $this->load->view('website/footer');
 }
 }

@@ -3,30 +3,7 @@
         body {
             font-family: 'Poppins', 'Hind Siliguri', sans-serif;
         }
-        .lang-selector {
-            display: flex;
-            gap: 8px;
-            margin-left: 15px;
-        }
-        .lang-btn {
-            background: transparent;
-            border: 1px solid #fff;
-            color: white;
-            padding: 4px 12px;
-            border-radius: 25px;
-            font-size: 12px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        .lang-btn:hover {
-            background: #174873;
-            border-color: #174873;
-        }
-        .lang-btn.active {
-            background: #174873;
-            border-color: #174873;
-        }
+       
         .header-top-right ul {
             display: flex;
             align-items: center;
@@ -64,21 +41,112 @@
             background: #f9fafc;
             padding: 60px 0;
         }
+        /* Animated Gradient Background */
         .page-title {
-            background: linear-gradient(135deg, #174873 0%, #ff6b6b 100%);
+            z-index:-1;
+            position: relative;
+            background: linear-gradient(135deg, #1a2a3a 0%, #2c3e50 25%, #1a5276 50%, #2980b9 75%, #1a2a3a 100%);
+            background-size: 200% 200%;
+            padding: 50px 0;
+            margin-bottom: 60px;
             color: white;
-            padding: 40px 0;
-            margin-bottom: 40px;
             text-align: center;
+            overflow: hidden;
+            animation: gradientShift 8s ease infinite;
         }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Animated Overlay Pattern */
+        .page-title::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 40%, rgba(255,255,255,0.08) 2px, transparent 2px),
+                radial-gradient(circle at 80% 70%, rgba(255,255,255,0.06) 1px, transparent 1px);
+            background-size: 50px 50px, 30px 30px;
+            pointer-events: none;
+            animation: floatDots 20s linear infinite;
+        }
+
+        @keyframes floatDots {
+            0% { background-position: 0 0, 0 0; }
+            100% { background-position: 100px 100px, 60px 60px; }
+        }
+
+        /* Floating Particles */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            animation: float 15s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.3; }
+            50% { transform: translateY(-50px) rotate(180deg); opacity: 0.8; }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Main Title Styling */
         .page-title h1 {
-            font-size: 42px;
-            font-weight: 700;
-            margin-bottom: 10px;
+            font-size: 56px;
+            color: white;
+            font-weight: 800;
+            margin: 0 0 20px 0;
+            letter-spacing: -0.5px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            animation: fadeInUp 0.8s ease;
         }
-        .page-title p {
-            font-size: 18px;
-            opacity: 0.9;
+         /* Breadcrumb Styling */
+        .breadcrumb {
+            margin-top: 30px;
+            font-size: 16px;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0,0,0,0.25);
+            backdrop-filter: blur(8px);
+            padding: 10px 25px;
+            border-radius: 50px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .breadcrumb a {
+            color: #ffd700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: #fff;
+            text-shadow: 0 0 5px rgba(255,215,0,0.5);
         }
         .holiday-card {
             background: white;
@@ -129,7 +197,7 @@
             display: inline-block;
         }
         .badge-saturday {
-            background: #ff8c00;
+            background: #ff6b6b;
             color: white;
             padding: 4px 12px;
             border-radius: 20px;
@@ -144,12 +212,7 @@
             border-radius: 12px;
             margin-top: 30px;
         }
-        .footer {
-            background: #1a1a2e;
-            color: #ccc;
-            padding: 40px 0 20px;
-            margin-top: 60px;
-        }
+      
         @media (max-width: 768px) {
             .holiday-table th, .holiday-table td {
                 padding: 10px 12px;
@@ -258,7 +321,7 @@
 
             <!-- Second Holiday Card: Second Saturday & Weekly Holidays -->
             <div class="holiday-card">
-                <div class="holiday-header" style="background: #ff8c00;">
+                <div class="holiday-header" style="background: #ff6b6b;">
                     <i class="fas fa-calendar-week"></i> 
                     <span class="english-text">Weekly & Special Holidays</span>
                     <span class="hindi-text">साप्ताहिक एवं विशेष अवकाश</span>

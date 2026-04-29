@@ -14,21 +14,118 @@
         .profile-img {
             width: 200px;
             height: 200px;
-            object-fit: cover;
-            border-radius: 50%;
+            /* object-fit: cover; */
+            border-radius: 10%;
             border: 5px solid #ff6b6b;
             margin-bottom: 20px;
         }
+       /* Animated Gradient Background */
         .page-title {
-            background: linear-gradient(135deg, #2c3e50, #3498db);
-            padding: 40px 0;
-            margin-bottom: 50px;
+            z-index:-1;
+            position: relative;
+            background: linear-gradient(135deg, #1a2a3a 0%, #2c3e50 25%, #1a5276 50%, #2980b9 75%, #1a2a3a 100%);
+            background-size: 200% 200%;
+            padding: 50px 0;
+            margin-bottom: 60px;
             color: white;
             text-align: center;
+            overflow: hidden;
+            animation: gradientShift 8s ease infinite;
         }
-        .page-title h1 { font-size: 42px; font-weight: 700; margin: 0; }
-        .breadcrumb { background: none; padding: 0; margin-top: 10px; }
-        .breadcrumb a { color: #ffeb3b; }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Animated Overlay Pattern */
+        .page-title::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 40%, rgba(255,255,255,0.08) 2px, transparent 2px),
+                radial-gradient(circle at 80% 70%, rgba(255,255,255,0.06) 1px, transparent 1px);
+            background-size: 50px 50px, 30px 30px;
+            pointer-events: none;
+            animation: floatDots 20s linear infinite;
+        }
+
+        @keyframes floatDots {
+            0% { background-position: 0 0, 0 0; }
+            100% { background-position: 100px 100px, 60px 60px; }
+        }
+
+        /* Floating Particles */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            animation: float 15s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.3; }
+            50% { transform: translateY(-50px) rotate(180deg); opacity: 0.8; }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Main Title Styling */
+        .page-title h1 {
+            font-size: 56px;
+            font-weight: 800;
+            margin: 0 0 20px 0;
+            letter-spacing: -0.5px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            animation: fadeInUp 0.8s ease;
+        }
+         /* Breadcrumb Styling */
+        .breadcrumb {
+            margin-top: 30px;
+            font-size: 16px;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0,0,0,0.25);
+            backdrop-filter: blur(8px);
+            padding: 10px 25px;
+            border-radius: 50px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .breadcrumb a {
+            color: #ffd700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: #fff;
+            text-shadow: 0 0 5px rgba(255,215,0,0.5);
+        }
+
         .content-section { padding: 30px 0 70px; }
         .message-quote { font-style: italic; border-left: 4px solid #ff6b6b; padding-left: 20px; margin: 20px 0; }
         @media (max-width: 768px) {
@@ -42,7 +139,7 @@
             
         /* Mission & Vision Module Styles */
         .mission-vision-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, rgba(20, 166, 228, 1) 0%, #174873 100%);
             border-radius: 20px;
             padding: 40px;
             margin: 30px 0;
@@ -93,7 +190,7 @@
     <!-- Dynamic Page Content based on URL (simulating separate pages) -->
     <div class="page-title">
         <div class="container">
-            <h1 id="pageMainTitle"><span class="english-text">About Our School</span><span class="hindi-text">हमारा विद्यालय</span><span class="bengali-text">আমাদের স্কুল</span></h1>
+            <h1 id="pageMainTitle" style="color:white;"><span class="english-text">About Our School</span><span class="hindi-text">हमारा विद्यालय</span><span class="bengali-text">আমাদের স্কুল</span></h1>
             <div class="breadcrumb">
                 <a href="index.html"><span class="english-text">Home</span><span class="hindi-text">मुखपृष्ठ</span><span class="bengali-text">হোম</span></a> / <span id="breadcrumbCurrent"><span class="english-text">About School</span><span class="hindi-text">विद्यालय</span><span class="bengali-text">স্কুল</span></span>
             </div>
@@ -108,11 +205,13 @@
                     <div class="col-md-8">
                         <div class="english-block">
                             <h3>Welcome to Jagadish Chandra High School</h3>
-                            <p>Established in 1985, Jagadish Chandra High School, Ghatsila, is a premier CBSE-affiliated institution dedicated to holistic education. Our mission is to nurture young minds with values, knowledge, and skills for a bright future.</p>
-                            <p>We offer state-of-the-art infrastructure, smart classrooms, science and computer labs, a vast library, and sports facilities. Our dedicated faculty ensures personalized attention and academic excellence.</p>
-                            <p>The school emphasizes co-curricular activities, cultural exchange, and community service, fostering global citizens rooted in Indian ethos. With a legacy of 100% board results and numerous Olympiad achievements, we take pride in our alumni excelling worldwide.</p>
-                            <div class="message-quote">"Education is not preparation for life; education is life itself." – John Dewey</div>
-                            <p>Our campus spreads over 5 acres with lush greenery, providing an ideal environment for learning and growth. We follow the latest CBSE curriculum with innovative teaching methodologies.</p>
+                            <p>Amidst this beautiful surroundings our school JAGADISH CHANDRA HIGH SCHOOL is grandly situated on the link road of Ghatsila and Jamshedpur near the NH-18 highway.</p>
+                            <p>The school started as a middle school in the year 1927/1928 as Ghatsila school with the efforts of the local Bengali speaking people but catering to educational needs of multilingual students coming from the Hindu, Sikh, Muslim, tribal and even Christian populace.</p>
+                            <p>During the period of 1936-1937 the then local raja named Raja Bahadur Jagadish Chandra Deo Dhabaldeb helped the school bountifully in cash and kind for its development, so the management named the school bearing his name in his honour and recognition of his services.
+Later the school grew to be a high school getting its recognition in 1943 by the state govt. as a high school, later leading to its up-gradation to a higher secondary level in the year 1959 which continued gloriously till 1972.</p>
+                            <div class="message-quote">"State Govt Aided Linguistic Minority Co-Educational School."</div>
+                            <p>Since 1972, the school reverted to its high school level with dropping of higher secondary scheme by the state govt. but in the same year the school was declared a Bengali medium minority high school by the state govt. with the efforts of the local Bengali speaking community with a view to safeguard and develop its language and culture.</p>
+                            <p>The school continues to be managed in the same order till date, contributing glorious achievements in its academic and cultural pursuits.</p>
                         </div>
                         <div class="hindi-block">
                             <h3>जगदीश चंद्र हाई स्कूल, घाटशिला में आपका स्वागत है</h3>
@@ -129,7 +228,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="profile-card text-center">
-                            <img src="https://via.placeholder.com/200x200?text=School+Building" alt="School" class="profile-img">
+                            <img src="<?php echo base_url('assets/images/logo.png'); ?>" width="100px" alt="School" class="profile-img">
                             <h4><span class="english-text">Our Campus</span><span class="hindi-text">हमारा परिसर</span><span class="bengali-text">আমাদের ক্যাম্পাস</span></h4>
                             <p><i class="fa fa-map-marker"></i> Ghatsila, East Singhbhum, Jharkhand</p>
                         </div>
@@ -195,7 +294,7 @@
                 <div class="row">
                     <div class="col-md-4 text-center">
                         <img src="https://via.placeholder.com/220x220?text=President+Shri+Ramesh" alt="President" class="profile-img">
-                        <h3><span class="english-text">Shri Rameshwar Prasad</span><span class="hindi-text">श्री रामेश्वर प्रसाद</span><span class="bengali-text">শ্রী রামেশ্বর প্রসাদ</span></h3>
+                        <h3><span class="english-text">Tapas Chatterjee</span><span class="hindi-text">श्री तापस चटर्जी</span><span class="bengali-text">শ্রী রামেশ্বর প্রসাদ</span></h3>
                         <p><span class="english-text">President, School Management Committee</span><span class="hindi-text">अध्यक्ष, विद्यालय प्रबंधन समिति</span><span class="bengali-text">সভাপতি, স্কুল ম্যানেজমেন্ট কমিটি</span></p>
                         <div class="team-social"><a href="#"><i class="fab fa-linkedin"></i></a><a href="#"><i class="fa fa-envelope"></i></a></div>
                     </div>

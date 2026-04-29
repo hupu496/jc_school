@@ -120,23 +120,125 @@
             .guidelines-card { padding: 20px; }
             .guidelines-card h3 { font-size: 20px; }
         }
+        /* Animated Gradient Background */
         .page-title {
-            background: linear-gradient(135deg, #174873 0%, #ff6b6b 100%);
+            z-index:-1;
+            position: relative;
+            background: linear-gradient(135deg, #1a2a3a 0%, #2c3e50 25%, #1a5276 50%, #2980b9 75%, #1a2a3a 100%);
+            background-size: 200% 200%;
+            padding: 50px 0;
+            margin-bottom: 60px;
             color: white;
-            padding: 40px 0;
-            margin-bottom: 40px;
             text-align: center;
+            overflow: hidden;
+            animation: gradientShift 8s ease infinite;
         }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Animated Overlay Pattern */
+        .page-title::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 40%, rgba(255,255,255,0.08) 2px, transparent 2px),
+                radial-gradient(circle at 80% 70%, rgba(255,255,255,0.06) 1px, transparent 1px);
+            background-size: 50px 50px, 30px 30px;
+            pointer-events: none;
+            animation: floatDots 20s linear infinite;
+        }
+
+        @keyframes floatDots {
+            0% { background-position: 0 0, 0 0; }
+            100% { background-position: 100px 100px, 60px 60px; }
+        }
+
+        /* Floating Particles */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            animation: float 15s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.3; }
+            50% { transform: translateY(-50px) rotate(180deg); opacity: 0.8; }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Main Title Styling */
         .page-title h1 {
-            font-size: 42px;
-            font-weight: 700;
-            margin-bottom: 10px;
+            font-size: 56px;
+            font-weight: 800;
+            color: #fff;
+            margin: 0 0 20px 0;
+            letter-spacing: -0.5px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            animation: fadeInUp 0.8s ease;
         }
-        .page-title p {
-            font-size: 18px;
-            opacity: 0.9;
+         /* Breadcrumb Styling */
+        .breadcrumb {
+            margin-top: 30px;
+            font-size: 16px;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0,0,0,0.25);
+            backdrop-filter: blur(8px);
+            padding: 10px 25px;
+            border-radius: 50px;
+            border: 1px solid rgba(255,255,255,0.2);
         }
-       
+
+        .breadcrumb a {
+            color: #ffd700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: #fff;
+            text-shadow: 0 0 5px rgba(255,215,0,0.5);
+        }
+        .profile-card { background: white; border-radius: 20px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); margin-bottom: 30px; transition: transform 0.3s; text-align: center; }
+        .profile-card:hover { transform: translateY(-5px); }
+        .profile-img { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 5px solid #ff6b6b; margin-bottom: 20px; background: #e9ecef; }
+        .page-title-bg { background: linear-gradient(135deg, #1e3c72, #2a5298); padding: 50px 0; margin-bottom: 50px; color: white; text-align: center; }
+        .school-badge { background: #ff6b6b10; border-radius: 15px; padding: 20px; margin-bottom: 25px; border-left: 4px solid #ff6b6b; }
+        .staff-table { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .staff-table th { background: #2c3e50; color: white; }
+        .section-title { border-left: 5px solid #ff6b6b; padding-left: 20px; margin: 30px 0 20px; }
+        .school-badge { background: #ff6b6b10; border-radius: 15px; padding: 20px; margin-bottom: 25px; border-left: 4px solid #ff6b6b; }
+        @media (max-width: 768px) { .profile-img { width: 130px; height: 130px; } .lang-btn { padding: 2px 8px; font-size: 10px; } }
+        .footer-widget h2 { font-size: 18px; }
+        .message-box { background: #f8f9fa; border-radius: 15px; padding: 25px; font-style: italic; border-left: 5px solid #ff6b6b; margin-top: 20px; }
     </style>
 
 
@@ -145,6 +247,7 @@
     <!-- header area end -->
 
     <!-- Page Title Area -->
+     <?php if($role == 'all_guide'): ?>
     <div class="page-title">
         <div class="container">
             <h1>
@@ -153,9 +256,9 @@
                 <span class="bengali-text">বিদ্যালয়ের নির্দেশিকা ও নিয়মাবলী</span>
             </h1>
             <p>
-                <span class="english-text">For Students, Parents & Guardians | Extracted from School Diary (Pages 26-27)</span>
-                <span class="hindi-text">छात्रों, अभिभावकों के लिए | स्कूल डायरी (पृष्ठ 26-27) से सारांशित</span>
-                <span class="bengali-text">শিক্ষার্থী, অভিভাবকদের জন্য | স্কুল ডায়েরি (পৃষ্ঠা ২৬-২৭) থেকে সংগৃহীত</span>
+                <span class="english-text">For Students, Parents & Guardians | Extracted from School Diary</span>
+                <span class="hindi-text">छात्रों, अभिभावकों के लिए | स्कूल डायरी  से सारांशित</span>
+                <span class="bengali-text">শিক্ষার্থী, অভিভাবকদের জন্য | স্কুল ডায়েরি  থেকে সংগৃহীত</span>
             </p>
         </div>
     </div>
@@ -243,10 +346,63 @@
                     </div>
                 </div>
             </div>
+            <!-- guidellines -->
+              <div class="school-badge" style="margin-top: 30px;">
+            <h3><span class="english-text">📜 School Rules & Uniform (Excerpts from School Diary)</span><span class="hindi-text">📜 विद्यालय नियम और पोशाक</span><span class="bengali-text">📜 স্কুলের নিয়ম ও পোশাক</span></h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <p><strong>Attendance:</strong> 75% attendance mandatory. Latecomers not allowed.</p>
+                    <p><strong>Discipline:</strong> No shouting, spitting, mobile phones. Respect school property.</p>
+                    <p><strong>Uniform (Boys):</strong> White half shirt & navy blue half pant (I-IV); White half shirt & navy blue full pant (V-X). White canvas shoes & white socks.</p>
+                </div>
+                <div class="col-md-6">
+                    <p><strong>Uniform (Girls):</strong> White shirt & navy blue skirt (I-VIII); Navy blue kameej & white salwar (IX-X). Wednesday: White salwar & white kameej.</p>
+                    <p><strong>School Hours:</strong> I-IV: 9 AM - 2 PM; V-X: 9 AM - 3 PM. 3rd Saturday holiday.</p>
+                    <p><i class="fa fa-heart" style="color:#ff6b6b;"></i> <strong>Lily Foundation Book Bank & Smile Scholarship available for needy students.</strong></p>
+                </div>
+            </div>
+        </div>
         </div>
     </div>
+     <?php endif; ?>
+    <?php if($role == 'teacher'): ?>
+     <div class="page-title">
+    <div class="container">
+        <h1>
+            <span class="english-text">Our Dedicated Teachers & Staff</span>
+            <span class="hindi-text">हमारे समर्पित शिक्षक और कर्मचारी</span>
+            <span class="bengali-text">আমাদের নিবেদিত শিক্ষক এবং কর্মী</span>
+        </h1>
+        <p>
+            <span class="english-text">Committed to excellence in education and guidance</span>
+            <span class="hindi-text">शिक्षा और मार्गदर्शन में उत्कृष्टता के लिए प्रतिबद्ध</span>
+            <span class="bengali-text">শিক্ষা এবং নির্দেশনায় উৎকর্ষের জন্য প্রতিশ্রুতিবদ্ধ</span>
+        </p>
+    </div>
+</div>
 
-  
+    <div class="container" style="padding-bottom: 60px;">
+   <!-- Complete Teachers List (Secondary + Primary) as per PDF -->
+        <div class="staff-table">
+            <h3 class="section-title"><span class="english-text"><i class="fa fa-chalkboard-user"></i> Our Dedicated Teachers (Secondary Section)</span><span class="hindi-text">हमारे शिक्षकगण (माध्यमिक)</span><span class="bengali-text">আমাদের শিক্ষকবৃন্দ (মাধ্যমিক)</span></h3>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead><tr><th>#</th><th><span class="english-text">Name</span><span class="hindi-text">नाम</span><span class="bengali-text">নাম</span></th><th>Qualification</th></tr></thead>
+                    <tbody>
+                        <tr><td>1</td><td>Mr. Rupnath Tiwari (H.M.)</td><td>M.A., B.Ed.</td></tr><tr><td>2</td><td>Mrs. Mousumi Bhattacherjee</td><td>M.A., B.Ed.</td></tr><tr><td>3</td><td>Mrs. Archana Rani Sharma</td><td>M.A., B.Ed.</td></tr><tr><td>4</td><td>Mrs. Arpita Roy</td><td>M.A., B.Ed.</td></tr><tr><td>5</td><td>Mrs. Rashmi Sharma</td><td>M.A., B.Ed.</td></tr><tr><td>6</td><td>Mr. Tapobrat Giri</td><td>M.Sc., B.Ed.</td></tr><tr><td>7</td><td>Mr. Shishulal Mahato</td><td>M.A., B.Ed.</td></tr><tr><td>8</td><td>Mr. Umesh Bhagat</td><td>M.Sc., B.Ed.</td></tr><tr><td>10</td><td>Mr. Pallab Kumar Dey</td><td>B.A., M.P.Ed.</td></tr><tr><td>11</td><td>Mr. Goutam Kumar Barik</td><td>M.Sc., B.Ed.</td></tr><tr><td>12</td><td>Mr. Partha Pratim Ghosh</td><td>M.Sc., B.Ed.</td></tr><tr><td>13</td><td>Mrs. Mousumi Dutta</td><td>M.A., B.Ed.</td></tr><tr><td>14</td><td>Mrs. Baby Shaw</td><td>M.A., B.Ed.</td></tr><tr><td>15</td><td>Mrs. Riya Kumari</td><td>M.A., B.Ed.</td></tr><tr><td>16</td><td>Mr. Madhusudan Mal</td><td>M.A., B.Ed., M.Ed.</td></tr><tr><td>17</td><td>Mr. Tampa Rajak</td><td>M.A., B.Ed.</td></tr><tr><td>18</td><td>Mrs. Paromita Guin</td><td>B.Sc., B.Ed.</td></tr><tr><td>19</td><td>Miss Shanti Baskey</td><td>M.A., B.Ed.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <h3 class="section-title"><span class="english-text"><i class="fa fa-laptop-code"></i> Computer Teachers & Staff</span><span class="hindi-text">कंप्यूटर शिक्षक एवं कर्मचारी</span><span class="bengali-text">কম্পিউটার শিক্ষক ও কর্মী</span></h3>
+            <div class="row"><div class="col-md-6"><ul><li><strong>Mr. Debraj Mukherjee</strong> (B.Com., ADIM/WE)</li><li><strong>Mr. Sourabh Sarkar</strong> (BCA)</li></ul></div><div class="col-md-6"><ul><li><strong>Office Staff:</strong> Mr. Subhash Chandra Dey (Head Clerk), Mr. Arup Choudhury (2nd Clerk)</li><li><strong>Peons:</strong> Rabidas Namata, Deepak Gantait, Suman Das, Ram Prasad Mandal</li></ul></div></div>
+            <h3 class="section-title"><span class="english-text"><i class="fa fa-school"></i> Primary Section Teachers</span><span class="hindi-text">प्राथमिक शिक्षक</span><span class="bengali-text">প্রাথমিক শিক্ষক</span></h3>
+            <ul><li>Ms. Uma Mitra (In-Charge) - M.A, B.Ed, D.El.Ed</li><li>Ms. Senoka Mitra - B.A Honrs, D.El.Ed</li><li>Mr. Rakhal Bisayee - M.A., D.El.Ed</li><li>Mr. Jaikishan Karmakar - B.Com, B.Ed</li><li>Miss Pramila Mahakur - B.A., B.Ed</li><li>Peon: Mr. Sujit Bagti</li></ul>
+        </div>
+     </div>
+            
+
+
+    <?php endif; ?>
     <script>
         $(document).ready(function() {
             // Language switching functionality

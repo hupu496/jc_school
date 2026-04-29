@@ -53,11 +53,13 @@ $route['default_controller'] = 'homeservice';
 $route['our_school'] = 'homeservice/aboutus';
 $route['officemember/(:any)'] = 'homeservice/officemember/$1';
 $route['displine']='homeservice/displine';
+$route['guideline/(:any)'] = 'homeservice/guideline/$1';
 $route['guideline'] = 'homeservice/guideline';
 $route['holiday_list'] = 'homeservice/holiday_list';
 $route['officemember'] = 'homeservice/officemember';
 $route['admission_guide'] = 'homeservice/admission_guide';
 $route['alumini'] = 'homeservice/alumini';
+$route['gallery'] = 'homeservice/gallery';
 $route['404_override'] = 'comsysit/error404';
 $route['translate_uri_dashes'] = FALSE;
 
