@@ -171,7 +171,7 @@
         /* lightbox modal style */
         .modal-gallery .modal-content {
             border-radius: 1.5rem;
-            background: #1e2a36;
+            background: #529de7;
             border: none;
         }
         .modal-img {
@@ -254,7 +254,7 @@
     <div class="modal-dialog modal-dialog-centered modal-xl" style="
     margin-top: 100px;
 ">
-        <div class="modal-content bg-dark text-white">
+        <div class="modal-content text-white">
             <div class="modal-header border-0">
                 <h5 class="modal-title" id="modalEventTitle">
                     <i class="fas fa-star-of-life" style="color:#3498db;"></i> Event Details
@@ -340,6 +340,10 @@
         { id: 30, title: "Academic Award", title_hi: "शैक्षणिक पुरस्कार", title_bn: "একাডেমিক পুরস্কার", desc: "Colorful celebration with music, organic colors and traditional sweets.", desc_hi: "संगीत, जैविक रंगों और पारंपरिक मिठाइयों के साथ रंगीन उत्सव।", desc_bn: "সঙ্গীত, জৈব রং এবং ঐতিহ্যবাহী মিষ্টির সাথে রঙিন উদযাপন।", category: "academic", img: "<?php echo base_url('assets/images/academic_award2.jpeg'); ?>", category_icon: "fa-palette" },
         { id: 31, title: "Foundation Day", title_hi: "स्थापना दिवस", title_bn: "প্রতিষ্ঠা দিবস", desc: "Colorful celebration with music, organic colors and traditional sweets.", desc_hi: "संगीत, जैविक रंगों और पारंपरिक मिठाइयों के साथ रंगीन उत्सव।", desc_bn: "সঙ্গীত, জৈব রং এবং ঐতিহ্যবাহী মিষ্টির সাথে রঙিন উদযাপন।", category: "cultural", img: "<?php echo base_url('assets/images/foundation_day.jpeg'); ?>", category_icon: "fa-palette" },
         { id: 32, title: "Academic Award", title_hi: "शैक्षणिक पुरस्कार", title_bn: "একাডেমিক পুরস্কার", desc: "Colorful celebration with music, organic colors and traditional sweets.", desc_hi: "संगीत, जैविक रंगों और पारंपरिक मिठाइयों के साथ रंगीन उत्सव।", desc_bn: "সঙ্গীত, জৈব রং এবং ঐতিহ্যবাহী মিষ্টির সাথে রঙিন উদযাপন।", category: "academic", img: "<?php echo base_url('assets/images/celebration_champ.jpeg'); ?>", category_icon: "fa-palette" },
+        { id: 33, title: "Science Lab", title_hi: "विज्ञान प्रयोगशाला", title_bn: "বিজ্ঞান ল্যাব", desc: "Colorful celebration with music, organic colors and traditional sweets.", desc_hi: "संगीत, जैविक रंगों और पारंपरिक मिठाइयों के साथ रंगीन उत्सव।", desc_bn: "সঙ্গীত, জৈব রং এবং ঐতিহ্যবাহী মিষ্টির সাথে রঙিন উদযাপন।", category: "academic", img: "<?php echo base_url('assets/images/science_lab1.jpeg'); ?>", category_icon: "fa-palette" },
+        { id: 34, title: "Science Lab", title_hi: "विज्ञान प्रयोगशाला", title_bn: "বিজ্ঞান ল্যাব", desc: "Colorful celebration with music, organic colors and traditional sweets.", desc_hi: "संगीत, जैविक रंगों और पारंपरिक मिठाइयों के साथ रंगीन उत्सव।", desc_bn: "সঙ্গীত, জৈব রং এবং ঐতিহ্যবাহী মিষ্টির সাথে রঙিন উদযাপন।", category: "academic", img: "<?php echo base_url('assets/images/science_lab2.jpeg'); ?>", category_icon: "fa-palette" },
+        { id: 35, title: "Annexure", title_hi: "विज्ञान प्रयोगशाला", title_bn: "বিজ্ঞান ল্যাব", desc: "Colorful celebration with music, organic colors and traditional sweets.", desc_hi: "संगीत, जैविक रंगों और पारंपरिक मिठाइयों के साथ रंगीन उत्सव।", desc_bn: "সঙ্গীত, জৈব রং এবং ঐতিহ্যবাহী মিষ্টির সাথে রঙিন উদযাপন।", category: "academic", img: "<?php echo base_url('assets/images/annex.jpeg'); ?>", category_icon: "fa-palette" },
+        { id: 36, title: "Annexure", title_hi: "विज्ञान प्रयोगशाला", title_bn: "বিজ্ঞান ল্যাব", desc: "Colorful celebration with music, organic colors and traditional sweets.", desc_hi: "संगीत, जैविक रंगों और पारंपरिक मिठाइयों के साथ रंगीन उत्सव।", desc_bn: "সঙ্গীত, জৈব রং এবং ঐতিহ্যবাহী মিষ্টির সাথে রঙিন উদযাপন।", category: "academic", img: "<?php echo base_url('assets/images/annex2.jpeg'); ?>", category_icon: "fa-palette" },
     ];
     
     let currentLang = 'english';
@@ -383,7 +387,7 @@
                             </div>
                         </div>
                         <div class="card-content">
-                            <div class="event-date"><i class="fas fa-calendar-alt" style="color:#3498db;"></i> ${ev.date}</div>
+                           
                             <h3 class="event-title">${escapeHtml(ev.title)}</h3>
                         
                         </div>

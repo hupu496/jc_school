@@ -9,7 +9,7 @@
                 <div class="slider-content">
                     <div class="table"><div class="table-cell"><div class="container">
                         <div class="row"><div class="col-md-8 col-xs-12">
-                            <h2><span class="english-text">CBSE Education</span><span class="hindi-text">सीबीएसई शिक्षा</span><span class="bengali-text">সিবিএসই শিক্ষা</span></h2>
+                            <h2><span class="english-text">JAC Education</span><span class="hindi-text">सीबीएसई शिक्षा</span><span class="bengali-text">সিবিএসই শিক্ষা</span></h2>
                         </div></div>
                     </div></div></div>
                 </div>
@@ -46,7 +46,7 @@
                                     <p class="english-text">Our mission is to nurture young minds with values, knowledge, and skills to face the challenges of tomorrow. We believe in holistic education that balances academics, sports, and cultural activities.</p>
                                     <p class="hindi-text">हमारा मिशन युवा दिमागों को मूल्यों, ज्ञान और कौशल से पोषित करना है ताकि वे कल की चुनौतियों का सामना कर सकें। हम समग्र शिक्षा में विश्वास करते हैं जो शिक्षा, खेल और सांस्कृतिक गतिविधियों को संतुलित करती है।</p>
                                     <p class="bengali-text">আমাদের লক্ষ্য হল তরুণ মনকে মূল্যবোধ, জ্ঞান এবং দক্ষতা দিয়ে লালন করা যাতে তারা আগামীকালের চ্যালেঞ্জ মোকাবেলা করতে পারে। আমরা সামগ্রিক শিক্ষায় বিশ্বাস করি যা একাডেমিক, খেলাধুলা এবং সাংস্কৃতিক কার্যক্রমের মধ্যে ভারসাম্য রক্ষা করে।</p>
-                                    <a href="#" class="btn-style"><span class="english-text">Read more...</span><span class="hindi-text">और पढ़ें...</span><span class="bengali-text">আরও পড়ুন...</span></a>
+                                    <!-- <a href="#" class="btn-style"><span class="english-text">Read more...</span><span class="hindi-text">और पढ़ें...</span><span class="bengali-text">আরও পড়ুন...</span></a> -->
                                 </div>
                             </div>
                         </div>
@@ -85,9 +85,9 @@
                                     <span class="english-text">Manoranjan Bakshi,</span>
                                     <span class="hindi-text">नाम: मनोरंजन बक्शी</span>
                                     <span class="bengali-text">নাম: মনোরঞ্জন বক্সী</span>
-                                    <p class="english-text" style="margin-top:10px;">M.A., B.Ed., Ph.D. - 25+ years of experience in education.</p>
-                                    <p class="hindi-text" style="margin-top:10px;">एम.ए., बी.एड., पीएच.डी. - शिक्षा में 25+ वर्षों का अनुभव।</p>
-                                    <p class="bengali-text" style="margin-top:10px;">এম.এ., বি.এড., পিএইচ.ডি. - শিক্ষায় 25+ বছরের অভিজ্ঞতা।</p>
+                                    <p class="english-text" style="margin-top:10px;">M.A., B.Ed. 35+ years of experience in education.</p>
+                                    <p class="hindi-text" style="margin-top:10px;">एम.ए., बी.एड. - शिक्षा में 35+ वर्षों का अनुभव।</p>
+                                    <p class="bengali-text" style="margin-top:10px;">এম.এ., বি.এড. - শিক্ষায় 35+ বছরের অভিজ্ঞতা।</p>
                                     
                                 </div>
                             </div>
@@ -97,37 +97,19 @@
                 
                 <!-- latest news -->
                 <div class="latest-news-wrap">
-                    <h2 class="news-title"><span class="english-text">News & Events</span><span class="hindi-text">समाचार और कार्यक्रम</span><span class="bengali-text">খবর ও ইভেন্ট</span></h2>
+                    <h2 class="news-title"><span class="english-text">Notice Board</span><span class="hindi-text">समाचार और कार्यक्रम</span><span class="bengali-text">খবর ও ইভেন্ট</span></h2>
                     <div class="latest-news">
                         <div id="marqueecontainer" onMouseover="copyspeed=pausespeed" onMouseout="copyspeed=marqueespeed">
                             <div id="vmarquee" style="position: absolute;left: 13px; top: 65px;">
                                 <span class="english-text">
-                                    ★ CBSE Latest Announcements<br><br>
-                                    ★ World Environment Day Celebration - June 5<br><br>
-                                    ★ Health & Physical Education Workshop<br><br>
-                                    ★ Parent-Teacher Meeting: April 20, 2026<br><br>
-                                    ★ Annual Sports Day: March 15, 2026<br><br>
-                                    ★ Summer Camp Registration Open
-                                </span>
-                                <span class="hindi-text">
-                                    ★ सीबीएसई नवीनतम घोषणाएं<br><br>
-                                    ★ विश्व पर्यावरण दिवस समारोह - 5 जून<br><br>
-                                    ★ स्वास्थ्य और शारीरिक शिक्षा कार्यशाला<br><br>
-                                    ★ अभिभावक-शिक्षक बैठक: 20 अप्रैल, 2026<br><br>
-                                    ★ वार्षिक खेल दिवस: 15 मार्च, 2026<br><br>
-                                    ★ ग्रीष्मकालीन शिविर पंजीकरण खुला
-                                </span>
-                                <span class="bengali-text">
-                                    ★ সিবিএসইর সর্বশেষ ঘোষণা<br><br>
-                                    ★ বিশ্ব পরিবেশ দিবস উদযাপন - ৫ জুন<br><br>
-                                    ★ স্বাস্থ্য ও শারীরিক শিক্ষা কর্মশালা<br><br>
-                                    ★ অভিভাবক-শিক্ষক বৈঠক: ২০ এপ্রিল, ২০২৬<br><br>
-                                    ★ বার্ষিক ক্রীড়া দিবস: ১৫ মার্চ, ২০২৬<br><br>
-                                    ★ গ্রীষ্মকালীন ক্যাম্পের নিবন্ধন শুরু
-                                </span>
+                                    ★ JAC Latest Announcements<br><br>
+                                    ★ Admission Open<br><br>
+                                    ★ JAC Secondary Board Result
+                                                                </span>
+                               
                             </div>
                         </div>
-                        <span><a style="font-size:16px;" href="#"><span class="english-text">More News...</span><span class="hindi-text">और समाचार...</span><span class="bengali-text">আরও খবর...</span></a></span>
+                        <span><a style="font-size:16px;" href="#"><span class="english-text" style="color:white;">More News...</span><span class="hindi-text">और समाचार...</span><span class="bengali-text">আরও খবর...</span></a></span>
                     </div>
                 </div>
                 <div class="latest-news-wrap">
@@ -135,14 +117,14 @@
                     <div class="latest-news">
                         <div class="sidebar-menu">
                             <ul>
-                                <li><a href="#"><span class="english-text">📄 OASIS Data</span><span class="hindi-text">📄 ओएसिस डेटा</span><span class="bengali-text">📄 ওএসআইএস ডেটা</span></a></li>
-                                <li><a href="#"><span class="english-text">📋 Latest Evaluation Scheme</span><span class="hindi-text">📋 नवीनतम मूल्यांकन योजना</span><span class="bengali-text">📋 সর্বশেষ মূল্যায়ন স্কিম</span></a></li>
+                                <li><a href="#"><span class="english-text">📄 Result</span><span class="hindi-text">📄 ओएसिस डेटा</span><span class="bengali-text">📄 ওএসআইএস ডেটা</span></a></li>
+                                <li><a href="#"><span class="english-text">📋 Examination Schedule</span><span class="hindi-text">📋 नवीनतम मूल्यांकन योजना</span><span class="bengali-text">📋 সর্বশেষ মূল্যায়ন স্কিম</span></a></li>
                                 <li><a href="#"><span class="english-text">📑 Tenders List</span><span class="hindi-text">📑 निविदा सूची</span><span class="bengali-text">📑 দরপত্রের তালিকা</span></a></li>
                                 <!-- <li><a href="#"><span class="english-text">🎓 CBSE Results 2025</span><span class="hindi-text">🎓 सीबीएसई परिणाम 2025</span><span class="bengali-text">🎓 সিবিএসই ফলাফল ২০২৫</span></a></li> -->
                                 <li><a href="<?php echo base_url('holiday_list'); ?>"><span class="english-text">📘 Holiday List</span><span class="hindi-text">📘 अवकाश सूची</span><span class="bengali-text">📘 ছুটির তালিকা</span></a></li>
                             </ul>
                         </div>
-                        <span><a style="font-size:16px;" href="#"><span class="english-text">More Downloads...</span><span class="hindi-text">और डाउनलोड...</span><span class="bengali-text">আরও ডাউনলোড...</span></a></span>
+                        <span><a style="font-size:16px;" href="#"><span class="english-text" style="color:white;">More Downloads...</span><span class="hindi-text">और डाउनलोड...</span><span class="bengali-text">আরও ডাউনলোড...</span></a></span>
                     </div>
                 </div>
             </div>

@@ -173,7 +173,7 @@ a#scrollUp:hover{
 .header-top-left ul:before,.header-top-right ul li:before{
 	position:absolute;
 	right:-6px;
-	content:"|";
+	content:"";
 	top:0;
 	color:#fff;
 }
@@ -1041,23 +1041,132 @@ a#scrollUp:hover{
 .footer-menu ul li a:hover{
 	color:#14a5e4;
 }
-.footer-bottom{
+/* .footer-bottom{
 	padding:15px 0px;
 	background: rgba(20, 166, 228, 1);
-}
-.copyright {
-	text-align:center;
-	font-size:15px;
-	color:#fff;
-	font-family: "Montserrat",sans-serif;
-	text-transform:uppercase;
-}
-.copyright a{
-	color:#fff;
-}
-.copyright a:hover{
-	color:#14a5e4;
-}
+} */
+      .footer-bottom {
+            padding: 10px 0 15px 0;
+            background: linear-gradient(135deg, #0C2F4A 0%, #0A2A42 100%);
+            /* deep blue gradient base — inspired by deep blue + yellow accent */
+            position: relative;
+            border-top: 3px solid #F9B81B;
+            /* vibrant yellow border for modern separation */
+            box-shadow: 0 -8px 20px rgba(0, 0, 0, 0.08);
+        }
+
+
+        /* copyright block - enhanced with icon and logo styling */
+        .copyright {
+            text-align: center;
+            font-size: 15px;
+            color: #fff;
+            font-family: "Montserrat", "Inter", sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 500;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        /* main school text with logo-icon integration */
+        .school-identity {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(2px);
+            padding: 8px 22px;
+            border-radius: 60px;
+            margin-bottom: 6px;
+            transition: all 0.2s ease;
+        }
+
+        /* logo image / icon set: yellow and deep blue identity */
+       
+      
+
+        /* designer badge - modern & elegant, with custom hover */
+        .designer-badge {
+            display: inline-flex;
+            align-items: baseline;
+            gap: 6px;
+            background: rgba(0, 0, 0, 0.35);
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            backdrop-filter: brightness(1.1);
+            transition: all 0.2s;
+        }
+
+        .designer-badge i {
+            color: #F9B81B;
+            font-size: 0.9rem;
+        }
+
+        .copyright a {
+            color: #F9D56E;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.25s ease;
+            border-bottom: 1px dotted transparent;
+            margin: 0 2px;
+        }
+
+        .copyright a:hover {
+            color: #F9B81B;
+            text-shadow: 0 0 2px rgba(249,184,27,0.5);
+            border-bottom: 1px dotted #F9B81B;
+        }
+
+        /* Additional hover effect for main link (ComSys IT) */
+        .designer-badge a:hover {
+            color: #FFE28A;
+            transform: scale(1.02);
+        }
+
+        /* customize anchor hover for regular copyright link if exists */
+        .copyright a:hover {
+            color: #F9B81B;
+        }
+
+        /* responsive refinements */
+        @media (max-width: 680px) {
+            .footer-bottom {
+                padding: 22px 0 20px;
+            }
+            .school-identity {
+                padding: 6px 16px;
+                gap: 8px;
+            }
+            .footer-logo-icon {
+                padding: 5px 12px;
+            }
+            .footer-logo-icon i {
+                font-size: 1.2rem;
+            }
+            .footer-logo-icon span {
+                font-size: 0.85rem;
+            }
+            .english-text {
+                font-size: 0.8rem;
+                padding: 4px 14px;
+            }
+            .designer-badge {
+                padding: 4px 14px;
+                font-size: 0.75rem;
+            }
+            .copyright {
+                gap: 10px;
+            }
+        }
 
 /*.-------------------------
  11.Home2 style 

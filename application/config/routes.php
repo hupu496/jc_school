@@ -51,6 +51,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'homeservice';
 $route['our_school'] = 'homeservice/aboutus';
+$route['admission_period'] = 'homeservice/admission_period';
 $route['officemember/(:any)'] = 'homeservice/officemember/$1';
 $route['displine']='homeservice/displine';
 $route['guideline/(:any)'] = 'homeservice/guideline/$1';
@@ -62,6 +63,8 @@ $route['alumini'] = 'homeservice/alumini';
 $route['gallery'] = 'homeservice/gallery';
 $route['affiliation'] = 'homeservice/affiliation';
 $route['achievements'] = 'homeservice/achievements';
+$route['registration'] = 'homeservice/registration';
+$route['fee_stru'] = 'homeservice/fee_stru';
 $route['achievements/(:any)'] = 'homeservice/achievements/$1';
 $route['404_override'] = 'comsysit/error404';
 $route['translate_uri_dashes'] = FALSE;

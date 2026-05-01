@@ -168,13 +168,13 @@
             <?php if($role == 'president'): ?>
             <h1 id="pageMainTitle"><span class="english-text">School Leadership & Management</span><span class="hindi-text">विद्यालय नेतृत्व एवं प्रबंधन</span><span class="bengali-text">বিদ্যালয়ের নেতৃত্ব ও ব্যবস্থাপনা</span></h1>
             <?php elseif($role == 'principal'): ?>
-            <h1><span class="english-text">Principal / Headmistress</span><span class="hindi-text">प्रधानाचार्य / प्रधानाध्यापिका</span><span class="bengali-text">প্রধান শিক্ষক / প্রধান শিক্ষিকা</span></h1>
+            <h1><span class="english-text">Headmaster</span><span class="hindi-text">प्रधानाचार्य / प्रधानाध्यापिका</span><span class="bengali-text">প্রধান শিক্ষক / প্রধান শিক্ষিকা</span></h1>
             <?php elseif($role == 'secretary'): ?>
              <h1><span class="english-text">School Secretary</span><span class="hindi-text">विद्यालय सचिव</span><span class="bengali-text">বিদ্যালয়ের সচিব</span></h1>
               <?php elseif($role == 'man_commite'): ?>   
                   <h1><span class="english-text">Management Committee</span><span class="hindi-text">विद्यालय सचिव</span><span class="bengali-text">বিদ্যালয়ের সচিব</span></h1>    
                      <?php endif; ?>
-            <p><span class="english-text">Based on Official School Diary 2025-26 | Jagadish Chandra High School, Ghatsila</span><span class="hindi-text">आधिकारिक स्कूल डायरी 2026-27 पर आधारित</span><span class="bengali-text">অফিসিয়াল স্কুল ডায়েরি 2025-26 এর ভিত্তিতে</span></p></div>
+            <p><span class="english-text">Based on Official School Diary 2026-27 | Jagadish Chandra High School, Ghatsila</span><span class="hindi-text">आधिकारिक स्कूल डायरी 2026-27 पर आधारित</span><span class="bengali-text">অফিসিয়াল স্কুল ডায়েরি 2025-26 এর ভিত্তিতে</span></p></div>
     </div>
 
     <div class="container" style="padding-bottom: 60px;">
@@ -182,11 +182,12 @@
         <!-- President Section (from PDF data: Mr. Tapas Chatterjee) -->
         <div id="president" class="profile-card">
             <div class="row">
-                <div class="col-md-3 text-center"><img src="<?php echo base_url('assets/images/seceratory.jpeg'); ?>" class="profile-img" alt="President"><h3><span class="english-text">Mr. Tapas Chatterjee</span><span class="hindi-text">श्री तपस चटर्जी</span><span class="bengali-text">শ্রী তপস চট্টোপাধ্যায়</span></h3><p><strong><span class="english-text">President, School Management Committee</span><span class="hindi-text">अध्यक्ष, विद्यालय प्रबंधन समिति</span><span class="bengali-text">সভাপতি, স্কুল ম্যানেজমেন্ট কমিটি</span></strong></p></div>
-                <div class="col-md-9">
-                    <div class="english-block"><h4>Official Message from President</h4><p>As per the school records (Page 17 of official diary), I, Tapas Chatterjee, serve as the President of Jagadish Chandra High School. Our institution, established in 1927/1928 as Ghatsila Middle School, has a rich legacy supported by Raja Bahadur Jagadish Chandra Deo Dhabaldeb. We are committed to providing quality education to the multilingual, multicultural community of Ghatsila. Our vision is to uphold honesty, truth, and good values — 'Satya Meva Jayate'. We strive to empower rural students with character, self-reliance, and leadership.</p><div class="message-box">"Our mission: To help students become men and women of character, ready to give themselves in service of others." — President's Desk</div></div>
-                    <div class="hindi-block"><h4>अध्यक्ष का आधिकारिक संदेश</h4><p>स्कूल रिकॉर्ड के अनुसार, मैं तपस चटर्जी, जगदीश चंद्र हाई स्कूल के अध्यक्ष के रूप में कार्यरत हूँ। हमारी संस्था, जिसकी स्थापना 1927/28 में हुई, राजा बहादुर जगदीश चंद्र देव धबलदेव द्वारा समर्थित है। हम गुणवत्तापूर्ण शिक्षा, सत्य और ईमानदारी के प्रति प्रतिबद्ध हैं।</p></div>
-                    <div class="bengali-block"><h4>সভাপতির অফিসিয়াল বার্তা</h4><p>বিদ্যালয়ের রেকর্ড অনুযায়ী, আমি তপস চট্টোপাধ্যায়, জগদীশ চন্দ্র হাই স্কুলের সভাপতি। আমাদের প্রতিষ্ঠান ১৯২৭/২৮ সালে প্রতিষ্ঠিত, রাজা বাহাদুর জগদীশ চন্দ্র দেব ধবলদেব দ্বারা সমর্থিত। আমরা গুণগত শিক্ষা ও সত্যের প্রতি প্রতিশ্রুতিবদ্ধ।</p></div>
+                <div class="col-md-12 text-center"><img src="<?php echo base_url('assets/images/seceratory.jpeg'); ?>" class="profile-img" alt="President"><h3><span class="english-text">Mr. Tapas Chatterjee</span><span class="hindi-text">श्री तपस चटर्जी</span><span class="bengali-text">শ্রী তপস চট্টোপাধ্যায়</span></h3> <span class="english-text"> (First alumnus, become President of School Committee) </span><span class="hindi-text">(विद्यालय के पहले पूर्व छात्र जो अध्यक्ष बने )</span> <span class="bengali-text">(বিদ্যালয়ের প্রথম প্রাক্তন ছাত্র যিনি সভাপতি হয়েছেন)</span> </h4><p><span class="english-text">President, School Management Committee</span><span class="hindi-text">अध्यक्ष, विद्यालय प्रबंधन समिति</span><span class="bengali-text">সভাপতি, স্কুল ম্যানেজমেন্ট কমিটি</span> </strong></p></div>
+                 <div class="col-md-12">
+                    <br>
+                    <div class="english-block"><h4>Official Message from President, School Committee</h4> <p> I, Tapas Chatterjee, serve as the President of Jagadish Chandra High School. Our institution, established in 1927/1928 as Ghatsila Middle School, has a rich legacy supported by Raja Bahadur Jagadish Chandra Deo Dhabaldeb. We are committed to providing quality education to the multilingual, multicultural community of Ghatsila. Our vision is to uphold honesty, truth, and good values — 'Satya Meva Jayate'. We strive to empower rural students with character, self-reliance, and leadership.</p><div class="message-box">"Our mission: To help students become men and women of character, ready to give themselves in service of others." — President's Desk</div></div>
+                    <div class="hindi-block"><h4>अध्यक्ष का आधिकारिक संदेश</h4><p> मैं तपस चटर्जी, जगदीश चंद्र हाई स्कूल के अध्यक्ष के रूप में कार्यरत हूँ। हमारी संस्था, जिसकी स्थापना 1927/28 में हुई, राजा बहादुर जगदीश चंद्र देव धबलदेव द्वारा समर्थित है। हम गुणवत्तापूर्ण शिक्षा, सत्य और ईमानदारी के प्रति प्रतिबद्ध हैं।</p></div>
+                    <div class="bengali-block"><h4>সভাপতির অফিসিয়াল বার্তা</h4><p>আমি তপস চট্টোপাধ্যায়, জগদীশ চন্দ্র হাই স্কুলের সভাপতি। আমাদের প্রতিষ্ঠান ১৯২৭/২৮ সালে প্রতিষ্ঠিত, রাজা বাহাদুর জগদীশ চন্দ্র দেব ধবলদেব দ্বারা সমর্থিত। আমরা গুণগত শিক্ষা ও সত্যের প্রতি প্রতিশ্রুতিবদ্ধ।</p></div>
                 </div>
             </div>
         </div>
@@ -195,23 +196,24 @@
         <!-- Principal / Headmistress Section (from PDF: Mrs. Rita Mandal, H.M.) -->
         <div id="principal" class="profile-card">
             <div class="row">
-                <div class="col-md-3 text-center"><img src="<?php echo base_url('assets/images/head_master.jpeg'); ?>" class="profile-img" alt="Principal"><h3><span class="english-text">Mr. Rupnath Tiwari</span><span class="hindi-text">श्रीमती रीता मंडल</span><span class="bengali-text">শ্রীমতী রীতা মন্ডল</span></h3><p><strong>M.A., B.Ed. <span class="english-text">(Headmistress)</span><span class="hindi-text">(प्रधानाध्यापिका)</span><span class="bengali-text">(প্রধান শিক্ষিকা)</span></strong></p></div>
-                <div class="col-md-9">
-                    <div class="english-block"><h4>Headmistress's Desk</h4><p>I, Rupnath Tiwari, am honored to lead Jagadish Chandra High School as the Headmistress. Our school diary (Page 17 & 19) reflects our commitment to holistic education. We focus on character building, academic excellence, and co-curricular activities. Our students have excelled in board exams, Olympiads, and cultural events. I urge parents and students to follow school rules, maintain 75% attendance, and wear proper uniform as prescribed. Together we shall continue the glorious legacy of this institution.</p><ul><li><i class="fa fa-calendar"></i> School Hours: Mon-Sat 9:00 AM - 3:00 PM (V to X)</li><li><i class="fa fa-graduation-cap"></i> Mission: Dignity of labour, self-respect & teamwork</li></ul><div class="message-box">"Education is the manifestation of perfection already in man" – Swami Vivekananda (School Diary, Page 23)</div></div>
-                    <div class="hindi-block"><h4>प्रधानाध्यापिका का संदेश</h4><p>मैं, रीता मंडल, जगदीश चंद्र हाई स्कूल की प्रधानाध्यापिका हूँ। हम चरित्र निर्माण, शैक्षणिक उत्कृष्टता और 75% उपस्थिति पर जोर देते हैं। स्कूल ड्रेस और नियमों का पालन अनिवार्य है।</p></div>
-                    <div class="bengali-block"><h4>প্রধান শিক্ষিকার বার্তা</h4><p>আমি, রীতা মন্ডল, জগদীশ চন্দ্র হাই স্কুলের প্রধান শিক্ষিকা। আমরা চরিত্র গঠন ও একাডেমিক উৎকর্ষে বিশ্বাসী। ৭৫% উপস্থিতি ও স্কুল ড্রেস বাধ্যতামূলক।</p></div>
+                <div class="col-md-12 text-center"><img src="<?php echo base_url('assets/images/head_master.jpeg'); ?>" class="profile-img" alt="Principal"><h3><span class="english-text">Mr. Rupnath Tiwari</span><span class="hindi-text">श्रीमती रीता मंडल</span><span class="bengali-text">শ্রীমতী রীতা মন্ডল</span></h3><p><strong>M.SC., B.ed. <span class="english-text">(Headmaster)</span><span class="hindi-text">(प्रधानाध्यापिका)</span><span class="bengali-text">(প্রধান শিক্ষিকা)</span></strong></p></div>
+                <div class="col-md-12">
+                    <br>
+                    <div class="english-block"><h4>Headmaster's Desk</h4><p>I, Rupnath Tiwari, am honored to lead Jagadish Chandra High School as the Headmistress. Our school diary reflects our commitment to holistic education. We focus on character building, academic excellence, and co-curricular activities. Our students have excelled in board exams, Olympiads, and cultural events. I urge parents and students to follow school rules, maintain 75% attendance, and wear proper uniform as prescribed. Together we shall continue the glorious legacy of this institution.</p><ul><li><i class="fa fa-calendar"></i> School Hours: Mon-Sat 9:00 AM - 3:00 PM (V to X)</li><li><i class="fa fa-graduation-cap"></i> Mission: Dignity of labour, self-respect & teamwork</li></ul><div class="message-box">"Education is the manifestation of perfection already in man" – Swami Vivekananda </div></div>
+                    <div class="hindi-block"><h4>प्रधानाध्यापक का संदेश</h4><p>मैं, रीता मंडल, जगदीश चंद्र हाई स्कूल की प्रधानाध्यापिका हूँ। हम चरित्र निर्माण, शैक्षणिक उत्कृष्टता और 75% उपस्थिति पर जोर देते हैं। स्कूल ड्रेस और नियमों का पालन अनिवार्य है।</p></div>
+                    <div class="bengali-block"><h4>প্রধান শিক্ষিক বার্তা</h4><p>আমি, রীতা মন্ডল, জগদীশ চন্দ্র হাই স্কুলের প্রধান শিক্ষিকা। আমরা চরিত্র গঠন ও একাডেমিক উৎকর্ষে বিশ্বাসী। ৭৫% উপস্থিতি ও স্কুল ড্রেস বাধ্যতামূলক।</p></div>
                 </div>
             </div>
         </div>
  <?php endif; ?>
-
-    <?php if($role == 'secretary'): ?>
+<?php if($role == 'secretary'): ?>
         <!-- Secretary Section (from PDF: Mr. Manoranjan Baksi) -->
         <div id="secretary" class="profile-card">
             <div class="row">
-                <div class="col-md-3 text-center"><img src="<?php echo base_url('assets/images/principal.jpeg'); ?>" class="profile-img" alt="Secretary"><h3><span class="english-text">Mr. Manoranjan Baksi</span><span class="hindi-text">श्री मनोरंजन बक्षी</span><span class="bengali-text">শ্রী মনোরঞ্জন বক্সী</span></h3><p><strong><span class="english-text">Secretary, Governing Body</span><span class="hindi-text">सचिव, प्रशासनिक निकाय</span><span class="bengali-text">সচিব, গভর্নিং বডি</span></strong></p></div>
-                <div class="col-md-9">
-                    <div class="english-block"><h4>Secretary's Message</h4><p>As Secretary (as recorded in school diary page 17), I, Manoranjan Baksi, ensure smooth administration and implementation of policies. We have initiated Book Bank facility through Lily Foundation for needy students and 'Smile Scholarship' for underprivileged meritorious children. Our school is a Bengali minority institution recognized by the state government since 1972, safeguarding language and culture. We are proud of our dedicated teachers, computer labs, and digital library. Parents are requested to cooperate and attend parent-teacher meetings regularly.</p><p><strong>Book Bank:</strong> Students can borrow one book for one week. <strong>Smile Scholarship:</strong> Financial aid for economically weak but academically strong students.</p></div>
+                <div class="col-md-12 text-center"><img src="<?php echo base_url('assets/images/principal.jpeg'); ?>" class="profile-img" alt="Secretary"><h3><span class="english-text">Mr. Manoranjan Baksi</span><span class="hindi-text">श्री मनोरंजन बक्षी</span><span class="bengali-text">শ্রী মনোরঞ্জন বক্সী</span></h3><p><strong><span class="english-text">Secretary, Governing Body</span><span class="hindi-text">सचिव, प्रशासनिक निकाय</span><span class="bengali-text">সচিব, গভর্নিং বডি</span></strong></p></div>
+                <div class="col-md-12">
+                    <br>
+                    <div class="english-block"><h4>Secretary's Message</h4><p>As Secretary (as recorded in school diary page 17), I, Manoranjan Baksi, ensure smooth administration and implementation of policies. We have initiated Book Bank facility through Lily Foundation for needy students and 'Smile Scholarship' for underprivileged meritorious children. Our school is a Bengali minority institution recognized by the state government since 1972, safeguarding language and culture. We are proud of our dedicated teachers, computer labs, and digital library. Parents are requested to cooperate and attend parent-teacher meetings regularly.</p></div>
                     <div class="hindi-block"><h4>सचिव का संदेश</h4><p>सचिव मनोरंजन बक्षी के अनुसार, लिली फाउंडेशन द्वारा बुक बैंक और स्माइल स्कॉलरशिप की सुविधा। अभिभावकों से सहयोग की अपील।</p></div>
                     <div class="bengali-block"><h4>সচিবের বার্তা</h4><p>সচিব মনোরঞ্জন বক্সী জানিয়েছেন, লিলি ফাউন্ডেশন দ্বারা বই ব্যাংক ও স্মাইল স্কলারশিপ সুবিধা। অভিভাবকদের সহযোগিতা কাম্য।</p></div>
                 </div>
@@ -231,8 +233,8 @@
                         <li><i class="fa fa-user-circle"></i> <strong>Mrs. Amita Bose</strong> - M.C. Member</li>
                         <li><i class="fa fa-user-circle"></i> <strong>Mr. Kantalal Das</strong> - M.C. Member</li>
                         <li><i class="fa fa-user-circle"></i> <strong>Mrs. Shilpi Sarkar</strong> - M.C. Member</li>
-                        <li><i class="fa fa-user-circle"></i> <strong>Mrs. Rita Mandal</strong> - H.M.</li>
-                        <li><i class="fa fa-user-circle"></i> <strong>Mrs. Rashmi Sharma</strong> - T.R.</li>
+                        <li><i class="fa fa-user-circle"></i> <strong>Mr. Rupnath Tiwari</strong> - H.M.</li>
+                        <li><i class="fa fa-user-circle"></i> <strong>Mr. Tapobrat Giri TR</strong> - T.R.</li>
                         <li><i class="fa fa-user-circle"></i> <strong>Mr. Jaharlal Soren</strong> - G.R.</li>
                     </ul>
                 </div>
@@ -247,15 +249,6 @@
     </div>
     <script src="https://rcsindia.co.in/newcbse19/js/vendor/jquery-1.12.4.min.js"></script>
     <script src="https://rcsindia.co.in/newcbse19/js/bootstrap.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            var savedLang = localStorage.getItem('schoolLang');
-            if(savedLang && (savedLang === 'english' || savedLang === 'hindi' || savedLang === 'bengali')){ $('body').removeClass('lang-english lang-hindi lang-bengali').addClass('lang-'+savedLang); $('.lang-btn').removeClass('active'); $('.lang-btn[data-lang="'+savedLang+'"]').addClass('active'); }
-            else { $('body').addClass('lang-english'); $('.lang-btn[data-lang="english"]').addClass('active'); }
-            $('.lang-btn').click(function(){ var lang = $(this).data('lang'); $('body').removeClass('lang-english lang-hindi lang-bengali').addClass('lang-'+lang); $('.lang-btn').removeClass('active'); $(this).addClass('active'); localStorage.setItem('schoolLang', lang); });
-            // Smooth scroll for anchors
-            $('a[href^="#"]').on('click', function(e){ e.preventDefault(); var target = $(this.getAttribute('href')); if(target.length) { $('html,body').stop().animate({ scrollTop: target.offset().top - 70 }, 600); } });
-        });
-    </script>
+   
 </body>
 </html>

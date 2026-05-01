@@ -55,11 +55,63 @@ public function holiday_list(){
     $this->load->view('website/footer');
 }
 public function alumini(){
-    $data['title'] = "Holiday List";
+    $data['title'] = "Alumini";
     $this->load->view('website/top-section',$data);
+    $data['alumini'] = $this->db->get_where('alumini')->result_array();
     $this->load->view('website/alumini',$data);
     $this->load->view('website/footer');
 }
+public function save_alumini()
+{
+    $data = [
+        'name'       => $this->input->post('name'),
+        'phone_no'   => $this->input->post('phone'),
+        'email'      => $this->input->post('email'),
+        'address'    => $this->input->post('address'),
+        'city'       => $this->input->post('city'),
+        'state'      => $this->input->post('state'),
+        'batch'      => $this->input->post('batch'),
+        'profession' => $this->input->post('profession'),
+        'added_on'   => date('Y-m-d H:i:s'),
+        'status'     => 1
+    ];
+
+    $insert = $this->db->insert('alumini', $data);
+
+    if ($insert) {
+        echo json_encode(['status' => 'success']);
+    } else {
+        echo json_encode(['status' => 'error']);
+    }
+}
+public function get_alumini()
+{
+    $search = $this->input->get('search');
+    $batch  = $this->input->get('batch');
+
+    $this->db->from('alumini');
+    $this->db->where('status', 1);
+
+    if (!empty($search)) {
+        $this->db->group_start();
+        $this->db->like('name', $search);
+        $this->db->or_like('city', $search);
+        $this->db->or_like('profession', $search);
+        $this->db->or_like('email', $search);
+        $this->db->group_end();
+    }
+
+    if (!empty($batch) && $batch != 'all') {
+        $this->db->where('batch', $batch);
+    }
+
+    $this->db->order_by('id', 'DESC');
+
+    $result = $this->db->get()->result_array();
+
+    echo json_encode($result);
+}
+
 public function gallery(){
     $data['title'] = "Event Gallery List";
     $this->load->view('website/top-section',$data);
@@ -77,6 +129,24 @@ public function achievements($role = null){
     $data['role'] = $role;
     $this->load->view('website/top-section',$data);
     $this->load->view('website/achievements',$data);
+    $this->load->view('website/footer');
+}
+public function registration(){
+    $data['title'] = "Registration Form";
+    $this->load->view('website/top-section',$data);
+    $this->load->view('website/registration',$data);
+    $this->load->view('website/footer');
+}
+public function fee_stru(){
+    $data['title'] = "Registration Form";
+    $this->load->view('website/top-section',$data);
+    $this->load->view('website/fee_structure',$data);
+    $this->load->view('website/footer');
+}
+public function admission_period(){
+    $data['title'] = "Registration Form";
+    $this->load->view('website/top-section',$data);
+    $this->load->view('website/admission_period',$data);
     $this->load->view('website/footer');
 }
 }

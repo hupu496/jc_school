@@ -1,47 +1,11 @@
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <style>
+<style>
         /* Trilingual styles */
-        body {
-            font-family: 'Poppins', 'Hind Siliguri', sans-serif;
+        @import url('https://fonts.googleapis.com/css2?family=Arial:wght@400;700&display=swap');
+       body {
+            font-family: 'Arial', sans-serif;
+           
+            background: linear-gradient(135deg, #f0f2f5 0%, #e8ecf1 100%);
         }
-        .lang-selector {
-            display: flex;
-            gap: 8px;
-            margin-left: 15px;
-        }
-  
-        .header-top-right ul {
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            justify-content: flex-end;
-        }
-        /* Language visibility classes */
-        .hindi-text, .bengali-text {
-            display: none;
-        }
-        body.lang-english .english-text { display: inline; }
-        body.lang-english .english-block { display: block; }
-        body.lang-english .hindi-text, body.lang-english .bengali-text { display: none; }
-        body.lang-english .hindi-block, body.lang-english .bengali-block { display: none; }
-        
-        body.lang-hindi .hindi-text { display: inline; }
-        body.lang-hindi .hindi-block { display: block; }
-        body.lang-hindi .english-text, body.lang-hindi .bengali-text { display: none; }
-        body.lang-hindi .english-block, body.lang-hindi .bengali-block { display: none; }
-        
-        body.lang-bengali .bengali-text { display: inline; }
-        body.lang-bengali .bengali-block { display: block; }
-        body.lang-bengali .english-text, body.lang-bengali .hindi-text { display: none; }
-        body.lang-bengali .english-block, body.lang-bengali .hindi-block { display: none; }
-        
-        .hindi-block, .bengali-block, .english-block {
-            display: none;
-        }
-        body.lang-english .english-block { display: block; }
-        body.lang-hindi .hindi-block { display: block; }
-        body.lang-bengali .bengali-block { display: block; }
         
         /* Guidelines specific styles */
         .guidelines-section {
@@ -563,6 +527,8 @@
                     <p><strong>Uniform (Girls):</strong> White shirt & navy blue skirt (I-VIII); Navy blue kameej & white salwar (IX-X). Wednesday: White salwar & white kameej.</p>
                     <p><strong>School Hours:</strong> I-IV: 9 AM - 2 PM; V-X: 9 AM - 3 PM. 3rd Saturday holiday.</p>
                     <p><i class="fa fa-heart" style="color:#ff6b6b;"></i> <strong>Lily Foundation Book Bank & Smile Scholarship available for needy students.</strong></p>
+                    <p><strong>Book Bank:</strong> Students can borrow one book for one week.</p>
+                    <p> <strong>Smile Scholarship:</strong> Financial aid for economically weak but academically strong students.</p>
                 </div>
             </div>
         </div>
@@ -598,9 +564,9 @@
                 </table>
             </div>
             <h3 class="section-title"><span class="english-text"><i class="fa fa-laptop-code"></i> Computer Teachers & Staff</span><span class="hindi-text">कंप्यूटर शिक्षक एवं कर्मचारी</span><span class="bengali-text">কম্পিউটার শিক্ষক ও কর্মী</span></h3>
-            <div class="row"><div class="col-md-6"><ul><li><strong>Mr. Debraj Mukherjee</strong> (B.Com., ADIM/WE)</li><li><strong>Mr. Sourabh Sarkar</strong> (BCA)</li></ul></div><div class="col-md-6"><ul><li><strong>Office Staff:</strong> Mr. Subhash Chandra Dey (Head Clerk), Mr. Arup Choudhury (2nd Clerk)</li><li><strong>Peons:</strong> Rabidas Namata, Deepak Gantait, Suman Das, Ram Prasad Mandal</li></ul></div></div>
+            <div class="row"><div class="col-md-6"><ul><li><strong>Mr. Debraj Mukherjee</strong> (D.El.Ed,B.Com., ADIM/WE)</li><li><strong>Mr. Sourabh Sarkar</strong> (D.El.Ed)</li></ul></div><div class="col-md-6"><ul><li><strong>Office Staff:</strong> Mr. Subhash Chandra Dey (Head Clerk), Mr. Arup Choudhury (2nd Clerk)</li><li><strong>Peons:</strong> Rabidas Namata, Deepak Gantait, Suman Das, Ram Prasad Mandal</li></ul></div></div>
             <h3 class="section-title"><span class="english-text"><i class="fa fa-school"></i> Primary Section Teachers</span><span class="hindi-text">प्राथमिक शिक्षक</span><span class="bengali-text">প্রাথমিক শিক্ষক</span></h3>
-            <ul><li>Ms. Uma Mitra (In-Charge) - M.A, B.Ed, D.El.Ed</li><li>Ms. Senoka Mitra - B.A Honrs, D.El.Ed</li><li>Mr. Rakhal Bisayee - M.A., D.El.Ed</li><li>Mr. Jaikishan Karmakar - B.Com, B.Ed</li><li>Miss Pramila Mahakur - B.A., B.Ed</li><li>Peon: Mr. Sujit Bagti</li></ul>
+            <ul><li>Ms. Uma Mitra (In-Charge) - M.A, B.Ed, D.El.Ed</li><li>Ms. Senoka Mitra - B.A Honrs, D.El.Ed</li><li>Mr. Rakhal Bisayee - M.A., D.El.Ed</li><li>Mr. Jaikishan Karmakar - B.Com, B.Ed</li><li>Miss Pramila Mahakur - B.A., B.Ed</li><li>Miss Shakuntala Tudu -M.A. B.Ed:</li></ul>
         </div>
      </div>
             
@@ -613,7 +579,7 @@
           <!-- Page Title -->
     <div class="page-title">
         <div class="container">
-            <h1>🏠 HOUSE DISTRIBUTION 2025-26</h1>
+            <h1>🏠 HOUSE DISTRIBUTION 2026-27</h1>
             <p>Jagadish Chandra High School, Ghatsila | Four Pillars of Excellence</p>
         </div>
     </div>

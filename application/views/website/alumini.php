@@ -1,6 +1,4 @@
 <style>
-
-   
         /* alumni header */
         .alumni-header {
             z-index:-1;
@@ -102,7 +100,7 @@
             color: #1e4620;
             margin: 0.5rem 0;
         }
-        .detail-item { font-size: 12px; margin-bottom: 0.5rem; color: #334155; display: flex; align-items: center; gap: 8px; }
+        .detail-item { font-size: 14px; margin-bottom: 0.5rem; color: #334155; display: flex; align-items: center; gap: 8px; }
         .detail-item i { width: 22px; color: #2a5a3a; }
         .btn-outline-alumni {
             border-radius: 60px;
@@ -119,33 +117,120 @@
             border-radius: 2rem;
             padding: 0.6rem 1.6rem;
             font-weight: 600;
+            font-size:16px;
             color: white;
         }
         .btn-primary-alumni:hover { background: #3498db; }
-        .modal-custom .modal-content { border-radius: 1.5rem; border: none; box-shadow: 0 25px 40px rgba(0,0,0,0.2); }
+        .form-control {
+            margin-top: 10px;
+        }
+      
         .form-control, .form-select { border-radius: 0.9rem; padding: 0.65rem 1rem; border: 1px solid #e2e8f0; }
         .form-control:focus, .form-select:focus { border-color: #2a5a3a; box-shadow: 0 0 0 0.2rem rgba(42,90,58,0.2); }
         .empty-state { text-align: center; padding: 3rem; background: white; border-radius: 2rem; }
-        footer { background: #3498db; color: #cbd5e1; margin-top: 4rem; padding: 2rem 0; text-align: center; }
-        .lang-btn {
-            background: transparent;
-            border: 1px solid white;
-            color: white;
-            padding: 4px 12px;
-            border-radius: 25px;
-            font-size: 12px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: 0.3s;
-            margin-left: 6px;
+          /* ---------- MODAL CUSTOM : LUXURY GLASS + ELEGANT SHADOW + ANIMATION ---------- */
+        .modal-custom .modal-content {
+            border-radius: 2rem;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(0px);
+            border: 1px solid rgba(46, 87, 62, 0.2);
+            box-shadow: 0 35px 60px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255,255,240,0.1);
+            transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
         }
-        .lang-btn:hover { background: #ff6b6b; border-color: #ff6b6b; }
-        .lang-selector { display: flex; gap: 6px; align-items: center; }
+
+        .modal.show .modal-dialog {
+            transform: scale(1);
+            animation: modalPopIn 0.35s cubic-bezier(0.21, 1.11, 0.35, 1);
+        }
+
+        @keyframes modalPopIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.92) translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .modal-header {
+            border-bottom: 2px solid rgba(42, 90, 58, 0.2);
+            background: linear-gradient(115deg, #fef9f0 0%, #ffffff 100%);
+            border-radius: 2rem 2rem 0 0;
+            padding: 1.3rem 1.8rem;
+        }
+
+        .modal-header .modal-title {
+            font-weight: 800;
+            font-size: 1.65rem;
+            background: linear-gradient(135deg, #1e4620, #2c7a47);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -0.3px;
+        }
+
+        .modal-header .close {
+            background: rgba(0,0,0,0.05);
+            border-radius: 50%;
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.9rem;
+            line-height: 1;
+            transition: 0.2s;
+            opacity: 0.7;
+            border: none;
+            outline: none;
+            color: #2c3e2f;
+        }
+
+        .modal-header .close:hover {
+            background: #e74c3c;
+            color: white;
+            opacity: 1;
+            transform: rotate(90deg);
+        }
+
+        /* form fields : modern, floating effect on focus */
+        .modal-body {
+            padding: 1.8rem 2rem 2rem;
+        }
+    
+        /* custom submit button inside modal */
+        .modal-body .btn-primary {
+            background: linear-gradient(95deg, #1f5438, #2f8c50);
+            border: none;
+            border-radius: 2.5rem;
+            padding: 0.8rem 1.8rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            width: 100%;
+            font-size: 1.1rem;
+            transition: 0.2s;
+            box-shadow: 0 10px 18px -8px rgba(31,84,56,0.5);
+            margin-top: 0.5rem;
+        }
+
+        .modal-body .btn-primary:hover {
+            transform: scale(1.01);
+            background: linear-gradient(95deg, #266e45, #38a35e);
+            box-shadow: 0 14px 22px -8px #1f5438;
+        }
+
         @media (max-width: 768px) {
             .alumni-header h1 { font-size: 1.8rem; }
             .filter-section { padding: 1rem; }
-            .lang-btn { padding: 2px 8px; font-size: 10px; }
+           
         }
+        #batchFilter {
+    max-height: 100px;
+    overflow-y: auto;
+}
+
     </style>
 <!-- Alumni Header with Language Selector -->
  <div class="alumni-header">
@@ -167,19 +252,32 @@
     <!-- filter section -->
     <div class="filter-section">
         <div class="row align-items-center g-3">
-            <div class="col-md-1"></div>
+            
             <div class="col-md-6">
                 <div class="input-group">
                    
                     <input type="text" class="form-control border-start-0" id="searchInput" placeholder="🔍 Search by name, city, profession...">
                 </div>
             </div>
-            <div class="col-md-4">
-                <select class="form-select" id="batchFilter">
+           <div class="col-md-4">
+
+                <input type="text"
+                    id="batchFilter"
+                    class="form-control"
+                    list="batchList"
+                    placeholder="Select or type batch year">
+
+                <datalist id="batchList">
                     <option value="all">All Batches</option>
-                </select>
+                </datalist>
+
             </div>
-            <div class="col-md-1"></div>
+         
+    <div class="col-md-2"><button class="btn btn-primary-alumni " style="margin-top:10px;"
+        data-toggle="modal"
+        data-target="#alumniModal">
+    ➕ Add Alumni
+</button></div>
            
         </div>
     </div>
@@ -189,108 +287,194 @@
         <div class="col-12 text-center py-5"><div class="spinner-border text-success" role="status"></div><p class="mt-2">Loading alumni directory...</p></div>
     </div>
 </div>
-
-<footer>
-    <div class="container">
-        <p><i class="fas fa-school"></i> Jagadish Chandra High School | <span class="english-text">Alumni Relations</span><span class="hindi-text">पूर्व छात्र संबंध</span><span class="bengali-text">প্রাক্তন সম্পর্ক</span> | <i class="fas fa-envelope"></i> alumni@jadishchandra.com</p>
-        <p class="small">"<span class="english-text">Once a Jagadishian, always a Jagadishian</span><span class="hindi-text">एक बार जगदीशियन, हमेशा जगदीशियन</span><span class="bengali-text">একবার জগদীশিয়ান, চিরকাল জগদীশিয়ান</span>"</p>
-    </div>
-</footer>
-
 <!-- MODAL POPUP (Opens automatically on page load) -->
-<div class="modal fade modal-custom" id="alumniModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="alumniModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
+<div class="modal fade modal-custom" id="alumniModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
-            <div class="modal-header border-0 pt-4 px-4">
-                <h5 class="modal-title fw-bold" id="alumniModalLabel">
-                    <i class="fas fa-user-graduate me-2"></i>
-                    <span class="english-text">Alumni Registration</span>
-                    <span class="hindi-text">पूर्व छात्र पंजीकरण</span>
-                    <span class="bengali-text">প্রাক্তন নিবন্ধন</span>
+
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <i class="fas fa-user-graduate"></i> Alumni Registration
                 </h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="close" data-dismiss="modal">
+                    &times;
+                </button>
             </div>
-            <div class="modal-body px-4 pb-4">
-                <form id="alumniForm" novalidate>
-                    <div class="row g-3">
-                        <div class="col-md-6"><label class="form-label fw-semibold"><i class="fas fa-user"></i> <span class="english-text">Full Name</span><span class="hindi-text">पूरा नाम</span><span class="bengali-text">পুরো নাম</span> *</label><input type="text" class="form-control" id="fullName" placeholder="e.g. Aditya Sinha" required><div class="invalid-feedback">Name required.</div></div>
-                        <div class="col-md-6"><label class="form-label fw-semibold"><i class="fas fa-phone-alt"></i> <span class="english-text">Phone No</span><span class="hindi-text">फोन नंबर</span><span class="bengali-text">ফোন নম্বর</span> *</label><input type="tel" class="form-control" id="phoneNo" placeholder="+91 XXXXX XXXXX" required><div class="invalid-feedback">Phone required.</div></div>
-                        <div class="col-md-6"><label class="form-label fw-semibold"><i class="fas fa-envelope"></i> Email ID *</label><input type="email" class="form-control" id="emailId" placeholder="alumni@example.com" required><div class="invalid-feedback">Valid email required.</div></div>
-                        <div class="col-md-6"><label class="form-label fw-semibold"><i class="fas fa-map-marker-alt"></i> <span class="english-text">Address</span><span class="hindi-text">पता</span><span class="bengali-text">ঠিকানা</span></label><input type="text" class="form-control" id="address" placeholder="Street, area"></div>
-                        <div class="col-md-6"><label class="form-label fw-semibold"><i class="fas fa-city"></i> <span class="english-text">City</span><span class="hindi-text">शहर</span><span class="bengali-text">শহর</span> *</label><input type="text" class="form-control" id="city" placeholder="e.g. Jamshedpur" required><div class="invalid-feedback">City required.</div></div>
-                        <div class="col-md-6"><label class="form-label fw-semibold"><i class="fas fa-map-pin"></i> <span class="english-text">State</span><span class="hindi-text">राज्य</span><span class="bengali-text">রাজ্য</span> *</label><input type="text" class="form-control" id="state" placeholder="Jharkhand" required><div class="invalid-feedback">State required.</div></div>
-                        <div class="col-md-4"><label class="form-label fw-semibold"><i class="fas fa-calendar-alt"></i> <span class="english-text">Batch (Year)</span><span class="hindi-text">बैच (वर्ष)</span><span class="bengali-text">ব্যাচ (বছর)</span> *</label><input type="text" class="form-control" id="batch" placeholder="e.g. 2015" required><div class="invalid-feedback">Batch required.</div></div>
-                        <div class="col-md-8"><label class="form-label fw-semibold"><i class="fas fa-briefcase"></i> <span class="english-text">Profession</span><span class="hindi-text">पेशा</span><span class="bengali-text">পেশা</span> *</label><input type="text" class="form-control" id="profession" placeholder="Engineer, Doctor, Teacher..." required><div class="invalid-feedback">Profession required.</div></div>
-                    </div>
-                    <div class="d-flex justify-content-end gap-3 mt-4">
-                        <button type="button" class="btn btn-outline-secondary rounded-pill" data-bs-dismiss="modal"><span class="english-text">Cancel</span><span class="hindi-text">रद्द करें</span><span class="bengali-text">বাতিল</span></button>
-                        <button type="submit" class="btn btn-primary-alumni px-4 rounded-pill"><i class="fas fa-save"></i> <span class="english-text">Save & Register</span><span class="hindi-text">सहेजें और पंजीकरण करें</span><span class="bengali-text">সংরক্ষণ ও নিবন্ধন</span></button>
-                    </div>
+
+            <div class="modal-body">
+                <form id="alumniForm">
+
+                 <div class="row">
+
+    <div class="col-md-6 mb-3 px-2">
+        <input type="text" class="form-control" id="fullName" placeholder="Full Name" required>
+    </div>
+
+    <div class="col-md-6 mb-3 px-2">
+        <input type="tel"
+               class="form-control"
+               id="phoneNo"
+               placeholder="10 Digit Mobile Number"
+               maxlength="10"
+               pattern="[0-9]{10}"
+               inputmode="numeric"
+               required>
+    </div>
+
+    <div class="col-md-6 mb-3 px-2">
+        <input type="email" class="form-control" id="emailId" placeholder="Email" required>
+    </div>
+
+    <div class="col-md-6 mb-3 px-2">
+        <input type="text" class="form-control" id="city" placeholder="City" required>
+    </div>
+
+    <div class="col-md-6 mb-3 px-2">
+        <input type="text" class="form-control" id="state" placeholder="State" required>
+    </div>
+
+    <div class="col-md-6 mb-3 px-2">
+         <input type="text"
+                    id="batch"
+                    class="form-control"
+                    list="batchList"
+                    placeholder="Select or type batch year">
+
+                <datalist id="batch">
+                    <option value="all">All Batches</option>
+                </datalist>
+       
+    </div>
+
+    <div class="col-md-12 mb-3 px-2">
+        <input type="text" class="form-control" id="profession" placeholder="Profession" required>
+    </div>
+
+    <div class="col-md-12 mb-3 px-2">
+        <input type="text" class="form-control" id="address" placeholder="Address">
+    </div>
+
+</div>
+                    <button type="submit" class="btn btn-primary mt-3" style="font-size:15px;">
+                        Submit
+                    </button>
+
                 </form>
             </div>
+
         </div>
     </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<script src="https://rcsindia.co.in/newcbse19/js/bootstrap.min.js"></script>
 <script>
+    $('#phoneNo').on('input', function () {
+    this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10);
+});
+  $('#alumniForm').on('submit', function(e){
+    e.preventDefault();
+    let phone = $('#phoneNo').val();
+    console.log(phone);
+
+    // ✅ Strict validation
+    if (!/^[6-9]\d{9}$/.test(phone)) {
+        alert("❌ Enter valid 10 digit mobile number (starts with 6-9)");
+        $('#phoneNo').focus();
+        return;
+    }
+
+    $.ajax({
+        url: "<?= base_url('homeservice/save_alumini'); ?>",
+        type: "POST",
+        data: {
+            name: $('#fullName').val(),
+            phone: phone,
+            email: $('#emailId').val(),
+            address: $('#address').val(),
+            city: $('#city').val(),
+            state: $('#state').val(),
+            batch: $('#batch').val(),
+            profession: $('#profession').val()
+        },
+        success: function(res){
+            let data = JSON.parse(res);
+
+            if(data.status == 'success'){
+
+                // ✅ CLOSE MODAL
+                $('#alumniModal').modal('hide');
+
+                // ✅ REMOVE BACKDROP FORCEFULLY
+                $('body').removeClass('modal-open');
+                $('.modal-backdrop').remove();
+
+                // ✅ RESET FORM
+                $('#alumniForm')[0].reset();
+
+                // ✅ RELOAD DATA
+                loadAlumni();
+            }
+        }
+    });
+});
+
+function loadAlumni() {
+
+    let search = $('#searchInput').val().trim();
+    let batch  = $('#batchFilter').val().trim();
+
+    // default fallback
+    if(batch === '') batch = 'all';
+
+    $.ajax({
+        url: "<?= base_url('homeservice/get_alumini'); ?>",
+        type: "GET",
+        data: {
+            search: search,
+            batch: batch
+        },
+        success: function(res) {
+
+            alumniArray = JSON.parse(res);
+
+            renderAlumniGrid();
+
+            $('#alumniCountDisplay').text(alumniArray.length);
+        }
+    });
+}
+document.getElementById("searchInput").addEventListener("input", function() {
+    loadAlumni();
+});
+
+document.getElementById("batchFilter").addEventListener("change", function() {
+    loadAlumni();
+});
     // ======================= MULTI-LANGUAGE HANDLER =======================
-    function setLanguage(lang) {
-        document.body.classList.remove('lang-english', 'lang-hindi', 'lang-bengali');
-        document.body.classList.add(`lang-${lang}`);
-        localStorage.setItem('jchs_alumni_lang', lang);
-    }
-    function initLanguage() {
-        const saved = localStorage.getItem('jchs_alumni_lang');
-        if(saved && ['english','hindi','bengali'].includes(saved)) setLanguage(saved);
-        else setLanguage('english');
-        document.querySelectorAll('.lang-btn').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                const lang = btn.getAttribute('data-lang');
-                if(lang) setLanguage(lang);
-            });
-        });
-    }
+   
     
     // ======================= ALUMNI DATA (simulated PDF extract + local storage) =======================
     let alumniArray = [];
-    const extractedFromPDF = [
-        { id: "1", name: "Priyanka Mukherjee", phone: "+91 98765 43210", email: "priyanka.m@alumni.com", address: "54 Lake Road", city: "Kolkata", state: "West Bengal", batch: "2012", profession: "Software Architect" },
-        { id: "2", name: "Rahul Choudhary", phone: "+91 98321 45678", email: "rahul.c@techstar.com", address: "HIG-12, Adityapur", city: "Jamshedpur", state: "Jharkhand", batch: "2010", profession: "Civil Engineer" },
-        { id: "3", name: "Anjali Kumari", phone: "+91 70045 67890", email: "anjali.k@medicure.in", address: "Sakchi House", city: "Ghatsila", state: "Jharkhand", batch: "2015", profession: "Medical Officer" },
-        { id: "4", name: "Vikram Singh Deo", phone: "+91 99345 12345", email: "vikram.s@alumni.com", address: "Station Road", city: "Ghatsila", state: "Jharkhand", batch: "2008", profession: "Entrepreneur & Educator" },
-        { id: "5", name: "Sudipta Dasgupta", phone: "+91 94321 77654", email: "sudipta.d@globalfin.com", address: "Dhatkidih", city: "Jamshedpur", state: "Jharkhand", batch: "2014", profession: "Financial Analyst" },
-        { id: "6", name: "Rohan Verma", phone: "+91 98765 11223", email: "rohan.v@alumni.com", address: "Moubhandar", city: "Ghatsila", state: "Jharkhand", batch: "2018", profession: "Data Scientist" }
-    ];
-
-    function loadAlumniData() {
-        const stored = localStorage.getItem("jchs_alumni_data_bilingual");
-        if (stored) {
-            alumniArray = JSON.parse(stored);
-        } else {
-            alumniArray = [...extractedFromPDF];
-            saveToLocalStorage();
-        }
-    }
-    function saveToLocalStorage() {
-        localStorage.setItem("jchs_alumni_data_bilingual", JSON.stringify(alumniArray));
-    }
+   
+   
     function generateId() { return Date.now().toString(36) + Math.random().toString(36).substring(2, 8); }
     
     function addAlumni(formData) {
-        const newAlumni = {
-            id: generateId(),
-            name: formData.name.trim(),
-            phone: formData.phone.trim(),
-            email: formData.email.trim(),
-            address: formData.address.trim(),
-            city: formData.city.trim(),
-            state: formData.state.trim(),
-            batch: formData.batch.trim(),
-            profession: formData.profession.trim()
-        };
-        alumniArray.unshift(newAlumni);
-        saveToLocalStorage();
-        renderAlumniGrid();
-        updateStatsAndFilters();
+        alumniArray.unshift({
+        name: formData.get('name'),
+        phone_no: formData.get('phone'),
+        email: formData.get('email'),
+        address: formData.get('address'),
+        city: formData.get('city'),
+        state: formData.get('state'),
+        batch: formData.get('batch'),
+        profession: formData.get('profession')
+    });
+
+    renderAlumniGrid();
     }
     
     function escapeHtml(str) { if(!str) return ''; return str.replace(/[&<>]/g, function(m){ if(m==='&') return '&amp;'; if(m==='<') return '&lt;'; if(m==='>') return '&gt;'; return m;}); }
@@ -321,7 +505,7 @@
                             <div class="detail-item"><i class="fas fa-briefcase"></i> ${escapeHtml(alumni.profession)}</div>
                             <div class="detail-item"><i class="fas fa-map-marker-alt"></i> ${escapeHtml(alumni.city)}, ${escapeHtml(alumni.state)}</div>
                             <div class="detail-item"><i class="fas fa-envelope"></i> ${escapeHtml(alumni.email)}</div>
-                            <div class="detail-item"><i class="fas fa-phone-alt"></i> ${escapeHtml(alumni.phone)}</div>
+                            <div class="detail-item"><i class="fas fa-phone-alt"></i> ${escapeHtml(alumni.phone_no)}</div>
                             ${alumni.address ? `<div class="detail-item"><i class="fas fa-home"></i> ${escapeHtml(alumni.address)}</div>` : ''}
                             <hr class="my-3">
                             <div class="d-flex justify-content-between align-items-center"><small class="text-muted"><i class="fas fa-graduation-cap"></i> JCHS</small><span class="badge bg-light text-dark rounded-pill">#Alumni</span></div>
@@ -332,83 +516,81 @@
         });
         container.innerHTML = cardsHtml;
     }
-    
-    function updateStatsAndFilters() {
-        const countSpan = document.getElementById("alumniCountDisplay");
-        if(countSpan) countSpan.innerText = alumniArray.length;
-        const batchesSet = new Set();
-        alumniArray.forEach(al => { if(al.batch) batchesSet.add(al.batch); });
-        let sortedBatches = Array.from(batchesSet).sort((a,b) => { let na=parseInt(a,10), nb=parseInt(b,10); if(isNaN(na)) return 1; if(isNaN(nb)) return -1; return nb - na; });
-        const batchSelect = document.getElementById("batchFilter");
-        if(batchSelect) {
-            const currentVal = batchSelect.value;
-            batchSelect.innerHTML = '<option value="all">All Batches</option>';
-            sortedBatches.forEach(b => { batchSelect.innerHTML += `<option value="${escapeHtml(b)}">${escapeHtml(b)}</option>`; });
-            if(currentVal && (currentVal === "all" || sortedBatches.includes(currentVal))) batchSelect.value = currentVal;
-            else batchSelect.value = "all";
-        }
-        renderAlumniGrid();
+    function getBatchValue() {
+
+    let inputYear = $('#batchInput').val().trim();
+    let selectedYear = $('#batchFilter').val();
+
+    // Priority: Input > Select > All
+    if(inputYear !== '') {
+        return inputYear;
     }
-    
-    function bindEvents() {
-        document.getElementById("searchInput")?.addEventListener("input", () => renderAlumniGrid());
-        document.getElementById("batchFilter")?.addEventListener("change", () => renderAlumniGrid());
-        const form = document.getElementById("alumniForm");
-        if(form) {
-            form.addEventListener("submit", (e) => {
-                e.preventDefault();
-                const name = document.getElementById("fullName").value.trim();
-                const phone = document.getElementById("phoneNo").value.trim();
-                const email = document.getElementById("emailId").value.trim();
-                const city = document.getElementById("city").value.trim();
-                const state = document.getElementById("state").value.trim();
-                const batch = document.getElementById("batch").value.trim();
-                const profession = document.getElementById("profession").value.trim();
-                if(!name || !phone || !email || !city || !state || !batch || !profession) {
-                    if(!name) document.getElementById("fullName").classList.add("is-invalid");
-                    if(!phone) document.getElementById("phoneNo").classList.add("is-invalid");
-                    if(!email) document.getElementById("emailId").classList.add("is-invalid");
-                    if(!city) document.getElementById("city").classList.add("is-invalid");
-                    if(!state) document.getElementById("state").classList.add("is-invalid");
-                    if(!batch) document.getElementById("batch").classList.add("is-invalid");
-                    if(!profession) document.getElementById("profession").classList.add("is-invalid");
-                    alert("Please fill all required fields.");
-                    return;
-                }
-                const emailPattern = /^[^\s@]+@([^\s@.,]+\.)+[^\s@.,]{2,}$/;
-                if(!emailPattern.test(email)) { document.getElementById("emailId").classList.add("is-invalid"); alert("Valid email required."); return; }
-                if(phone.length < 8) { alert("Phone number too short."); return; }
-                const address = document.getElementById("address").value.trim();
-                addAlumni({ name, phone, email, address, city, state, batch, profession });
-                document.getElementById("alumniForm").reset();
-                document.querySelectorAll(".is-invalid").forEach(el => el.classList.remove("is-invalid"));
-                const modal = bootstrap.Modal.getInstance(document.getElementById("alumniModal"));
-                if(modal) modal.hide();
-                alert(`🎉 ${name} , you are now part of alumni network!`);
-            });
-        }
-        document.querySelectorAll("#alumniForm .form-control").forEach(inp => { inp.addEventListener("input", function(){ this.classList.remove("is-invalid"); }); });
+
+    return selectedYear || 'all';
+}
+   function updateBatchFilter(data) {
+    let batchSet = new Set();
+
+    data.forEach(item => {
+        if(item.batch) batchSet.add(item.batch);
+    });
+
+    let select = document.getElementById("batchFilter");
+    let current = select.value;
+
+    select.innerHTML = `<option value="all">All Batches</option>`;
+
+    [...batchSet].sort((a,b)=>b-a).forEach(batch => {
+        select.innerHTML += `<option value="${batch}">${batch}</option>`;
+    });
+
+    select.value = current || 'all';
+}
+   function generateBatchDropdown() {
+
+    let currentYear = new Date().getFullYear();
+    let startYear = 1927;
+
+    let dataList = $('#batchList');
+
+    dataList.html('<option value="all">All Batches</option>');
+
+    for(let year = currentYear; year >= startYear; year--) {
+        dataList.append(`<option value="${year}">`);
     }
-    
-    // Show modal automatically on page load (exactly as required)
-    let modalShownFlag = false;
-    function showModalOnLoad() {
-        if(!modalShownFlag) {
-            const modalEl = document.getElementById("alumniModal");
-            if(modalEl) {
-                const modal = new bootstrap.Modal(modalEl, { backdrop: 'static', keyboard: true });
-                modal.show();
-                modalShownFlag = true;
-            }
-        }
+}
+ $('#searchInput').on('keyup', function(){
+    loadAlumni();
+});
+
+$('#batchFilter').on('input', function(){
+
+    let val = $(this).val();
+
+    // allow only 4 digit year or 'all'
+    if(val !== 'All') {
+        this.value = val.replace(/[^0-9]/g, '').slice(0,4);
     }
-    
-    function init() {
-        initLanguage();
-        loadAlumniData();
-        updateStatsAndFilters();
-        bindEvents();
-        setTimeout(() => { showModalOnLoad(); }, 300);
+
+    loadAlumni();
+});
+
+// ⌨️ Enter key
+$('#batchFilter').on('keypress', function(e){
+    if(e.which === 13){
+        loadAlumni();
     }
-    window.addEventListener("DOMContentLoaded", init);
+});
+   window.addEventListener("DOMContentLoaded", function() {
+    initLanguage();
+    loadAlumni(); // 🔥 load from DB
+});
+  $(document).ready(function(){
+
+    generateBatchDropdown();
+
+    $('#batchFilter').val('all'); // default
+
+    loadAlumni();
+});
 </script>

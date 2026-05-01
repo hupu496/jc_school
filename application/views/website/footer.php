@@ -140,18 +140,9 @@
                             </h2>
                             
                             <p class="english-text">
-                                Mon-Fri: 9:00 AM - 2:00 PM<br>
+                                April-June: 7:00 AM - 1:00 PM<br>
+                                July-March: 9:00 AM - 3:00 PM <br>
                                 3rd Saturday will be Holiday
-                            </p>
-                            
-                            <p class="hindi-text">
-                                सोम-शुक्र: सुबह 9:00 - दोपहर 2:00<br>
-                                तीसरा शनिवार अवकाश रहेगा
-                            </p>
-                            
-                            <p class="bengali-text">
-                                সোম-শুক্র: সকাল ৯:০০ - দুপুর ২:০০<br>
-                                তৃতীয় শনিবার ছুটি থাকবে
                             </p>
                         </div>
                     </div>
@@ -164,21 +155,39 @@
 </div>
             </div>
         </div>
+       
         <div class="footer-bottom">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="copyright">
-                            <span class="english-text">&copy; 2026 JAGADISH CHANDRA HIGH / PRIMARY School. </span>
-                             <br><span class="designer-badge">
-    Designed by 
-    <a href="https://comsysit.in" target="_blank">ComSys IT</a>
-</span>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="copyright">
+                        <!-- Logo area: yellow icon + deep blue text combined -->
+                        
+
+                        <!-- main copyright school text with icon and year -->
+                        <div class="school-line-wrapper">
+                            <span class="english-text">
+                                <i class="far fa-copyright"></i> 2026 JAGADISH CHANDRA HIGH / PRIMARY School
+                            </span>
                         </div>
+
+                        <!-- Designer badge with professional credit, icon + link, deep blue + yellow integration -->
+                        <span class="designer-badge">
+                            <i class="fas fa-code-branch"></i> 
+                            <span style="letter-spacing: 0.5px;">Designed with <i class="fas fa-heart" style="color:#F9B81B; font-size: 0.7rem;"></i> by</span> 
+                            <a href="https://comsysit.in" target="_blank" rel="noopener noreferrer">
+                                <i class="fas fa-cogs"></i> ComSys IT
+                            </a>
+                             <img src="<?php echo base_url('assets/images/comsysit.jpeg'); ?>" alt="" width=50px style="border-radius:100px">
+                        </span>
+
+                        <!-- extra little detail: show a small yellow stripe, symbolizing vibrant identity -->
+                        <div style="height: 2px; width: 60px; background: #F9B81B; margin: 6px auto 0; border-radius: 4px;"></div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </footer>
     <!-- footer-area end -->
     

@@ -359,7 +359,7 @@
                     </div>
                     <div class="vacation-item">
                         <h4>❄️ Winter Break</h4>
-                        <p>December 28 – December 31, 2026</p>
+                        <p>December 25 – January 5, 2027</p>
                         <span class="vacation-days">4 Days</span>
                     </div>
                 </div>

@@ -1,14 +1,8 @@
 
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Arial:wght@400;700&display=swap');
+       
         
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 20px;
-            background: #f4f4f4;
-        }
+      
         
         .header {
             background: #174873;
@@ -47,6 +41,7 @@
             padding: 8px;
             border: 1px solid #000;
             font-size: 16px;
+            box-sizing: border-box;
         }
         .photo-box {
             width: 120px;
@@ -120,368 +115,415 @@
             margin-top: 40px;
         }
 
-      
+        .section-title {
+            background: #174873;
+            color: white;
+            padding: 8px 12px;
+            margin: 20px 0 10px 0;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .inline-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .inline-group > div {
+            flex: 1;
+        }
+        .checkbox-group {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .checkbox-group label {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-weight: normal;
+            margin-bottom: 0;
+        }
+        .checkbox-group input {
+            width: auto;
+        }
     </style>
+<!-- Form Header -->
+<div class="header">
+    <span class="translatable" data-key="school_name">JAGADISH CHANDRA HIGH SCHOOL, GHATSILA</span><br>
+    <span class="translatable" data-key="district">DIST. - EAST SINGHBHUM, JHARKHAND</span>
+</div>
+<div class="sub-header">
+    <span class="translatable" data-key="admission_form">ADMISSION FORM</span><br>
+    <span class="translatable" data-key="block_letters">(PLEASE WRITE IN BLOCK LETTERS - ALL INFORMATION MUST BE FULLY ENTERED)</span>
+</div>
 
+<!-- Fillable Form -->
+<div class="form-section no-print">
+    <div style="display: flex; gap: 30px; align-items: flex-start; flex-wrap: wrap;">
+        
+        <!-- Left Column -->
+        <div style="flex: 1; min-width: 300px;">
+            <!-- Admission No and Date Row -->
+            <div style="display: flex; gap: 20px; margin-bottom: 15px;">
+                <div style="flex:1;"><label class="translatable" data-key="adm_no">Admission No.:</label><input type="text" id="admNo" placeholder="Admission Number"></div>
+                <div style="flex:1;"><label class="translatable" data-key="date">Date:</label><input type="date" id="date"></div>
+            </div>
 
+            <div style="border: 2px solid #174873; padding: 15px; margin-bottom: 20px;">
+                <h3 style="text-align:center; margin-top:0; color:#174873;" class="translatable" data-key="application_title"># APPLICATION FOR ADMISSION</h3>
+                
+                <!-- Row with Aadhar, Bank A/C, Photo -->
+                <div style="display: flex; gap: 15px; align-items: flex-start; flex-wrap: wrap;">
+                    <div style="flex:2;">
+                        <div class="inline-group">
+                            <div><label class="translatable" data-key="aadhar">Aadhar No.</label><input type="text" id="aadhar" placeholder="Aadhar Number"></div>
+                            <div><label class="translatable" data-key="bank_ac">Bank A/C. No.</label><input type="text" id="bankAc" placeholder="Bank Account Number"></div>
+                        </div>
+                        <div class="inline-group" style="margin-top:10px;">
+                            <div><label class="translatable" data-key="bank_name">Name of the Bank :</label><input type="text" id="bankName" placeholder="Bank Name"></div>
+                            <div><label class="translatable" data-key="ifsc">IFSC Code.</label><input type="text" id="ifsc" placeholder="IFSC Code"></div>
+                        </div>
+                        <div style="margin-top:10px;">
+                            <label class="translatable" data-key="branch">Name of the Branch :</label>
+                            <input type="text" id="branch" placeholder="Branch Name">
+                        </div>
+                        <div style="margin-top:10px;">
+                            <label class="translatable" data-key="bpl">B.P.L. No.</label>
+                            <input type="text" id="bpl" placeholder="BPL Number">
+                        </div>
+                    </div>
+                    <div style="flex:1; text-align:center;">
+                        <div class="photo-box" id="studentPhotoBox" onclick="triggerUpload('student')">
+                            Click to Upload Photo<br>(Passport Size)<br>
+                            <span class="upload-text">JPG / PNG</span>
+                            <input type="file" id="studentFile" accept="image/*" style="display:none;" onchange="handleImageUpload(event, 'student')">
+                        </div>
+                        <span class="translatable" data-key="passport_photo">Passport Size Photo</span>
+                    </div>
+                </div>
+            </div>
 
-
-    <!-- Form Header -->
-    <div class="header">
-        <span class="translatable" data-key="school_name">JAGADISH CHANDRA HIGH / PRIMARY SCHOOL</span><br>
-        <span class="translatable" data-key="ghatsila">GHATSILA</span>
-    </div>
-    <div class="sub-header">
-        <span class="translatable" data-key="student_record">STUDENT’S PERSONAL RECORD</span><br>
-        <span class="translatable" data-key="filled_by">(TO BE FILLED BY THE PARENT / GUARDIAN)</span><br>
-        <span class="translatable" data-key="block_letters">(PLEASE WRITE IN BLOCK LETTERS)</span>
-    </div>
-
-    <!-- Fillable Form -->
-    <div class="form-section no-print">
-
-        <div style="display: flex; gap: 30px; align-items: flex-start;">
+            <!-- STUDENTS Section -->
+            <div class="section-title"><span class="translatable" data-key="students_section">STUDENTS</span></div>
             
-            <!-- Left Column - Student Details -->
-            <div style="flex: 1;">
-                <table>
-                    <tr>
-                        <td colspan="2" style="text-align:center; font-size:18px; font-weight:bold;">
-                            <span class="translatable" data-key="student_photo">Student’s Photo</span>
-                        </td>
-                        <td rowspan="8" style="width:140px;">
-                            <div class="photo-box" id="studentPhotoBox" onclick="triggerUpload('student')">
-                                Click to Upload Photo<br>(4×5 cm)<br>
-                                <span class="upload-text">JPG / PNG / JPEG</span>
-                                <input type="file" id="studentFile" accept="image/*" style="display:none;" onchange="handleImageUpload(event, 'student')">
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><label><span class="translatable" data-key="name">Name</span></label></td>
-                        <td colspan="2"><input type="text" id="name" placeholder="Full Name in Block Letters"></td>
-                    </tr>
-                    <tr>
-                        <td><label><span class="translatable" data-key="class">Class</span></label></td>
-                        <td><input type="text" id="class" style="width:120px;"></td>
-                        <td><label><span class="translatable" data-key="section">Section</span></label><input type="text" id="section" style="width:80px;"></td>
-                        <td><label><span class="translatable" data-key="roll">Roll No.</span></label><input type="text" id="roll" style="width:120px;"></td>
-                    </tr>
-                    <tr>
-                        <td><label><span class="translatable" data-key="adm_no">Adm. No.</span></label></td>
-                        <td><input type="text" id="admNo"></td>
-                        <td colspan="2"><label><span class="translatable" data-key="aadhar">Aadhar No.</span></label><input type="text" id="aadhar"></td>
-                    </tr>
-                    <tr>
-                        <td><label><span class="translatable" data-key="bank_ac">Bank A/c No.</span></label></td>
-                        <td><input type="text" id="bankAc"></td>
-                        <td colspan="2"><label><span class="translatable" data-key="ifsc">IFSC Code</span></label><input type="text" id="ifsc"></td>
-                    </tr>
-                    <tr>
-                        <td><label><span class="translatable" data-key="bank_name">Name of Bank</span></label></td>
-                        <td><input type="text" id="bankName"></td>
-                        <td colspan="2"><label><span class="translatable" data-key="branch">Branch</span></label><input type="text" id="branch"></td>
-                    </tr>
-                    <tr>
-                        <td><label><span class="translatable" data-key="dob">Date of Birth</span></label></td>
-                        <td><input type="date" id="dob"></td>
-                        <td><label><span class="translatable" data-key="gender">Gender</span></label><input type="text" id="gender" placeholder="Male/Female"></td>
-                        <td><label><span class="translatable" data-key="blood">Blood Group</span></label><input type="text" id="blood"></td>
-                    </tr>
-                    <tr>
-                        <td><label><span class="translatable" data-key="bpl">BPL Card No.</span></label></td>
-                        <td colspan="3"><input type="text" id="bpl"></td>
-                    </tr>
-                    <tr>
-                        <td><label><span class="translatable" data-key="religion">Religion</span></label></td>
-                        <td><input type="text" id="religion"></td>
-                        <td colspan="2">
-                            <label><span class="translatable" data-key="category">Category :</span></label>
-                            <input type="checkbox" id="st"> ST &nbsp;
-                            <input type="checkbox" id="sc"> SC &nbsp;
-                            <input type="checkbox" id="obc"> OBC &nbsp;
-                            <input type="checkbox" id="gen"> GEN
-                        </td>
-                    </tr>
-                </table>
+            <table>
+                <tr><td style="width:40%;"><label class="translatable" data-key="full_name">1. Full Name :</label></td><td><input type="text" id="fullName" placeholder="Full Name in Block Letters"></td></tr>
+                <tr><td><label class="translatable" data-key="sex">2. Sex :</label></td>
+                    <td><input type="text" id="gender" placeholder="Male/Female"> &nbsp;&nbsp; <label class="translatable" data-key="blood_group">Blood Group :</label> <input type="text" id="blood" style="width:100px;" placeholder="B+ / O+ etc"></td></tr>
+                <tr><td><label class="translatable" data-key="dob">3. Date of Birth :</label></td><td><input type="date" id="dob"></td></tr>
+                <tr><td><label class="translatable" data-key="birth_certificate">4. Birth Certificate (Mention Source) :</label></td><td><input type="text" id="birthCertificate" placeholder="Birth Certificate No. / Source"></td></tr>
+                <tr><td><label class="translatable" data-key="caste">5. Caste / Sub Caste :</label></td><td><input type="text" id="casteSubCaste" placeholder="e.g., ST - Santhal / SC - etc"></td></tr>
+                <tr><td><label class="translatable" data-key="nationality">6. Nationality :</label></td><td><input type="text" id="nationality" placeholder="Indian / Others"></td></tr>
+                <tr><td><label class="translatable" data-key="mother_tongue">7. Mother Tongue :</label></td><td><input type="text" id="motherTongue" placeholder="Mother Tongue"></td></tr>
+                <tr><td><label class="translatable" data-key="language_home">Language spoken at home :</label></td><td><input type="text" id="homeLanguage" placeholder="Language spoken at home"></td></tr>
+                <tr><td><label class="translatable" data-key="last_school">8. School Last Attended :</label></td><td><input type="text" id="lastSchool" placeholder="Previous School Name"></td></tr>
+                <tr><td><label class="translatable" data-key="class">9. Class :</label></td><td><input type="text" id="lastClass" placeholder="Last Class Studied"></td></tr>
+                <tr><td><label class="translatable" data-key="promoted_to">10. Promoted to :</label></td><td><input type="text" id="promotedTo" placeholder="Promoted to Class"></td></tr>
+                <tr><td><label class="translatable" data-key="wanted_class">11. Class to which admission wanted :</label></td><td><input type="text" id="wantedClass" placeholder="Class Seeking Admission"></td></tr>
+                <tr><td><label class="translatable" data-key="first_language">12. Subject offered as 1st Language :</label></td><td><input type="text" id="firstLanguage" placeholder="Bengali / Hindi / Santhali"></td></tr>
+                <tr><td><label class="translatable" data-key="additional_subject">Additional Subject :</label></td><td><input type="text" id="additionalSubject" placeholder="Additional Subject (if any)"></td></tr>
+            </table>
 
-                <table>
-                    <tr>
-                        <td><label><span class="translatable" data-key="father_name">Father’s Name</span></label><input type="text" id="fatherName"></td>
-                        <td><label><span class="translatable" data-key="occupation">Occupation</span></label><input type="text" id="fatherOcc"></td>
-                    </tr>
-                    <tr>
-                        <td><label><span class="translatable" data-key="mother_name">Mother’s Name</span></label><input type="text" id="motherName"></td>
-                        <td><label><span class="translatable" data-key="occupation">Occupation</span></label><input type="text" id="motherOcc"></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><label><span class="translatable" data-key="residential_address">Residential Address</span></label><textarea id="address" rows="3" style="width:100%; resize:none;"></textarea></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><label><span class="translatable" data-key="ph_no">Ph. No.</span></label><input type="text" id="phone" style="width:100%;"></td>
-                    </tr>
-                </table>
-            </div>
-
-            <!-- Right Column - Page 2 Details -->
-            <div style="flex: 1;">
-                <h3 style="text-align:center; margin:10px 0;">
-                    <span class="translatable" data-key="bro_sis">Brother’s / Sister’s in Jagadish Chandra High / Primary School</span>
-                </h3>
-                <table>
-                    <tr><th>Sl. No.</th><th>Name</th><th>Class</th><th>Sec</th><th>Adm. No.</th></tr>
-                    <tr><td>1.</td><td><input type="text" id="sib1"></td><td><input type="text" id="sib1Class" style="width:80px;"></td><td><input type="text" id="sib1Sec" style="width:60px;"></td><td><input type="text" id="sib1Adm" style="width:100px;"></td></tr>
-                    <tr><td>2.</td><td><input type="text" id="sib2"></td><td><input type="text" id="sib2Class" style="width:80px;"></td><td><input type="text" id="sib2Sec" style="width:60px;"></td><td><input type="text" id="sib2Adm" style="width:100px;"></td></tr>
-                </table>
-
-                <p><label><span class="translatable" data-key="mother_tongue">Mother Tongue :</span></label><input type="text" id="motherTongue" style="width:100%;"></p>
-
-                <p style="margin:20px 0; font-weight:bold;" class="translatable" data-key="declaration">
-                    I have read the school rules and regulations laid down in the school diary and promise to abide by them.
-                </p>
-
-                <div style="display:flex; gap:15px; margin-top:20px;">
-                    <div>
-                        <div class="photo-box small" id="fatherPhotoBox" onclick="triggerUpload('father')">
-                            Click to Upload<br>Father Photo
-                            <input type="file" id="fatherFile" accept="image/*" style="display:none;" onchange="handleImageUpload(event, 'father')">
-                        </div>
-                        <p style="text-align:center; margin:5px 0;">Father’s Full Sign.<br><input type="text" id="fatherSign" placeholder="Signature"></p>
-                    </div>
-                    <div>
-                        <div class="photo-box small" id="motherPhotoBox" onclick="triggerUpload('mother')">
-                            Click to Upload<br>Mother Photo
-                            <input type="file" id="motherFile" accept="image/*" style="display:none;" onchange="handleImageUpload(event, 'mother')">
-                        </div>
-                        <p style="text-align:center; margin:5px 0;">Mother’s Full Sign.<br><input type="text" id="motherSign" placeholder="Signature"></p>
-                    </div>
-                    <div>
-                        <div class="photo-box small" id="guardianPhotoBox" onclick="triggerUpload('guardian')">
-                            Click to Upload<br>Guardian Photo
-                            <input type="file" id="guardianFile" accept="image/*" style="display:none;" onchange="handleImageUpload(event, 'guardian')">
-                        </div>
-                        <p style="text-align:center; margin:5px 0;">Guardian’s Full Sign.<br><input type="text" id="guardianSign" placeholder="Signature"></p>
-                    </div>
-                </div>
-
-                <p><label><span class="translatable" data-key="date">Date :</span></label><input type="date" id="date"></p>
-            </div>
-        </div>
-
-        <div style="text-align:center; margin-top:30px;">
-            <!-- <button class="btn" id="saveBtn" onclick="saveFormData()">💾 Save Form Data (with Images)</button> -->
-            <!-- <button class="btn btn-success" id="loadBtn" onclick="loadFormData()">📂 Load Saved Form</button> -->
-            <button class="btn" id="generateBtn" onclick="generatePrint()">Generate Print Format</button>
-            <button class="btn" id="printBtn" onclick="window.print()" style="background:#0066cc;">🖨️ Print Now</button>
-        </div>
-    </div>
-
-    <!-- PRINTABLE VERSION -->
-    <div id="printArea" class="print-area">
-        <div style="border:8px solid #c8102e; padding:20px; margin-bottom:30px;">
-            <div style="text-align:center;">
-                <h1 style="margin:0; color:#c8102e;" class="translatable" data-key="school_name">JAGADISH CHANDRA HIGH / PRIMARY SCHOOL</h1>
-                <h2 style="margin:5px 0;" class="translatable" data-key="ghatsila">GHATSILA</h2>
-                <p style="font-size:20px; font-weight:bold;" class="translatable" data-key="student_record">STUDENT’S PERSONAL RECORD</p>
-            </div>
-
-            <table style="width:100%; border:2px solid #000;">
-                <tr>
-                    <td style="width:70%; vertical-align:top;">
-                        <strong><span class="translatable" data-key="name">Name</span></strong> : <span id="printName"></span><br><br>
-                        <strong><span class="translatable" data-key="class">Class</span></strong> : <span id="printClass"></span> &nbsp;&nbsp;
-                        <strong><span class="translatable" data-key="section">Section</span></strong> : <span id="printSection"></span> &nbsp;&nbsp;
-                        <strong><span class="translatable" data-key="roll">Roll No.</span></strong> : <span id="printRoll"></span><br><br>
-                        <strong><span class="translatable" data-key="adm_no">Adm. No.</span></strong> : <span id="printAdm"></span> &nbsp;&nbsp;
-                        <strong><span class="translatable" data-key="aadhar">Aadhar No.</span></strong> : <span id="printAadhar"></span><br><br>
-                        <strong><span class="translatable" data-key="bank_ac">Bank A/c No.</span></strong> : <span id="printBankAc"></span> &nbsp;&nbsp;
-                        <strong><span class="translatable" data-key="ifsc">IFSC Code</span></strong> : <span id="printIfsc"></span><br><br>
-                        <strong><span class="translatable" data-key="bank_name">Bank</span></strong> : <span id="printBankName"></span> &nbsp;&nbsp;
-                        <strong><span class="translatable" data-key="branch">Branch</span></strong> : <span id="printBranch"></span><br><br>
-                        <strong><span class="translatable" data-key="dob">Date of Birth</span></strong> : <span id="printDob"></span> &nbsp;&nbsp;
-                        <strong><span class="translatable" data-key="gender">Gender</span></strong> : <span id="printGender"></span><br><br>
-                        <strong><span class="translatable" data-key="bpl">BPL Card No.</span></strong> : <span id="printBpl"></span> &nbsp;&nbsp;
-                        <strong><span class="translatable" data-key="blood">Blood Group</span></strong> : <span id="printBlood"></span><br><br>
-                        <strong><span class="translatable" data-key="religion">Religion</span></strong> : <span id="printReligion"></span><br><br>
-                        <strong><span class="translatable" data-key="category">Category</span></strong> : <span id="printCategory"></span>
-                    </td>
-                    <td style="text-align:center; vertical-align:top;">
-                        <img id="printStudentPhoto" style="width:140px; height:170px; object-fit:contain; border:2px solid #000;" alt="Student Photo">
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <strong><span class="translatable" data-key="father_name">Father’s Name</span></strong> : <span id="printFather"></span> &nbsp;&nbsp;&nbsp;&nbsp;
-                        <strong><span class="translatable" data-key="occupation">Occupation</span></strong> : <span id="printFatherOcc"></span><br><br>
-                        <strong><span class="translatable" data-key="mother_name">Mother’s Name</span></strong> : <span id="printMother"></span> &nbsp;&nbsp;&nbsp;&nbsp;
-                        <strong><span class="translatable" data-key="occupation">Occupation</span></strong> : <span id="printMotherOcc"></span><br><br>
-                        <strong><span class="translatable" data-key="residential_address">Residential Address</span></strong> : <span id="printAddress"></span><br><br>
-                        <strong><span class="translatable" data-key="ph_no">Ph. No.</span></strong> : <span id="printPhone"></span>
+            <!-- PARENT/GUARDIAN Section -->
+            <div class="section-title"><span class="translatable" data-key="parent_section">PARENT/GUARDIAN</span></div>
+            
+            <table>
+                <tr><td style="width:40%;"><label class="translatable" data-key="father_name">1. Full Name of Father :</label></td><td><input type="text" id="fatherName"></td></tr>
+                <tr><td><label class="translatable" data-key="father_education">2. Education Qualification :</label></td><td><input type="text" id="fatherEdu" placeholder="Father's Qualification"></td></tr>
+                <tr><td><label class="translatable" data-key="father_occupation">3. Occupation :</label></td><td><input type="text" id="fatherOcc"></td></tr>
+                <tr><td><label class="translatable" data-key="residential_address">4. Residential Address :</label></td><td><textarea id="address" rows="3" style="width:100%; resize:none;" placeholder="Full Residential Address"></textarea></td></tr>
+                <tr><td><label class="translatable" data-key="mother_name">5. Full Name of Mother :</label></td><td><input type="text" id="motherName"></td></tr>
+                <tr><td><label class="translatable" data-key="mother_education">6. Education Qualification :</label></td><td><input type="text" id="motherEdu" placeholder="Mother's Qualification"></td></tr>
+                <tr><td><label class="translatable" data-key="siblings_section">7. Brother/Sister Studying at J.C. High School.</label></td>
+                    <td>
+                        <div style="margin-bottom:5px;"><span class="translatable" data-key="name">Name :</span> <input type="text" id="siblingName" placeholder="Sibling Name" style="width:60%;"> &nbsp; <span class="translatable" data-key="class">Class :</span> <input type="text" id="siblingClass" style="width:25%;" placeholder="Class"></div>
+                        <div><span class="translatable" data-key="name_optional">Name (2nd) :</span> <input type="text" id="siblingName2" placeholder="Second Sibling" style="width:60%;"> &nbsp; <span class="translatable" data-key="class">Class :</span> <input type="text" id="siblingClass2" style="width:25%;" placeholder="Class"></div>
                     </td>
                 </tr>
             </table>
 
-            <h3 style="text-align:center; margin:20px 0 10px;" class="translatable" data-key="bro_sis">Brother’s / Sister’s in Jagadish Chandra High / Primary School</h3>
-            <table style="width:100%; border:2px solid #000;">
-                <tr style="background:#f0f0f0;">
-                    <th>Sl. No.</th><th>Name</th><th>Class</th><th>Sec</th><th>Adm. No.</th>
-                </tr>
-                <tr><td>1.</td><td id="printSib1"></td><td id="printSib1Class"></td><td id="printSib1Sec"></td><td id="printSib1Adm"></td></tr>
-                <tr><td>2.</td><td id="printSib2"></td><td id="printSib2Class"></td><td id="printSib2Sec"></td><td id="printSib2Adm"></td></tr>
-            </table>
-
-            <p><strong><span class="translatable" data-key="mother_tongue">Mother Tongue</span></strong> : <span id="printMotherTongue"></span></p>
-
-            <p style="margin:25px 0; font-weight:bold; text-align:center;" class="translatable" data-key="declaration">
-                I have read the school rules and regulations laid down in the school diary and promise to abide by them.
-            </p>
-
-            <div style="display:flex; justify-content:space-around; margin-top:30px;">
-                <div style="text-align:center;">
-                    <img id="printFatherPhoto" style="width:110px; height:110px; object-fit:contain; border:2px solid #000;" alt="Father Photo">
-                    <p>Father’s Photo</p>
-                    <div class="signature" id="printFatherSign"></div>
+            <!-- Declaration Section -->
+            <div class="section-title"><span class="translatable" data-key="declaration_title">DECLARATION</span></div>
+            <p class="translatable" data-key="declaration_text" style="font-style:italic; margin:10px 0;">I declare that the caste certificate and birth certificate is correct and I shall not ask for its alteration at any time.</p>
+            
+            <div style="display: flex; justify-content: space-between; margin-top: 20px; flex-wrap: wrap;">
+                <div>
+                    <label class="translatable" data-key="date_sign">Date :</label>
+                    <input type="date" id="declarationDate" style="width:150px;">
                 </div>
-                <div style="text-align:center;">
-                    <img id="printMotherPhoto" style="width:110px; height:110px; object-fit:contain; border:2px solid #000;" alt="Mother Photo">
-                    <p>Mother’s Photo</p>
-                    <div class="signature" id="printMotherSign"></div>
-                </div>
-                <div style="text-align:center;">
-                    <img id="printGuardianPhoto" style="width:110px; height:110px; object-fit:contain; border:2px solid #000;" alt="Guardian Photo">
-                    <p>Guardian’s Photo</p>
-                    <div class="signature" id="printGuardianSign"></div>
+                <div style="text-align:right;">
+                    <label class="translatable" data-key="signature">Signature of Parent/Guardian :</label>
+                    <input type="text" id="guardianSign" placeholder="Full Signature" style="width:250px;">
                 </div>
             </div>
 
-            <p style="text-align:right; margin-top:20px;"><strong><span class="translatable" data-key="date">Date :</span></strong> <span id="printDate"></span></p>
-
-            <div style="text-align:center; margin-top:30px; font-size:14px; border-top:2px solid #c8102e; padding-top:10px;">
-                JAGADISH CHANDRA HIGH / PRIMARY SCHOOL / 1 &nbsp;&nbsp;&nbsp;&nbsp; JAGADISH CHANDRA HIGH / PRIMARY SCHOOL / 2
+            <!-- Photo Signatures Section -->
+            <div style="display:flex; gap:20px; margin-top:25px; flex-wrap:wrap;">
+                <div>
+                    <div class="photo-box small" id="fatherPhotoBox" onclick="triggerUpload('father')">
+                        Click to Upload<br>Father Photo
+                        <input type="file" id="fatherFile" accept="image/*" style="display:none;" onchange="handleImageUpload(event, 'father')">
+                    </div>
+                    <p style="text-align:center; margin:5px 0;" class="translatable" data-key="father_photo">Father's Photo</p>
+                </div>
+                <div>
+                    <div class="photo-box small" id="motherPhotoBox" onclick="triggerUpload('mother')">
+                        Click to Upload<br>Mother Photo
+                        <input type="file" id="motherFile" accept="image/*" style="display:none;" onchange="handleImageUpload(event, 'mother')">
+                    </div>
+                    <p style="text-align:center;" class="translatable" data-key="mother_photo">Mother's Photo</p>
+                </div>
+                <div>
+                    <div class="photo-box small" id="guardianPhotoBox" onclick="triggerUpload('guardian')">
+                        Click to Upload<br>Guardian Photo
+                        <input type="file" id="guardianFile" accept="image/*" style="display:none;" onchange="handleImageUpload(event, 'guardian')">
+                    </div>
+                    <p style="text-align:center;" class="translatable" data-key="guardian_photo">Guardian's Photo</p>
+                </div>
             </div>
         </div>
     </div>
 
+    <div style="text-align:center; margin-top:30px;">
+        <button class="btn" id="generateBtn" onclick="generatePrint()">Generate Print Format</button>
+        <button class="btn" id="printBtn" onclick="window.print()" style="background:#0066cc;">🖨️ Print Now</button>
+    </div>
+</div>
+
+<!-- PRINTABLE VERSION (matches new PDF structure) -->
+<div id="printArea" class="print-area">
+    <div style="border:8px solid #c8102e; padding:20px;">
+        <div style="text-align:center;">
+            <h1 style="margin:0; color:#c8102e;" class="translatable" data-key="school_name">JAGADISH CHANDRA HIGH SCHOOL, GHATSILA</h1>
+            <h3 style="margin:5px 0;" class="translatable" data-key="district">DIST. - EAST SINGHBHUM, JHARKHAND</h3>
+            <h2 style="margin:10px 0;" class="translatable" data-key="admission_form_print">ADMISSION FORM</h2>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; margin-bottom:15px;">
+            <div><strong class="translatable" data-key="adm_no">Admission No.:</strong> <span id="printAdmNo">___________</span></div>
+            <div><strong class="translatable" data-key="date">Date:</strong> <span id="printDate">___________</span></div>
+        </div>
+
+        <div style="border:2px solid #000; padding:15px; margin-bottom:20px;">
+            <div style="display:flex; flex-wrap:wrap; gap:15px;">
+                <div style="flex:2;">
+                    <div><strong class="translatable" data-key="aadhar">Aadhar No.:</strong> <span id="printAadhar">___________</span> &nbsp;&nbsp; <strong class="translatable" data-key="bank_ac">Bank A/C. No.:</strong> <span id="printBankAc">___________</span></div>
+                    <div style="margin-top:8px;"><strong class="translatable" data-key="bank_name">Name of the Bank :</strong> <span id="printBankName">___________</span> &nbsp;&nbsp; <strong class="translatable" data-key="ifsc">IFSC Code.:</strong> <span id="printIfsc">___________</span></div>
+                    <div style="margin-top:8px;"><strong class="translatable" data-key="branch">Name of the Branch :</strong> <span id="printBranch">___________</span></div>
+                    <div style="margin-top:8px;"><strong class="translatable" data-key="bpl">B.P.L. No.:</strong> <span id="printBpl">___________</span></div>
+                </div>
+                <div style="flex:1; text-align:center;">
+                    <img id="printStudentPhoto" style="width:120px; height:140px; object-fit:contain; border:2px solid #000;" alt="Student Photo">
+                    <div><small class="translatable" data-key="passport_photo">Passport Size Photo</small></div>
+                </div>
+            </div>
+        </div>
+
+        <h4 style="background:#174873; color:white; padding:6px; margin:15px 0 10px 0;" class="translatable" data-key="students_section">STUDENTS</h4>
+        <table style="width:100%; border:2px solid #000;">
+            <tr><td style="width:40%;"><strong>1. Full Name :</strong></td><td><span id="printFullName">___________</span></td></tr>
+            <tr><td><strong>2. Sex :</strong></td><td><span id="printGender">___________</span> &nbsp;&nbsp; <strong>Blood Group :</strong> <span id="printBlood">___________</span></td></tr>
+            <tr><td><strong>3. Date of Birth :</strong></td><td><span id="printDob">___________</span></td></tr>
+            <tr><td><strong>4. Birth Certificate (Source) :</strong></td><td><span id="printBirthCert">___________</span></td></tr>
+            <tr><td><strong>5. Caste / Sub Caste :</strong></td><td><span id="printCaste">___________</span></td></tr>
+            <tr><td><strong>6. Nationality :</strong></td><td><span id="printNationality">___________</span></td></tr>
+            <tr><td><strong>7. Mother Tongue :</strong></td><td><span id="printMotherTongue">___________</span></td></tr>
+            <tr><td><strong>Language spoken at home :</strong></td><td><span id="printHomeLang">___________</span></td></tr>
+            <tr><td><strong>8. School Last Attended :</strong></td><td><span id="printLastSchool">___________</span></td></tr>
+            <tr><td><strong>9. Class :</strong></td><td><span id="printLastClass">___________</span></td></tr>
+            <tr><td><strong>10. Promoted to :</strong></td><td><span id="printPromotedTo">___________</span></td></tr>
+            <tr><td><strong>11. Class wanted :</strong></td><td><span id="printWantedClass">___________</span></td></tr>
+            <tr><td><strong>12. 1st Language :</strong></td><td><span id="printFirstLang">___________</span></td></tr>
+            <tr><td><strong>Additional Subject :</strong></td><td><span id="printAddSub">___________</span></td></tr>
+        </table>
+
+        <h4 style="background:#174873; color:white; padding:6px; margin:15px 0 10px 0;" class="translatable" data-key="parent_section">PARENT/GUARDIAN</h4>
+        <table style="width:100%; border:2px solid #000;">
+            <tr><td style="width:40%;"><strong>1. Full Name of Father :</strong></td><td><span id="printFatherName">___________</span></td></tr>
+            <tr><td><strong>2. Education Qualification :</strong></td><td><span id="printFatherEdu">___________</span></td></tr>
+            <tr><td><strong>3. Occupation :</strong></td><td><span id="printFatherOcc">___________</span></td></tr>
+            <tr><td><strong>4. Residential Address :</strong></td><td><span id="printAddress">___________</span></td></tr>
+            <tr><td><strong>5. Full Name of Mother :</strong></td><td><span id="printMotherName">___________</span></td></tr>
+            <tr><td><strong>6. Education Qualification :</strong></td><td><span id="printMotherEdu">___________</span></td></tr>
+            <tr><td><strong>7. Brother/Sister at J.C. High School :</strong></td><td><span id="printSibling">___________</span> (Class: <span id="printSiblingClass">___</span>) &nbsp; <span id="printSibling2">___________</span> (Class: <span id="printSiblingClass2">___</span>)</td></tr>
+        </table>
+
+        <p style="margin:20px 0; font-style:italic;" class="translatable" data-key="declaration_text">I declare that the caste certificate and birth certificate is correct and I shall not ask for its alteration at any time.</p>
+        
+        <div style="display:flex; justify-content:space-between; margin-top:20px;">
+            <div><strong class="translatable" data-key="date_sign">Date :</strong> <span id="printDeclDate">___________</span></div>
+            <div><strong class="translatable" data-key="signature">Signature of Parent/Guardian :</strong> <span id="printGuardianSign">___________</span></div>
+        </div>
+
+        <!-- Photos at bottom for print -->
+        <div style="display:flex; justify-content:space-around; margin-top:30px;">
+            <div style="text-align:center;"><img id="printFatherPhoto" style="width:100px; height:100px; border:1px solid #000;" alt="Father Photo"><br>Father's Photo</div>
+            <div style="text-align:center;"><img id="printMotherPhoto" style="width:100px; height:100px; border:1px solid #000;" alt="Mother Photo"><br>Mother's Photo</div>
+            <div style="text-align:center;"><img id="printGuardianPhoto" style="width:100px; height:100px; border:1px solid #000;" alt="Guardian Photo"><br>Guardian's Photo</div>
+        </div>
+    </div>
+</div>
 
 <script>
-    // ====================== TRANSLATIONS (All content added - logic unchanged) ======================
+    // ====================== TRANSLATIONS (Fully extended for new fields) ======================
     const translations = {
         english: {
-            school_name: "JAGADISH CHANDRA HIGH / PRIMARY SCHOOL",
-            ghatsila: "GHATSILA",
-            student_record: "STUDENT’S PERSONAL RECORD",
-            filled_by: "(TO BE FILLED BY THE PARENT / GUARDIAN)",
-            block_letters: "(PLEASE WRITE IN BLOCK LETTERS)",
-            student_photo: "Student’s Photo",
-            name: "Name",
-            class: "Class",
-            section: "Section",
-            roll: "Roll No.",
-            adm_no: "Adm. No.",
+            school_name: "JAGADISH CHANDRA HIGH SCHOOL, GHATSILA",
+            district: "DIST. - EAST SINGHBHUM, JHARKHAND",
+            admission_form: "ADMISSION FORM",
+            block_letters: "(PLEASE WRITE IN BLOCK LETTERS - ALL INFORMATION MUST BE FULLY ENTERED)",
+            adm_no: "Admission No.:",
+            date: "Date:",
+            application_title: "# APPLICATION FOR ADMISSION",
             aadhar: "Aadhar No.",
-            bank_ac: "Bank A/c No.",
-            ifsc: "IFSC Code",
-            bank_name: "Name of Bank",
-            branch: "Branch",
-            dob: "Date of Birth",
-            gender: "Gender",
-            blood: "Blood Group",
-            bpl: "BPL Card No.",
-            religion: "Religion",
-            category: "Category :",
-            father_name: "Father’s Name",
-            mother_name: "Mother’s Name",
-            occupation: "Occupation",
-            residential_address: "Residential Address",
-            ph_no: "Ph. No.",
-            bro_sis: "Brother’s / Sister’s in Jagadish Chandra High / Primary School",
-            mother_tongue: "Mother Tongue :",
-            declaration: "I have read the school rules and regulations laid down in the school diary and promise to abide by them.",
-            date: "Date :",
-            save_btn: "💾 Save Form Data (with Images)",
-            load_btn: "📂 Load Saved Form",
-            generate_btn: "Generate Print Format",
-            print_btn: "🖨️ Print Now"
+            bank_ac: "Bank A/C. No.",
+            bank_name: "Name of the Bank :",
+            ifsc: "IFSC Code.",
+            branch: "Name of the Branch :",
+            bpl: "B.P.L. No.",
+            passport_photo: "Passport Size Photo",
+            students_section: "STUDENTS",
+            full_name: "1. Full Name :",
+            sex: "2. Sex :",
+            blood_group: "Blood Group :",
+            dob: "3. Date of Birth :",
+            birth_certificate: "4. Birth Certificate (Mention Source) :",
+            caste: "5. Caste / Sub Caste :",
+            nationality: "6. Nationality :",
+            mother_tongue: "7. Mother Tongue :",
+            language_home: "Language spoken at home :",
+            last_school: "8. School Last Attended :",
+            class: "9. Class :",
+            promoted_to: "10. Promoted to :",
+            wanted_class: "11. Class to which admission wanted :",
+            first_language: "12. Subject offered as 1st Language :",
+            additional_subject: "Additional Subject :",
+            parent_section: "PARENT/GUARDIAN",
+            father_name: "1. Full Name of Father :",
+            father_education: "2. Education Qualification :",
+            father_occupation: "3. Occupation :",
+            residential_address: "4. Residential Address :",
+            mother_name: "5. Full Name of Mother :",
+            mother_education: "6. Education Qualification :",
+            siblings_section: "7. Brother/Sister Studying at J.C. High School.",
+            name: "Name :",
+            name_optional: "Name (2nd) :",
+            declaration_title: "DECLARATION",
+            declaration_text: "I declare that the caste certificate and birth certificate is correct and I shall not ask for its alteration at any time.",
+            date_sign: "Date :",
+            signature: "Signature of Parent/Guardian :",
+            father_photo: "Father's Photo",
+            mother_photo: "Mother's Photo",
+            guardian_photo: "Guardian's Photo",
+            admission_form_print: "ADMISSION FORM"
         },
         hindi: {
-            school_name: "जगदीश चंद्र हाई / प्राइमरी स्कूल",
-            ghatsila: "घाटशिला",
-            student_record: "छात्र का व्यक्तिगत रिकॉर्ड",
-            filled_by: "(माता-पिता / अभिभावक द्वारा भरा जाए)",
-            block_letters: "(कृपया ब्लॉक अक्षरों में लिखें)",
-            student_photo: "छात्र की फोटो",
-            name: "नाम",
-            class: "कक्षा",
-            section: "अनुभाग",
-            roll: "रोल नं.",
-            adm_no: "प्रवेश नं.",
-            aadhar: "आधार नं.",
-            bank_ac: "बैंक खाता नं.",
-            ifsc: "IFSC कोड",
-            bank_name: "बैंक का नाम",
-            branch: "शाखा",
-            dob: "जन्म तिथि",
-            gender: "लिंग",
-            blood: "रक्त समूह",
-            bpl: "बीपीएल कार्ड नं.",
-            religion: "धर्म",
-            category: "श्रेणी :",
-            father_name: "पिता का नाम",
-            mother_name: "माता का नाम",
-            occupation: "व्यवसाय",
-            residential_address: "निवास पता",
-            ph_no: "फोन नं.",
-            bro_sis: "जगदीश चंद्र हाई / प्राइमरी स्कूल में भाई/बहन",
-            mother_tongue: "मातृभाषा :",
-            declaration: "मैंने स्कूल डायरी में दिए गए नियम पढ़ लिए हैं और उनका पालन करने का वादा करता/करती हूं।",
-            date: "तिथि :",
-            save_btn: "💾 फॉर्म डेटा सहेजें (छवियों सहित)",
-            load_btn: "📂 सहेजा गया फॉर्म लोड करें",
-            generate_btn: "प्रिंट फॉर्मेट तैयार करें",
-            print_btn: "🖨️ अब प्रिंट करें"
+            school_name: "जगदीश चंद्र हाई स्कूल, घाटशिला",
+            district: "जिला - पूर्वी सिंहभूम, झारखंड",
+            admission_form: "प्रवेश फॉर्म",
+            block_letters: "(कृपया ब्लॉक अक्षरों में लिखें - सभी जानकारी पूरी भरें)",
+            adm_no: "प्रवेश संख्या:",
+            date: "तिथि:",
+            application_title: "# प्रवेश हेतु आवेदन",
+            aadhar: "आधार संख्या",
+            bank_ac: "बैंक खाता संख्या",
+            bank_name: "बैंक का नाम :",
+            ifsc: "आईएफएससी कोड",
+            branch: "शाखा का नाम :",
+            bpl: "बीपीएल संख्या",
+            passport_photo: "पासपोर्ट साइज़ फोटो",
+            students_section: "छात्र",
+            full_name: "1. पूरा नाम :",
+            sex: "2. लिंग :",
+            blood_group: "रक्त समूह :",
+            dob: "3. जन्म तिथि :",
+            birth_certificate: "4. जन्म प्रमाण पत्र (स्रोत) :",
+            caste: "5. जाति / उपजाति :",
+            nationality: "6. राष्ट्रीयता :",
+            mother_tongue: "7. मातृभाषा :",
+            language_home: "घर पर बोली जाने वाली भाषा :",
+            last_school: "8. अंतिम विद्यालय :",
+            class: "9. कक्षा :",
+            promoted_to: "10. पदोन्नत कक्षा :",
+            wanted_class: "11. प्रवेश हेतु इच्छित कक्षा :",
+            first_language: "12. प्रथम भाषा विषय :",
+            additional_subject: "अतिरिक्त विषय :",
+            parent_section: "माता-पिता/अभिभावक",
+            father_name: "1. पिता का पूरा नाम :",
+            father_education: "2. शैक्षणिक योग्यता :",
+            father_occupation: "3. व्यवसाय :",
+            residential_address: "4. निवास पता :",
+            mother_name: "5. माता का पूरा नाम :",
+            mother_education: "6. शैक्षणिक योग्यता :",
+            siblings_section: "7. जे.सी. हाई स्कूल में भाई/बहन",
+            name: "नाम :",
+            name_optional: "दूसरा नाम :",
+            declaration_title: "घोषणा",
+            declaration_text: "मैं घोषणा करता हूं कि जाति प्रमाण पत्र और जन्म प्रमाण पत्र सही है और मैं कभी भी इसके संशोधन का अनुरोध नहीं करूंगा।",
+            date_sign: "तिथि :",
+            signature: "अभिभावक के हस्ताक्षर :",
+            father_photo: "पिता का फोटो",
+            mother_photo: "माता का फोटो",
+            guardian_photo: "अभिभावक का फोटो",
+            admission_form_print: "प्रवेश फॉर्म"
         },
         bengali: {
-            school_name: "জগদীশ চন্দ্র হাই / প্রাইমারি স্কুল",
-            ghatsila: "ঘাটশিলা",
-            student_record: "ছাত্রের ব্যক্তিগত রেকর্ড",
-            filled_by: "(পিতা-মাতা / অভিভাবক দ্বারা পূরণ করতে হবে)",
-            block_letters: "(দয়া করে ব্লক অক্ষরে লিখুন)",
-            student_photo: "ছাত্রের ছবি",
-            name: "নাম",
-            class: "শ্রেণী",
-            section: "বিভাগ",
-            roll: "রোল নং",
-            adm_no: "ভর্তি নং",
-            aadhar: "আধার নং",
-            bank_ac: "ব্যাঙ্ক অ্যাকাউন্ট নং",
+            school_name: "জগদীশ চন্দ্র হাই স্কুল, ঘটশিলা",
+            district: "জেলা - পূর্ব সিংভূম, ঝাড়খণ্ড",
+            admission_form: "ভর্তি ফর্ম",
+            block_letters: "(দয়া করে ব্লক অক্ষরে লিখুন - সমস্ত তথ্য সম্পূর্ণ পূরণ করুন)",
+            adm_no: "ভর্তি নম্বর:",
+            date: "তারিখ:",
+            application_title: "# ভর্তির আবেদন",
+            aadhar: "আধার নম্বর",
+            bank_ac: "ব্যাঙ্ক অ্যাকাউন্ট নম্বর",
+            bank_name: "ব্যাঙ্কের নাম :",
             ifsc: "আইএফএসসি কোড",
-            bank_name: "ব্যাঙ্কের নাম",
-            branch: "শাখা",
-            dob: "জন্ম তারিখ",
-            gender: "লিঙ্গ",
-            blood: "রক্তের গ্রুপ",
-            bpl: "বিপিএল কার্ড নং",
-            religion: "ধর্ম",
-            category: "শ্রেণী :",
-            father_name: "পিতার নাম",
-            mother_name: "মাতার নাম",
-            occupation: "পেশা",
-            residential_address: "বাসস্থানের ঠিকানা",
-            ph_no: "ফোন নং",
-            bro_sis: "জগদীশ চন্দ্র হাই / প্রাইমারি স্কুলে ভাই/বোন",
-            mother_tongue: "মাতৃভাষা :",
-            declaration: "আমি স্কুল ডায়েরিতে দেওয়া নিয়মাবলী পড়েছি এবং সেগুলি মেনে চলার প্রতিশ্রুতি দিচ্ছি।",
-            date: "তারিখ :",
-            save_btn: "💾 ফর্ম ডেটা সংরক্ষণ করুন (ছবি সহ)",
-            load_btn: "📂 সংরক্ষিত ফর্ম লোড করুন",
-            generate_btn: "প্রিন্ট ফরম্যাট তৈরি করুন",
-            print_btn: "🖨️ এখন প্রিন্ট করুন"
+            branch: "শাখার নাম :",
+            bpl: "বিপিএল নম্বর",
+            passport_photo: "পাসপোর্ট সাইজের ছবি",
+            students_section: "ছাত্র",
+            full_name: "1. সম্পূর্ণ নাম :",
+            sex: "2. লিঙ্গ :",
+            blood_group: "রক্তের গ্রুপ :",
+            dob: "3. জন্ম তারিখ :",
+            birth_certificate: "4. জন্ম সনদ (সূত্র) :",
+            caste: "5. বর্ণ / উপবর্ণ :",
+            nationality: "6. জাতীয়তা :",
+            mother_tongue: "7. মাতৃভাষা :",
+            language_home: "বাড়িতে কথ্য ভাষা :",
+            last_school: "8. শেষ বিদ্যালয় :",
+            class: "9. শ্রেণী :",
+            promoted_to: "10. উত্তীর্ণ শ্রেণী :",
+            wanted_class: "11. ভর্তি ইচ্ছুক শ্রেণী :",
+            first_language: "12. প্রথম ভাষার বিষয় :",
+            additional_subject: "অতিরিক্ত বিষয় :",
+            parent_section: "পিতা-মাতা/অভিভাবক",
+            father_name: "1. পিতার সম্পূর্ণ নাম :",
+            father_education: "2. শিক্ষাগত যোগ্যতা :",
+            father_occupation: "3. পেশা :",
+            residential_address: "4. বাসস্থানের ঠিকানা :",
+            mother_name: "5. মাতার সম্পূর্ণ নাম :",
+            mother_education: "6. শিক্ষাগত যোগ্যতা :",
+            siblings_section: "7. জে.সি. হাই স্কুলে ভাই/বোন",
+            name: "নাম :",
+            name_optional: "দ্বিতীয় নাম :",
+            declaration_title: "ঘোষণা",
+            declaration_text: "আমি ঘোষণা করছি যে জাতি সনদ এবং জন্ম সনদ সঠিক এবং আমি এর কোনো সংশোধন চাইব না।",
+            date_sign: "তারিখ :",
+            signature: "অভিভাবকের স্বাক্ষর :",
+            father_photo: "পিতার ছবি",
+            mother_photo: "মাতার ছবি",
+            guardian_photo: "অভিভাবকের ছবি",
+            admission_form_print: "ভর্তি ফর্ম"
         }
     };
 
     let currentLang = 'english';
+    let studentImage = '', fatherImage = '', motherImage = '', guardianImage = '';
 
-    // Update all translatable texts
     function updateLanguage(lang) {
         currentLang = lang;
         $('.translatable').each(function() {
@@ -490,248 +532,64 @@
                 $(this).html(translations[lang][key]);
             }
         });
-
-        // Update buttons
-        $('#saveBtn').html(translations[lang].save_btn);
-        $('#loadBtn').html(translations[lang].load_btn);
-        $('#generateBtn').html(translations[lang].generate_btn);
-        $('#printBtn').html(translations[lang].print_btn);
     }
 
-    // ====================== ORIGINAL LOGIC (UNCHANGED) ======================
-    let studentImage = '';
-    let fatherImage = '';
-    let motherImage = '';
-    let guardianImage = '';
-
-    function triggerUpload(type) {
-        document.getElementById(type + 'File').click();
-    }
-
+    function triggerUpload(type) { document.getElementById(type + 'File').click(); }
     function handleImageUpload(e, type) {
         const file = e.target.files[0];
         if (!file) return;
         const reader = new FileReader();
-        reader.onload = function (ev) {
+        reader.onload = function(ev) {
             const base64 = ev.target.result;
-            if (type === 'student') {
-                studentImage = base64;
-                document.getElementById('studentPhotoBox').innerHTML = `<img src="${base64}" alt="Student Photo">`;
-            } else if (type === 'father') {
-                fatherImage = base64;
-                document.getElementById('fatherPhotoBox').innerHTML = `<img src="${base64}" alt="Father Photo">`;
-            } else if (type === 'mother') {
-                motherImage = base64;
-                document.getElementById('motherPhotoBox').innerHTML = `<img src="${base64}" alt="Mother Photo">`;
-            } else if (type === 'guardian') {
-                guardianImage = base64;
-                document.getElementById('guardianPhotoBox').innerHTML = `<img src="${base64}" alt="Guardian Photo">`;
-            }
+            if (type === 'student') { studentImage = base64; document.getElementById('studentPhotoBox').innerHTML = `<img src="${base64}" alt="Student Photo">`; }
+            else if (type === 'father') { fatherImage = base64; document.getElementById('fatherPhotoBox').innerHTML = `<img src="${base64}" alt="Father Photo">`; }
+            else if (type === 'mother') { motherImage = base64; document.getElementById('motherPhotoBox').innerHTML = `<img src="${base64}" alt="Mother Photo">`; }
+            else if (type === 'guardian') { guardianImage = base64; document.getElementById('guardianPhotoBox').innerHTML = `<img src="${base64}" alt="Guardian Photo">`; }
         };
         reader.readAsDataURL(file);
     }
 
-    function saveFormData() {
-        const formData = {
-            name: document.getElementById('name').value,
-            class: document.getElementById('class').value,
-            section: document.getElementById('section').value,
-            roll: document.getElementById('roll').value,
-            admNo: document.getElementById('admNo').value,
-            aadhar: document.getElementById('aadhar').value,
-            bankAc: document.getElementById('bankAc').value,
-            ifsc: document.getElementById('ifsc').value,
-            bankName: document.getElementById('bankName').value,
-            branch: document.getElementById('branch').value,
-            dob: document.getElementById('dob').value,
-            gender: document.getElementById('gender').value,
-            blood: document.getElementById('blood').value,
-            bpl: document.getElementById('bpl').value,
-            religion: document.getElementById('religion').value,
-            st: document.getElementById('st').checked,
-            sc: document.getElementById('sc').checked,
-            obc: document.getElementById('obc').checked,
-            gen: document.getElementById('gen').checked,
-            fatherName: document.getElementById('fatherName').value,
-            fatherOcc: document.getElementById('fatherOcc').value,
-            motherName: document.getElementById('motherName').value,
-            motherOcc: document.getElementById('motherOcc').value,
-            address: document.getElementById('address').value,
-            phone: document.getElementById('phone').value,
-            sib1: document.getElementById('sib1').value,
-            sib1Class: document.getElementById('sib1Class').value,
-            sib1Sec: document.getElementById('sib1Sec').value,
-            sib1Adm: document.getElementById('sib1Adm').value,
-            sib2: document.getElementById('sib2').value,
-            sib2Class: document.getElementById('sib2Class').value,
-            sib2Sec: document.getElementById('sib2Sec').value,
-            sib2Adm: document.getElementById('sib2Adm').value,
-            motherTongue: document.getElementById('motherTongue').value,
-            fatherSign: document.getElementById('fatherSign').value,
-            motherSign: document.getElementById('motherSign').value,
-            guardianSign: document.getElementById('guardianSign').value,
-            date: document.getElementById('date').value,
-            studentImage: studentImage,
-            fatherImage: fatherImage,
-            motherImage: motherImage,
-            guardianImage: guardianImage
-        };
-        localStorage.setItem('jagadishChandraAdmissionForm', JSON.stringify(formData));
-        alert('✅ Form data + all images saved successfully in your browser!');
-    }
-
-    function loadFormData() {
-        const savedData = localStorage.getItem('jagadishChandraAdmissionForm');
-        if (!savedData) {
-            alert('No saved form found!');
-            return;
-        }
-        const data = JSON.parse(savedData);
-        document.getElementById('name').value = data.name || '';
-        document.getElementById('class').value = data.class || '';
-        document.getElementById('section').value = data.section || '';
-        document.getElementById('roll').value = data.roll || '';
-        document.getElementById('admNo').value = data.admNo || '';
-        document.getElementById('aadhar').value = data.aadhar || '';
-        document.getElementById('bankAc').value = data.bankAc || '';
-        document.getElementById('ifsc').value = data.ifsc || '';
-        document.getElementById('bankName').value = data.bankName || '';
-        document.getElementById('branch').value = data.branch || '';
-        document.getElementById('dob').value = data.dob || '';
-        document.getElementById('gender').value = data.gender || '';
-        document.getElementById('blood').value = data.blood || '';
-        document.getElementById('bpl').value = data.bpl || '';
-        document.getElementById('religion').value = data.religion || '';
-        document.getElementById('fatherName').value = data.fatherName || '';
-        document.getElementById('fatherOcc').value = data.fatherOcc || '';
-        document.getElementById('motherName').value = data.motherName || '';
-        document.getElementById('motherOcc').value = data.motherOcc || '';
-        document.getElementById('address').value = data.address || '';
-        document.getElementById('phone').value = data.phone || '';
-        document.getElementById('sib1').value = data.sib1 || '';
-        document.getElementById('sib1Class').value = data.sib1Class || '';
-        document.getElementById('sib1Sec').value = data.sib1Sec || '';
-        document.getElementById('sib1Adm').value = data.sib1Adm || '';
-        document.getElementById('sib2').value = data.sib2 || '';
-        document.getElementById('sib2Class').value = data.sib2Class || '';
-        document.getElementById('sib2Sec').value = data.sib2Sec || '';
-        document.getElementById('sib2Adm').value = data.sib2Adm || '';
-        document.getElementById('motherTongue').value = data.motherTongue || '';
-        document.getElementById('fatherSign').value = data.fatherSign || '';
-        document.getElementById('motherSign').value = data.motherSign || '';
-        document.getElementById('guardianSign').value = data.guardianSign || '';
-        document.getElementById('date').value = data.date || '';
-
-        document.getElementById('st').checked = data.st || false;
-        document.getElementById('sc').checked = data.sc || false;
-        document.getElementById('obc').checked = data.obc || false;
-        document.getElementById('gen').checked = data.gen || false;
-
-        if (data.studentImage) {
-            studentImage = data.studentImage;
-            document.getElementById('studentPhotoBox').innerHTML = `<img src="${data.studentImage}" alt="Student Photo">`;
-        }
-        if (data.fatherImage) {
-            fatherImage = data.fatherImage;
-            document.getElementById('fatherPhotoBox').innerHTML = `<img src="${data.fatherImage}" alt="Father Photo">`;
-        }
-        if (data.motherImage) {
-            motherImage = data.motherImage;
-            document.getElementById('motherPhotoBox').innerHTML = `<img src="${data.motherImage}" alt="Mother Photo">`;
-        }
-        if (data.guardianImage) {
-            guardianImage = data.guardianImage;
-            document.getElementById('guardianPhotoBox').innerHTML = `<img src="${data.guardianImage}" alt="Guardian Photo">`;
-        }
-        alert('✅ Saved form loaded successfully!');
-    }
-
     function generatePrint() {
-        document.getElementById('printName').innerText = document.getElementById('name').value || '________________';
-        document.getElementById('printClass').innerText = document.getElementById('class').value || '___';
-        document.getElementById('printSection').innerText = document.getElementById('section').value || '___';
-        document.getElementById('printRoll').innerText = document.getElementById('roll').value || '___';
-        document.getElementById('printAdm').innerText = document.getElementById('admNo').value || '________________';
-        document.getElementById('printAadhar').innerText = document.getElementById('aadhar').value || '________________';
-        document.getElementById('printBankAc').innerText = document.getElementById('bankAc').value || '________________';
-        document.getElementById('printIfsc').innerText = document.getElementById('ifsc').value || '________________';
-        document.getElementById('printBankName').innerText = document.getElementById('bankName').value || '________________';
-        document.getElementById('printBranch').innerText = document.getElementById('branch').value || '________________';
-        document.getElementById('printDob').innerText = document.getElementById('dob').value || '________________';
-        document.getElementById('printGender').innerText = document.getElementById('gender').value || '___';
-        document.getElementById('printBpl').innerText = document.getElementById('bpl').value || '________________';
-        document.getElementById('printBlood').innerText = document.getElementById('blood').value || '___';
-        document.getElementById('printReligion').innerText = document.getElementById('religion').value || '________________';
-
-        let cat = [];
-        if (document.getElementById('st').checked) cat.push('ST');
-        if (document.getElementById('sc').checked) cat.push('SC');
-        if (document.getElementById('obc').checked) cat.push('OBC');
-        if (document.getElementById('gen').checked) cat.push('GEN');
-        document.getElementById('printCategory').innerText = cat.join(' / ') || '________________';
-
-        document.getElementById('printFather').innerText = document.getElementById('fatherName').value || '________________';
-        document.getElementById('printFatherOcc').innerText = document.getElementById('fatherOcc').value || '________________';
-        document.getElementById('printMother').innerText = document.getElementById('motherName').value || '________________';
-        document.getElementById('printMotherOcc').innerText = document.getElementById('motherOcc').value || '________________';
-        document.getElementById('printAddress').innerText = document.getElementById('address').value || '________________';
-        document.getElementById('printPhone').innerText = document.getElementById('phone').value || '________________';
-
-        document.getElementById('printSib1').innerText = document.getElementById('sib1').value || '________________';
-        document.getElementById('printSib1Class').innerText = document.getElementById('sib1Class').value || '___';
-        document.getElementById('printSib1Sec').innerText = document.getElementById('sib1Sec').value || '___';
-        document.getElementById('printSib1Adm').innerText = document.getElementById('sib1Adm').value || '___';
-        document.getElementById('printSib2').innerText = document.getElementById('sib2').value || '________________';
-        document.getElementById('printSib2Class').innerText = document.getElementById('sib2Class').value || '___';
-        document.getElementById('printSib2Sec').innerText = document.getElementById('sib2Sec').value || '___';
-        document.getElementById('printSib2Adm').innerText = document.getElementById('sib2Adm').value || '___';
-
-        document.getElementById('printMotherTongue').innerText = document.getElementById('motherTongue').value || '________________';
-        document.getElementById('printDate').innerText = document.getElementById('date').value || '________________';
-        document.getElementById('printFatherSign').innerText = document.getElementById('fatherSign').value || '________________';
-        document.getElementById('printMotherSign').innerText = document.getElementById('motherSign').value || '________________';
-        document.getElementById('printGuardianSign').innerText = document.getElementById('guardianSign').value || '________________';
-
+        const fields = {
+            admNo: document.getElementById('admNo').value, date: document.getElementById('date').value,
+            aadhar: document.getElementById('aadhar').value, bankAc: document.getElementById('bankAc').value,
+            bankName: document.getElementById('bankName').value, ifsc: document.getElementById('ifsc').value,
+            branch: document.getElementById('branch').value, bpl: document.getElementById('bpl').value,
+            fullName: document.getElementById('fullName').value, gender: document.getElementById('gender').value,
+            blood: document.getElementById('blood').value, dob: document.getElementById('dob').value,
+            birthCert: document.getElementById('birthCertificate').value, caste: document.getElementById('casteSubCaste').value,
+            nationality: document.getElementById('nationality').value, motherTongue: document.getElementById('motherTongue').value,
+            homeLang: document.getElementById('homeLanguage').value, lastSchool: document.getElementById('lastSchool').value,
+            lastClass: document.getElementById('lastClass').value, promotedTo: document.getElementById('promotedTo').value,
+            wantedClass: document.getElementById('wantedClass').value, firstLang: document.getElementById('firstLanguage').value,
+            addSub: document.getElementById('additionalSubject').value, fatherName: document.getElementById('fatherName').value,
+            fatherEdu: document.getElementById('fatherEdu').value, fatherOcc: document.getElementById('fatherOcc').value,
+            address: document.getElementById('address').value, motherName: document.getElementById('motherName').value,
+            motherEdu: document.getElementById('motherEdu').value, siblingName: document.getElementById('siblingName').value,
+            siblingClass: document.getElementById('siblingClass').value, siblingName2: document.getElementById('siblingName2').value,
+            siblingClass2: document.getElementById('siblingClass2').value, declDate: document.getElementById('declarationDate').value,
+            guardianSign: document.getElementById('guardianSign').value
+        };
+        for (let k in fields) document.getElementById('print' + k.charAt(0).toUpperCase() + k.slice(1)).innerText = fields[k] || '___________';
         document.getElementById('printStudentPhoto').src = studentImage || '';
         document.getElementById('printFatherPhoto').src = fatherImage || '';
         document.getElementById('printMotherPhoto').src = motherImage || '';
         document.getElementById('printGuardianPhoto').src = guardianImage || '';
-
         document.getElementById('printArea').style.display = 'block';
         document.getElementById('printArea').scrollIntoView({ behavior: 'smooth' });
-
-        // Update print area texts to current language
         updateLanguage(currentLang);
-
-        alert('✅ Print format with images generated!\n\nClick "Print Now" or press Ctrl + P');
+        alert('✅ Print format ready! Click "Print Now" or press Ctrl+P');
     }
 
-    // ====================== LANGUAGE SWITCH (jQuery as provided by you) ======================
     $(document).ready(function() {
-        // Set initial language
         var savedLang = localStorage.getItem('schoolLang') || 'english';
         currentLang = savedLang;
-        $('body').addClass('lang-' + savedLang);
-        $('.lang-btn').removeClass('active');
-        $('.lang-btn[data-lang="' + savedLang + '"]').addClass('active');
         updateLanguage(savedLang);
-
-        // Language button click
+        // Language switcher - using existing lang buttons from original site
         $('.lang-btn').click(function() {
             var lang = $(this).data('lang');
-            $('body').removeClass('lang-english lang-hindi lang-bengali').addClass('lang-' + lang);
-            $('.lang-btn').removeClass('active');
-            $(this).addClass('active');
             localStorage.setItem('schoolLang', lang);
             updateLanguage(lang);
         });
-
-        // Auto-load saved form if exists
-        const saved = localStorage.getItem('jagadishChandraAdmissionForm');
-        if (saved) {
-            if (confirm('A saved form was found. Load it now?')) {
-                loadFormData();
-            }
-        }
     });
 </script>

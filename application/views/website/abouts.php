@@ -197,10 +197,10 @@
         </div>
     </div>
 
-    <div class="content-section">
+    <div class="">
         <div class="container">
             <!-- ABOUT SCHOOL PAGE -->
-            <div id="page-about" class="page-content-block" style="display: none;">
+            <div id="page-about" class="page-content-block" >
                 <div class="row">
                     <div class="col-md-8">
                         <div class="english-block">
@@ -213,22 +213,12 @@ Later the school grew to be a high school getting its recognition in 1943 by the
                             <p>Since 1972, the school reverted to its high school level with dropping of higher secondary scheme by the state govt. but in the same year the school was declared a Bengali medium minority high school by the state govt. with the efforts of the local Bengali speaking community with a view to safeguard and develop its language and culture.</p>
                             <p>The school continues to be managed in the same order till date, contributing glorious achievements in its academic and cultural pursuits.</p>
                         </div>
-                        <div class="hindi-block">
-                            <h3>जगदीश चंद्र हाई स्कूल, घाटशिला में आपका स्वागत है</h3>
-                            <p>1985 में स्थापित, जगदीश चंद्र हाई स्कूल, घाटशिला, एक प्रमुख सीबीएसई संबद्ध संस्थान है जो समग्र शिक्षा के लिए समर्पित है। हमारा मिशन युवा दिमागों को मूल्यों, ज्ञान और कौशल के साथ एक उज्ज्वल भविष्य के लिए तैयार करना है।</p>
-                            <p>हम अत्याधुनिक बुनियादी ढाँचा, स्मार्ट कक्षाएँ, विज्ञान और कंप्यूटर प्रयोगशालाएँ, विशाल पुस्तकालय और खेल सुविधाएँ प्रदान करते हैं। हमारा समर्पित संकाय व्यक्तिगत ध्यान और शैक्षणिक उत्कृष्टता सुनिश्चित करता है।</p>
-                            <p>स्कूल सह-पाठयक्रम गतिविधियों, सांस्कृतिक आदान-प्रदान और सामुदायिक सेवा पर जोर देता है, जो भारतीय मूल्यों में निहित वैश्विक नागरिकों का निर्माण करता है। 100% बोर्ड परिणामों और कई ओलंपियाड उपलब्धियों की विरासत के साथ, हमें अपने पूर्व छात्रों पर गर्व है जो दुनिया भर में उत्कृष्टता प्राप्त कर रहे हैं।</p>
-                        </div>
-                        <div class="bengali-block">
-                            <h3>জগদীশ চন্দ্র হাই স্কুল, ঘাটশিলায় স্বাগতম</h3>
-                            <p>১৯৮৫ সালে প্রতিষ্ঠিত, জগদীশ চন্দ্র হাই স্কুল, ঘাটশিলা, একটি প্রধান সিবিএসই অনুমোদিত প্রতিষ্ঠান যা সামগ্রিক শিক্ষার জন্য নিবেদিত। আমাদের মিশন তরুণ মনকে মূল্যবোধ, জ্ঞান এবং দক্ষতা সহ একটি উজ্জ্বল ভবিষ্যতের জন্য প্রস্তুত করা।</p>
-                            <p>আমরা অত্যাধুনিক অবকাঠামো, স্মার্ট ক্লাসরুম, বিজ্ঞান ও কম্পিউটার ল্যাব, বিশাল গ্রন্থাগার এবং ক্রীড়া সুবিধা প্রদান করি। আমাদের নিবেদিত শিক্ষকমণ্ডলী ব্যক্তিগত মনোযোগ এবং একাডেমিক শ্রেষ্ঠত্ব নিশ্চিত করে।</p>
-                            <p>স্কুল সহ-পাঠ্যক্রমিক কার্যক্রম, সাংস্কৃতিক বিনিময় এবং কমিউনিটি সার্ভিসের উপর জোর দেয়, যা ভারতীয় মূল্যবোধে নিহিত বিশ্ব নাগরিক তৈরি করে। ১০০% বোর্ড ফলাফল এবং অসংখ্য অলিম্পিয়াড অর্জনের উত্তরাধিকার নিয়ে, আমরা আমাদের প্রাক্তন ছাত্রদের নিয়ে গর্বিত যারা বিশ্বজুড়ে উৎকর্ষ অর্জন করছে।</p>
-                        </div>
+                       
+                        
                     </div>
                     <div class="col-md-4">
                         <div class="profile-card text-center">
-                            <img src="<?php echo base_url('assets/images/logo.png'); ?>" width="100px" alt="School" class="profile-img">
+                            <img src="<?php echo base_url('assets/images/about_us.jpeg'); ?>" width="100px" alt="School" class="profile-img">
                             <h4><span class="english-text">Our Campus</span><span class="hindi-text">हमारा परिसर</span><span class="bengali-text">আমাদের ক্যাম্পাস</span></h4>
                             <p><i class="fa fa-map-marker"></i> Ghatsila, East Singhbhum, Jharkhand</p>
                         </div>
@@ -290,96 +280,7 @@ Later the school grew to be a high school getting its recognition in 1943 by the
                             </div>
                         </div>
             <!-- PRESIDENT PAGE -->
-            <div id="page-president" class="page-content-block" style="display: none;">
-                <div class="row">
-                    <div class="col-md-4 text-center">
-                        <img src="https://via.placeholder.com/220x220?text=President+Shri+Ramesh" alt="President" class="profile-img">
-                        <h3><span class="english-text">Tapas Chatterjee</span><span class="hindi-text">श्री तापस चटर्जी</span><span class="bengali-text">শ্রী রামেশ্বর প্রসাদ</span></h3>
-                        <p><span class="english-text">President, School Management Committee</span><span class="hindi-text">अध्यक्ष, विद्यालय प्रबंधन समिति</span><span class="bengali-text">সভাপতি, স্কুল ম্যানেজমেন্ট কমিটি</span></p>
-                        <div class="team-social"><a href="#"><i class="fab fa-linkedin"></i></a><a href="#"><i class="fa fa-envelope"></i></a></div>
-                    </div>
-                    <div class="col-md-8">
-                        <div class="english-block">
-                            <h4>Message from the President</h4>
-                            <p>With over three decades of experience in educational leadership, I envision Jagadish Chandra High School as a beacon of excellence. Our commitment is to provide an environment where every child discovers their potential and develops into a responsible citizen.</p>
-                            <p>The school has grown remarkably under the able guidance of our principal and staff. We continuously upgrade infrastructure, introduce modern teaching aids, and ensure holistic development. I invite parents to partner with us in this noble journey.</p>
-                            <p><strong>Vision:</strong> To create future leaders who are academically sound, morally upright, and socially conscious.</p>
-                        </div>
-                        <div class="hindi-block">
-                            <h4>अध्यक्ष का संदेश</h4>
-                            <p>शैक्षिक नेतृत्व में तीन दशकों से अधिक के अनुभव के साथ, मैं जगदीश चंद्र हाई स्कूल को उत्कृष्टता के प्रतीक के रूप में देखता हूँ। हमारी प्रतिबद्धता एक ऐसा वातावरण प्रदान करना है जहाँ हर बच्चा अपनी क्षमता को खोजे और एक जिम्मेदार नागरिक बने।</p>
-                            <p>स्कूल हमारे प्रधानाचार्य और स्टाफ के सक्षम मार्गदर्शन में उल्लेखनीय रूप से विकसित हुआ है। हम लगातार बुनियादी ढांचे का उन्नयन करते हैं, आधुनिक शिक्षण सहायक सामग्री पेश करते हैं और समग्र विकास सुनिश्चित करते हैं। मैं अभिभावकों को इस महान यात्रा में हमारे साथ भागीदार बनने के लिए आमंत्रित करता हूँ।</p>
-                        </div>
-                        <div class="bengali-block">
-                            <h4>সভাপতির বার্তা</h4>
-                            <p>শিক্ষাগত নেতৃত্বে তিন দশকের বেশি অভিজ্ঞতা নিয়ে, আমি জগদীশ চন্দ্র হাই স্কুলকে শ্রেষ্ঠত্বের আলোকস্তম্ভ হিসাবে দেখি। আমাদের অঙ্গীকার একটি পরিবেশ প্রদান করা যেখানে প্রতিটি শিশু তার সম্ভাবনা আবিষ্কার করে এবং দায়িত্বশীল নাগরিক হয়ে ওঠে।</p>
-                            <p>স্কুল আমাদের প্রধান শিক্ষক এবং কর্মীদের দক্ষ নির্দেশনায় উল্লেখযোগ্যভাবে বেড়েছে। আমরা ক্রমাগত অবকাঠামো আপগ্রেড করি, আধুনিক শিক্ষণ সহায়ক প্রবর্তন করি এবং সামগ্রিক বিকাশ নিশ্চিত করি। আমি অভিভাবকদের এই মহৎ যাত্রায় আমাদের সাথে অংশীদার হওয়ার জন্য আমন্ত্রণ জানাই।</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PRINCIPAL PAGE -->
-            <div id="page-principal" class="page-content-block" style="display: none;">
-                <div class="row">
-                    <div class="col-md-4 text-center">
-                        <img src="https://via.placeholder.com/220x220?text=Principal+Dr.+Anita" alt="Principal" class="profile-img">
-                        <h3><span class="english-text">Dr. Anita Sharma</span><span class="hindi-text">डॉ. अनीता शर्मा</span><span class="bengali-text">ডঃ অনিতা শর্মা</span></h3>
-                        <p>M.Sc., Ph.D. (Education)</p>
-                        <div class="team-social"><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fa fa-envelope"></i></a></div>
-                    </div>
-                    <div class="col-md-8">
-                        <div class="english-block">
-                            <h4>Principal's Desk</h4>
-                            <p>It gives me immense pleasure to lead Jagadish Chandra High School, an institution where every child is valued. Our dedicated team works tirelessly to foster academic excellence, character development, and life skills.</p>
-                            <p>We have implemented innovative pedagogies like experiential learning, digital classrooms, and regular assessments to ensure conceptual clarity. Our students regularly excel in CBSE board exams, science fairs, and sports competitions.</p>
-                            <p>I believe in open communication with parents and community. Together, we can shape a generation that is compassionate, curious, and competent. Let’s join hands for a brighter tomorrow.</p>
-                            <div class="message-quote">"The function of education is to teach one to think intensively and to think critically." – Martin Luther King Jr.</div>
-                        </div>
-                        <div class="hindi-block">
-                            <h4>प्रधानाचार्य का संदेश</h4>
-                            <p>जगदीश चंद्र हाई स्कूल का नेतृत्व करते हुए मुझे अपार खुशी हो रही है, एक ऐसा संस्थान जहाँ हर बच्चे को महत्व दिया जाता है। हमारी समर्पित टीम शैक्षणिक उत्कृष्टता, चरित्र विकास और जीवन कौशल को बढ़ावा देने के लिए अथक प्रयास करती है।</p>
-                            <p>हमने अनुभवात्मक शिक्षण, डिजिटल कक्षाओं और नियमित मूल्यांकन जैसी नवीन शिक्षण विधियों को लागू किया है। हमारे छात्र नियमित रूप से सीबीएसई बोर्ड परीक्षाओं, विज्ञान प्रदर्शनियों और खेल प्रतियोगिताओं में उत्कृष्टता प्राप्त करते हैं।</p>
-                        </div>
-                        <div class="bengali-block">
-                            <h4>প্রধান শিক্ষকের বার্তা</h4>
-                            <p>জগদীশ চন্দ্র হাই স্কুলের নেতৃত্ব দিতে আমার অসীম আনন্দ হচ্ছে, একটি প্রতিষ্ঠান যেখানে প্রতিটি শিশুকে মূল্য দেওয়া হয়। আমাদের নিবেদিত দল একাডেমিক শ্রেষ্ঠত্ব, চরিত্র বিকাশ এবং জীবন দক্ষতা বৃদ্ধির জন্য неустанно কাজ করে।</p>
-                            <p>আমরা অভিজ্ঞতামূলক শিক্ষা, ডিজিটাল ক্লাসরুম এবং নিয়মিত মূল্যায়নের মতো উদ্ভাবনী শিক্ষণ পদ্ধতি বাস্তবায়ন করেছি। আমাদের ছাত্ররা নিয়মিত সিবিএসই বোর্ড পরীক্ষা, বিজ্ঞান মেলা এবং ক্রীড়া প্রতিযোগিতায় উৎকর্ষ অর্জন করে।</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- SECRETARY PAGE -->
-            <div id="page-secretary" class="page-content-block" style="display: none;">
-                <div class="row">
-                    <div class="col-md-4 text-center">
-                        <img src="https://via.placeholder.com/220x220?text=Secretary+Mr.+Mukherjee" alt="Secretary" class="profile-img">
-                        <h3><span class="english-text">Mr. S. K. Mukherjee</span><span class="hindi-text">श्री एस. के. मुखर्जी</span><span class="bengali-text">শ্রী এস. কে. মুখার্জী</span></h3>
-                        <p><span class="english-text">Secretary, Governing Body</span><span class="hindi-text">सचिव, प्रशासनिक निकाय</span><span class="bengali-text">সচিব, গভর্নিং বডি</span></p>
-                    </div>
-                    <div class="col-md-8">
-                        <div class="english-block">
-                            <h4>From the Secretary's Desk</h4>
-                            <p>As Secretary of the school, I ensure smooth administration and policy implementation. Our focus is on transparency, accountability, and quality education for all. We have introduced scholarships for meritorious and underprivileged students.</p>
-                            <p>We are proud of our state-of-the-art digital library, career counseling cell, and teacher training programs. The school follows a child-centric approach with regular parent-teacher meets. We aim to make education inclusive and future-ready.</p>
-                            <p>I invite everyone to visit our campus and experience the positive energy. Let us build a learning community that inspires excellence and empathy.</p>
-                            <p><strong>Contact:</strong> secretary@jchighschool.edu | +91-9876543210</p>
-                        </div>
-                        <div class="hindi-block">
-                            <h4>सचिव का संदेश</h4>
-                            <p>स्कूल के सचिव के रूप में, मैं सुचारू प्रशासन और नीति कार्यान्वयन सुनिश्चित करता हूँ। हमारा ध्यान पारदर्शिता, जवाबदेही और सभी के लिए गुणवत्तापूर्ण शिक्षा पर है। हमने मेधावी और वंचित छात्रों के लिए छात्रवृत्ति शुरू की है।</p>
-                            <p>हमें अपनी अत्याधुनिक डिजिटल लाइब्रेरी, करियर काउंसलिंग सेल और शिक्षक प्रशिक्षण कार्यक्रमों पर गर्व है। स्कूल नियमित अभिभावक-शिक्षक बैठकों के साथ बाल-केंद्रित दृष्टिकोण का पालन करता है। हम शिक्षा को समावेशी और भविष्य के लिए तैयार बनाने का लक्ष्य रखते हैं।</p>
-                        </div>
-                        <div class="bengali-block">
-                            <h4>সচিবের বার্তা</h4>
-                            <p>স্কুলের সচিব হিসাবে, আমি মসৃণ প্রশাসন এবং নীতি বাস্তবায়ন নিশ্চিত করি। আমাদের ফোকাস স্বচ্ছতা, জবাবদিহিতা এবং সবার জন্য মানসম্মত শিক্ষার উপর। আমরা মেধাবী ও সুবিধাবঞ্চিত ছাত্রদের জন্য বৃত্তি চালু করেছি।</p>
-                            <p>আমরা আমাদের অত্যাধুনিক ডিজিটাল লাইব্রেরি, ক্যারিয়ার কাউন্সেলিং সেল এবং শিক্ষক প্রশিক্ষণ কর্মসূচিতে গর্বিত। স্কুল নিয়মিত অভিভাবক-শিক্ষক মিটিং সহ শিশু-কেন্দ্রিক পদ্ধতি অনুসরণ করে। আমরা শিক্ষাকে অন্তর্ভুক্তিমূলক এবং ভবিষ্যত-প্রস্তুত করার লক্ষ্য রাখি।</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+            
     </div>
 
     <!-- footer area same as original -->
@@ -391,65 +292,4 @@ Later the school grew to be a high school getting its recognition in 1943 by the
     <script src="https://rcsindia.co.in/newcbse19/js/jquery.slicknav.min.js"></script>
     <script src="https://rcsindia.co.in/newcbse19/js/main.js"></script>
 
-    <script>
-        $(document).ready(function(){
-            // language persistence
-            var savedLang = localStorage.getItem('schoolLang');
-            if(savedLang && (savedLang === 'english' || savedLang === 'hindi' || savedLang === 'bengali')){
-                $('body').removeClass('lang-english lang-hindi lang-bengali').addClass('lang-'+savedLang);
-                $('.lang-btn').removeClass('active');
-                $('.lang-btn[data-lang="'+savedLang+'"]').addClass('active');
-            } else { $('body').addClass('lang-english'); $('.lang-btn[data-lang="english"]').addClass('active');}
-            $('.lang-btn').click(function(){
-                var lang = $(this).data('lang');
-                $('body').removeClass('lang-english lang-hindi lang-bengali').addClass('lang-'+lang);
-                $('.lang-btn').removeClass('active'); $(this).addClass('active');
-                localStorage.setItem('schoolLang', lang);
-            });
-            
-            // Routing simulation: detect which page based on URL filename or hash
-            function showPage(pageId){
-                $('.page-content-block').hide();
-                $('#'+pageId).show();
-                // update title and breadcrumb
-                var titles = {
-                    'page-about': { en:'About Our School', hi:'हमारा विद्यालय', bn:'আমাদের স্কুল' },
-                    'page-president': { en:'President', hi:'अध्यक्ष', bn:'সভাপতি' },
-                    'page-principal': { en:'Principal', hi:'प्रधानाचार्य', bn:'প্রধান শিক্ষক' },
-                    'page-secretary': { en:'Secretary', hi:'सचिव', bn:'সচিব' }
-                };
-                var t = titles[pageId];
-                if(t){
-                    $('#pageMainTitle .english-text').text(t.en);
-                    $('#pageMainTitle .hindi-text').text(t.hi);
-                    $('#pageMainTitle .bengali-text').text(t.bn);
-                    $('#breadcrumbCurrent .english-text').text(t.en);
-                    $('#breadcrumbCurrent .hindi-text').text(t.hi);
-                    $('#breadcrumbCurrent .bengali-text').text(t.bn);
-                }
-            }
-            
-            var path = window.location.pathname.split('/').pop();
-            if(path.includes('about-school') || path.includes('about')) showPage('page-about');
-            else if(path.includes('president')) showPage('page-president');
-            else if(path.includes('principal')) showPage('page-principal');
-            else if(path.includes('secretary')) showPage('page-secretary');
-            else showPage('page-about'); // default
-            
-            // handle navigation clicks from menu to simulate separate pages
-            $('a[href="about-school.html"]').click(function(e){ e.preventDefault(); window.history.pushState({}, '', 'about-school.html'); showPage('page-about'); });
-            $('a[href="president.html"]').click(function(e){ e.preventDefault(); window.history.pushState({}, '', 'president.html'); showPage('page-president'); });
-            $('a[href="principal.html"]').click(function(e){ e.preventDefault(); window.history.pushState({}, '', 'principal.html'); showPage('page-principal'); });
-            $('a[href="secretary.html"]').click(function(e){ e.preventDefault(); window.history.pushState({}, '', 'secretary.html'); showPage('page-secretary'); });
-            $('a[href="index.html"]').click(function(e){ e.preventDefault(); window.history.pushState({}, '', 'index.html'); showPage('page-about'); });
-            
-            // also handle hash or other inner links
-            $(document).on('click', '.mainmenu ul li a', function(){
-                var href = $(this).attr('href');
-                if(href && href.includes('about-school')){ showPage('page-about'); }
-                if(href && href.includes('president')){ showPage('page-president'); }
-                if(href && href.includes('principal')){ showPage('page-principal'); }
-                if(href && href.includes('secretary')){ showPage('page-secretary'); }
-            });
-        });
-    </script>
+    

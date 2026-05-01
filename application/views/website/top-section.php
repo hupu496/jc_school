@@ -19,14 +19,16 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <!-- Google Fonts for better multilingual support -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <style>
     /* ========== 3D LANGUAGE BUTTONS CUSTOMIZATION ========== */
-         body {
-            font-family: 'Poppins', 'Hind Siliguri', sans-serif;
+     @import url('https://fonts.googleapis.com/css2?family=Arial:wght@400;700&display=swap');
+       body {
+            font-family: 'Arial', sans-serif;
+           
             background: linear-gradient(135deg, #f0f2f5 0%, #e8ecf1 100%);
-            min-height: 100vh;
         }
+    
     .lang-selector {
         display: flex;
         gap: 12px;
@@ -413,6 +415,13 @@
     font-weight: 500;
     display: inline-block;
 }
+  .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
 
 .designer-badge a {
     color: #fff;
@@ -440,28 +449,32 @@
                 <div class="row">
                     <div class="col-md-6 col-sm-6 col-xs-12">
                         <div class="header-top-left">
-                        <div class=""><a href="<?php echo base_url('/'); ?>"><img src="<?php echo base_url('assets\images\logo.png'); ?>" alt="School Logo" width="100px"/></a><span style="color:white; font-weight:500; font-size:22px; text-shadow: 2px 2px 6px rgba(0,0,0,0.9);">JAGADISH CHANDRA HIGH SCHOOL</span></div>
-                  
-                        </div>
+                            <div class="row">
+                                <div class="col-md-4 col-xs-12"><a href="<?php echo base_url('/'); ?>"><img src="<?php echo base_url('assets\images\logo.png'); ?>" alt="School Logo" width="100px"/></a></div>
+                                <div class="col-md-8 col-xs-12"><span style="color:white; font-weight:500; font-size:22px; text-shadow: 2px 2px 6px rgba(0,0,0,0.9);">JAGADISH CHANDRA HIGH SCHOOL</span><br><span style="color:#FFD700; font-size:12px; font-weight:400; margin-top:3px; letter-spacing:0.5px;">  (State Government Aided Linguistic Minority Co-Education School)</span></div>
+                            </div>
+                        <!-- <div class=""><a href="<?php echo base_url('/'); ?>"><img src="<?php echo base_url('assets\images\logo.png'); ?>" alt="School Logo" width="100px"/></a><span style="color:white; font-weight:500; font-size:22px; text-shadow: 2px 2px 6px rgba(0,0,0,0.9);">JAGADISH CHANDRA HIGH SCHOOL</span><br><span style="color:#FFD700; font-size:12px; font-weight:400; margin-top:3px; letter-spacing:0.5px;">  (State Government Aided Linguistic Minority Co-Education School)</span></div>-->
+                            
+                        </div> 
                     </div>
                     <div class="col-md-6 col-sm-6 col-xs-12">
                         <div class="header-top-right text-right">
                             <ul>
-                                <li><a href="#"><i class="fa fa-user"></i> <span class="english-text">Admin</span><span class="hindi-text">प्रशासक</span><span class="bengali-text">প্রশাসক</span></a></li>
+                                <!-- <li><a href="#"><i class="fa fa-user"></i> <span class="english-text">Admin</span><span class="hindi-text">प्रशासक</span><span class="bengali-text">প্রশাসক</span></a></li> -->
                                 <li><a href="mailto:j.c.hs.ghatsila.e.singhbhum@gmail.com"><i class="fa fa-envelope-o"></i> j.c.hs.ghatsila.e.singhbhum@gmail.com</a></li>
                                 <li><a href="tel:+919234676905"><i class="fa fa-phone"></i>+91 9234676905</a></li>
                                 <li>
                                     <div class="lang-selector">
-                                        <button class="lang-btn bengali-hover" data-lang="bengali">🇧🇩 বাংলা</button>
+                                        <button class="lang-btn bengali-hover" data-lang="bengali">🇮🇳 বাংলা</button>
                                         <button class="lang-btn  green-hover" data-lang="hindi">🇮🇳 हिंदी</button>
-                                        <button class="lang-btn" data-lang="english">🇬🇧 EN</button>
+                                        <button class="lang-btn" data-lang="english">🇮🇳 EN</button>
                                     </div>
                                 </li>
                              
-                                    <li><a href="#" ><img src="<?php echo base_url('assets/facebook.png'); ?>" style="border:2px solid #fff;border-radius:100px;" alt=""></a></li>
+                                    <!-- <li><a href="#" ><img src="<?php echo base_url('assets/facebook.png'); ?>" style="border:2px solid #fff;border-radius:100px;" alt=""></a></li>
                                     <li><a href="#"><img src="<?php echo base_url('assets/instagram.png'); ?>" style="border:2px solid #fff;border-radius:100px;" alt=""></a></li>
                                     <li><a href="#"><img src="<?php echo base_url('assets/linkedin.png'); ?>" style="border:2px solid #fff;border-radius:100px;" alt=""></a></li>
-                                    <li><a href="#"><img src="<?php echo base_url('assets/youtube.png'); ?>" style="border:2px solid #fff;border-radius:100px;" alt=""></a></li>
+                                    <li><a href="#"><img src="<?php echo base_url('assets/youtube.png'); ?>" style="border:2px solid #fff;border-radius:100px;" alt=""></a></li> -->
                                   
                               
                             </ul>
@@ -495,9 +508,9 @@
                                 <li><a href="#"><span class="english-text">About Us</span><span class="hindi-text">हमारे बारे में</span><span class="bengali-text">আমাদের সম্পর্কে</span> &raquo;</a>
                                     <ul>
                                         <li><a href="<?php echo base_url('/our_school'); ?>"><span class="english-text">About Our School</span><span class="hindi-text">हमारा विद्यालय</span><span class="bengali-text">আমাদের স্কুল</span></a></li>
-                                        <li><a href="<?php echo base_url('/officemember/president'); ?>"><span class="english-text">President</span><span class="hindi-text">प्रबंधन समिति</span><span class="bengali-text">স্কুল ম্যানেজমেন্ট</span></a></li>
+                                        <li><a href="<?php echo base_url('/officemember/president'); ?>"><span class="english-text">School President</span><span class="hindi-text">प्रबंधन समिति</span><span class="bengali-text">স্কুল ম্যানেজমেন্ট</span></a></li>
                                          <li><a href="<?php echo base_url('/officemember/secretary'); ?>"><span class="english-text">Secretary</span><span class="hindi-text">अध्यक्ष</span><span class="bengali-text">চেয়ারম্যান</span></a></li>
-                                        <li><a href="<?php echo base_url('/officemember/principal'); ?>"><span class="english-text">Principal</span><span class="hindi-text">प्रधानाचार्य</span><span class="bengali-text">প্রধান শিক্ষক</span></a></li>
+                                        <li><a href="<?php echo base_url('/officemember/principal'); ?>"><span class="english-text">HeadMaster</span><span class="hindi-text">प्रधानाचार्य</span><span class="bengali-text">প্রধান শিক্ষক</span></a></li>
                                        
                                         <li><a href="<?php echo base_url('/officemember/man_commite'); ?>"><span class="english-text">Management Committee</span><span class="hindi-text">प्रबंध समिति</span><span class="bengali-text">ব্যবস্থাপনা কমিটি</span></a></li>
                                     </ul>
@@ -506,7 +519,9 @@
                                     <ul>
                                         <li><a href="<?php echo base_url('admission_guide'); ?>"><span class="english-text">Admission Form</span><span class="hindi-text">प्रवेश फॉर्म</span><span class="bengali-text">ভর্তির ফর্ম</span></a></li>
                                         <li><a href="<?php echo base_url('displine'); ?>"><span class="english-text">Discipline</span><span class="hindi-text">अनुशासन</span><span class="bengali-text">শৃঙ্খলা</span></a></li>
-                                        <li><a href="#"><span class="english-text">Admission Period</span><span class="hindi-text">प्रवेश अवधि</span><span class="bengali-text">ভর্তির সময়কাল</span></a></li>
+                                        <li><a href="<?php echo base_url('admission_period'); ?>"><span class="english-text">Admission Period</span><span class="hindi-text">प्रवेश अवधि</span><span class="bengali-text">ভর্তির সময়কাল</span></a></li>
+                                        <li><a href="<?php echo base_url('registration'); ?>"><span class="english-text">Registration Form</span><span class="hindi-text">प्रवेश अवधि</span><span class="bengali-text">ভর্তির সময়কাল</span></a></li>
+                                        <!-- <li><a href="<?php echo base_url('fee_stru'); ?>"><span class="english-text">Fee Structure</span><span class="hindi-text">प्रवेश अवधि</span><span class="bengali-text">ভর্তির সময়কাল</span></a></li> -->
                                     </ul>
                                 </li>
                                <li>
@@ -520,16 +535,16 @@
                                     </ul>
                                 </li>
 
-</li>
-                               
+</li>                        
                                 <li><a href="#"><span class="english-text">Achievements</span><span class="hindi-text">उपलब्धियाँ</span><span class="bengali-text">অর্জন</span> &raquo;</a>
                                     <ul class="right">
-                                        
+                                        <li><a href="<?php echo base_url('achievements/Auditorium'); ?>"><span class="english-text">Auditorium</span><span class="hindi-text">ओलंपियाड</span><span class="bengali-text">অলিম্পিয়াড</span></a></li>
+                                        <li><a href="<?php echo base_url('achievements/Science'); ?>"><span class="english-text">Science Lab</span><span class="hindi-text">खेलकूद</span><span class="bengali-text">খেলা ও ক্রীড়া</span></a></li>
+                                        <li><a href="<?php echo base_url('achievements/Annex'); ?>"><span class="english-text">Plus 2 Annex</span><span class="hindi-text">अन्य पाठ्यक्रम</span><span class="bengali-text">অন্যান্য পাঠ্যক্রম</span></a></li>
                                         <li><a href="<?php echo base_url('achievements/board_result'); ?>"><span class="english-text">Board Results</span><span class="hindi-text">बोर्ड परिणाम</span><span class="bengali-text">বোর্ড ফলাফল</span></a></li>
-                                        <!-- <li><a href="#"><span class="english-text">Olympiad</span><span class="hindi-text">ओलंपियाड</span><span class="bengali-text">অলিম্পিয়াড</span></a></li> -->
-                                        <li><a href="#"><span class="english-text">Game & Sports</span><span class="hindi-text">खेलकूद</span><span class="bengali-text">খেলা ও ক্রীড়া</span></a></li>
-                                        <li><a href="#"><span class="english-text">Other curriculum</span><span class="hindi-text">अन्य पाठ्यक्रम</span><span class="bengali-text">অন্যান্য পাঠ্যক্রম</span></a></li>
                                     </ul>
+                                        
+                                        
                                 </li>
                                <li><a href="<?php echo base_url('/alumini'); ?>"><span class="english-text">Alumni</span><span class="hindi-text">पूर्व छात्र</span><span class="bengali-text">প্রাক্তন ছাত্র</span></a></li>
                                 <li><a href="<?php echo base_url('/affiliation'); ?>"><span class="english-text">Affiliation</span><span class="hindi-text">संबद्धता</span><span class="bengali-text">অনুমোদন</span></a></li>

@@ -334,7 +334,7 @@
     </style>
     <div class="affiliation-header">
         <h1>🏛️ JAGADISH CHANDRA HIGH SCHOOL</h1>
-        <p>Affiliation & Recognition Details</p>
+        <p>Jharkhand Academic Council, Ranchi</p>
         <div class="udise-badge">
             <i class="fas fa-qrcode"></i> UDISE CODE: 20180615501
         </div>
@@ -360,7 +360,7 @@
             </div>
             <div class="stat-card">
                 <i class="fas fa-users"></i>
-                <div class="stat-number">600+</div>
+                <div class="stat-number">900+</div>
                 <div class="stat-label">Enrolled Students</div>
             </div>
         </div>
@@ -488,7 +488,7 @@
                     </tr>
                     <tr>
                         <td>Management Type</td>
-                        <td>Private Aided - Minority (Bengali)</td>
+                        <td>State Government Aided-Minority (Bengali)</td>
                     </tr>
                     <tr>
                         <td>School Type</td>
@@ -512,7 +512,7 @@
                     <div class="timeline-year">1927-28</div>
                     <div class="timeline-content">
                         <h4>School Established</h4>
-                        <p>Started as a middle school named "Ghatsila School" by local Bengali community.</p>
+                        <p>Started as a middle school named "J.C. High School" by local Bengali community.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
