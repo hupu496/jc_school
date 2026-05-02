@@ -81,6 +81,18 @@
 </style>
 
 <script>
+  
+  $(document).ready(function(){
+      $('#welcomeModal').modal('show');
+  });
+
+  $(document).ready(function(){
+      if (!localStorage.getItem("modalShown")) {
+          $('#welcomeModal').modal('show');
+          localStorage.setItem("modalShown", "true");
+      }
+  });
+
     (function() {
         // Visitor counter functionality - increments on each page reload
         // Starting from 9999 as requested
@@ -174,7 +186,7 @@
                         <!-- Designer badge with professional credit, icon + link, deep blue + yellow integration -->
                         <span class="designer-badge">
                             <i class="fas fa-code-branch"></i> 
-                            <span style="letter-spacing: 0.5px;">Designed with <i class="fas fa-heart" style="color:#F9B81B; font-size: 0.7rem;"></i> by</span> 
+                            <span style="letter-spacing: 0.5px;">Designed<i class="fas fa-heart" style="color:#F9B81B; font-size: 0.7rem;"></i> by</span> 
                             <a href="https://comsysit.in" target="_blank" rel="noopener noreferrer">
                                 <i class="fas fa-cogs"></i> ComSys IT
                             </a>

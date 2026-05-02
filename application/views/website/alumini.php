@@ -353,7 +353,9 @@
     <div class="col-md-12 mb-3 px-2">
         <input type="text" class="form-control" id="address" placeholder="Address">
     </div>
-
+   <div class="col-md-12">
+    <small><b>Note:</b>I hereby declare that i am alumni of JCHS Ghatsila and all information is provide by me is or true and valid.</small>
+   </div>
 </div>
                     <button type="submit" class="btn btn-primary mt-3" style="font-size:15px;">
                         Submit
@@ -371,6 +373,16 @@
 
 <script src="https://rcsindia.co.in/newcbse19/js/bootstrap.min.js"></script>
 <script>
+    function maskPhone(phone) {
+    if (!phone) return '';
+    return phone.slice(0, -5).replace(/./g, 'x') + phone.slice(-5);
+}
+
+function maskEmail(email) {
+    if (!email) return '';
+    let parts = email.split('@');
+    return 'xxxxx@' + parts[1];
+}
     $('#phoneNo').on('input', function () {
     this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10);
 });
@@ -504,8 +516,8 @@ document.getElementById("batchFilter").addEventListener("change", function() {
                             <div class="alumni-batch"><i class="far fa-calendar-alt me-1"></i> <span class="english-text">Batch</span><span class="hindi-text">बैच</span><span class="bengali-text">ব্যাচ</span> ${escapeHtml(alumni.batch)}</div>
                             <div class="detail-item"><i class="fas fa-briefcase"></i> ${escapeHtml(alumni.profession)}</div>
                             <div class="detail-item"><i class="fas fa-map-marker-alt"></i> ${escapeHtml(alumni.city)}, ${escapeHtml(alumni.state)}</div>
-                            <div class="detail-item"><i class="fas fa-envelope"></i> ${escapeHtml(alumni.email)}</div>
-                            <div class="detail-item"><i class="fas fa-phone-alt"></i> ${escapeHtml(alumni.phone_no)}</div>
+                            <div class="detail-item"><i class="fas fa-envelope"></i>  ${maskEmail(escapeHtml(alumni.email))}</div>
+                            <div class="detail-item"><i class="fas fa-phone-alt"></i> ${maskPhone(escapeHtml(alumni.phone_no))}</div>
                             ${alumni.address ? `<div class="detail-item"><i class="fas fa-home"></i> ${escapeHtml(alumni.address)}</div>` : ''}
                             <hr class="my-3">
                             <div class="d-flex justify-content-between align-items-center"><small class="text-muted"><i class="fas fa-graduation-cap"></i> JCHS</small><span class="badge bg-light text-dark rounded-pill">#Alumni</span></div>

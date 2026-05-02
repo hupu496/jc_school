@@ -250,12 +250,8 @@
         transform: translateY(-50%);
         font-size: 12px;
     }
-</style>
-<style>
-        /* Trilingual styles */
-        body {
-            font-family: 'Poppins', 'Hind Siliguri', sans-serif;
-        }
+
+       
         .lang-selector {
             display: flex;
             gap: 8px;
@@ -406,6 +402,7 @@
     margin: 0;
     box-shadow: 0 0 8px 1px #999;
 }
+
 .designer-badge {
     background: #222;
     color: #fff;
@@ -433,6 +430,108 @@
 /* Hover effect */
 .designer-badge a:hover {
     color: yellow;
+}
+.blink-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    background: linear-gradient(45deg, #007bff, #5dade2);
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    animation: blinkBlue 1.5s infinite;
+}
+
+/* Blinking soft blue effect */
+@keyframes blinkBlue {
+    0% {
+        box-shadow: 0 0 5px rgba(0,123,255,0.4);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(0,123,255,0.9);
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(0,123,255,0.4);
+    }
+}
+
+/* Hover effect (surround glow + click feel) */
+/* Modal Background Blur */
+
+
+/* Glass Effect Modal */
+.custom-modal {
+   
+    border-radius: 20px;
+    padding: 20px;
+    border: none;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 30px rgba(0,123,255,0.3);
+    animation: popupFade 0.5s ease;
+}
+
+
+/* Image Styling */
+.modal-img {
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,123,255,0.4);
+}
+
+/* Title */
+.modal-title {
+    font-weight: 600;
+    color: #007bff;
+}
+
+/* Text */
+.modal-text {
+    color: #333;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+/* Close Button */
+.custom-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: #fff;
+    border: none;
+    font-size: 20px;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+/* Button (Improved) */
+.blink-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 16px;
+    color: #fff;
+    background: linear-gradient(45deg, #007bff, #5dade2);
+    border-radius: 30px;
+    text-decoration: none;
+    animation: pulseGlow 1.5s infinite;
+    transition: 0.3s;
+}
+
+/* Glow Animation */
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 5px rgba(0,123,255,0.5); }
+    50% { box-shadow: 0 0 25px rgba(0,123,255,1); }
+    100% { box-shadow: 0 0 5px rgba(0,123,255,0.5); }
+}
+
+/* Hover Effect */
+.blink-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 35px rgba(0,123,255,1);
+    color: #fff;
 }
     </style>
 </head>
@@ -501,7 +600,8 @@
 
     </div>
 </div>
-                    <div class="col-md-8 col-sm-9 hidden-xs">
+
+                    <div class="col-md-10 col-sm-9 hidden-xs">
                         <div class="mainmenu text-right text-bold" style="font-weight:800;">
                             <ul id="navigation">
                                 <li class=""><a href="<?php echo base_url('/'); ?>"><span class="english-text">Home</span><span class="hindi-text">मुखपृष्ठ</span><span class="bengali-text">হোম</span></a></li>

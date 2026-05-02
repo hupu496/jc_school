@@ -131,6 +131,44 @@
         </div>
     </div>
     <!-- course-area end -->
+     <!-- Modal -->
+      <!-- Auto Show Modal -->
+<div class="modal fade" id="welcomeModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content custom-modal">
+
+      <!-- Close Button -->
+         <div class="modal-header">
+         <h3 style="text-align:center;">Jagadish Chandra High School</h3>
+        <button type="button" class="custom-close" data-dismiss="modal">&times;</button>
+        <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+      </div>
+      
+
+      <div class="modal-body text-center">
+
+        <!-- Image -->
+        <img src="<?php echo base_url('assets/images/juble.png'); ?>" 
+             class="img-fluid modal-img" alt="Celebration">
+
+        <!-- Heading -->
+        <h4 class="modal-title mt-2">🎉 100 Years Celebration 🎉</h4>
+
+        <!-- Text -->
+        <p class="modal-text">
+          For Register participation in 100 years celebrations. Be part of the legacy!
+        </p>
+
+        <!-- Button -->
+        <a href="<?php echo base_url('alumini'); ?>" class="blink-btn">
+          Register Now
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+</div>
 
     
    
