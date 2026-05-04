@@ -327,11 +327,11 @@ a#scrollUp:hover{
 	font-size: 14px;
 	margin: 0;
 	padding: 10px 0;
-	position: absolute;
+	/* position: absolute; */
 	right: 15px;
-	top: 89px;
-	width: 270px;
-	z-index: 9999;
+	top: 37px;
+	width: 280px;
+	
 }
 .responsive-menu-wrap .slicknav_nav a:hover {
   background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
