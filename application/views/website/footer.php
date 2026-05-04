@@ -28,13 +28,14 @@
                                 <li><a href="<?php echo base_url('guideline/all_guide'); ?>"><span class="english-text">Guideline Details</span><span class="hindi-text">पाठ्यक्रम विवरण</span><span class="bengali-text">কোর্সের বিবরণ</span></a></li>
                                 <li><a href="<?php echo base_url('gallery'); ?>"><span class="english-text">Events Gallery</span><span class="hindi-text">कार्यक्रम गैलरी</span><span class="bengali-text">ইভেন্ট গ্যালারি</span></a></li>
                                 <li><a href="<?php echo base_url('guideline/teacher');?>"><span class="english-text">Teachers Details</span><span class="hindi-text">शिक्षक विवरण</span><span class="bengali-text">শিক্ষকদের বিবরণ</span></a></li>
+                                  <li><a href="<?php echo base_url('contact_us');?>"><span class="english-text">Contact Us</span><span class="hindi-text">शिक्षक विवरण</span><span class="bengali-text">শিক্ষকদের বিবরণ</span></a></li>
                             </ul>
                         </div>
                     </div>
 <div class="col-md-3 col-sm-6 col-xs-12">
     <div class="footer-widget">
         <h2>
-            <span class="english-text">Visitor Count</span>
+            <span class="english-text">Last Digit</span>
             <span class="hindi-text">आगंतुक संख्या</span>
             <span class="bengali-text">দর্শনার্থী সংখ্যা</span>
         </h2>

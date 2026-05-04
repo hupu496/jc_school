@@ -70,13 +70,16 @@
             border: 1px solid rgba(0,0,0,0.05);
             box-shadow: 0 8px 20px rgba(0,0,0,0.02);
             height: 100%;
+            display: flex;
+            flex-direction: column;
         }
         .alumni-card:hover {
             transform: translateY(-6px);
             box-shadow: 0 20px 30px -12px rgba(0,0,0,0.15);
             border-color: #cbd5e1;
         }
-        .card-body-alumni { padding: 1.5rem; }
+        .card-body-alumni { padding: 1.5rem;
+     flex: 1; }
         .avatar-icon {
             width: 60px;
             height: 60px;
@@ -230,6 +233,25 @@
     max-height: 100px;
     overflow-y: auto;
 }
+ /* Certificate Badge */
+        .certificate-badge {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #ffd700, #ff8c00);
+            padding: 12px 20px;
+            border-radius: 50px;
+            color: #1a4a6f;
+            font-weight: 700;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+
+        .certificate-badge:hover {
+            transform: scale(1.05);
+        }
 
     </style>
 <!-- Alumni Header with Language Selector -->
@@ -273,14 +295,16 @@
 
             </div>
          
-    <div class="col-md-2"><button class="btn btn-primary-alumni " style="margin-top:10px;"
-        data-toggle="modal"
-        data-target="#alumniModal">
-    ➕ Add Alumni
-</button></div>
-           
-        </div>
-    </div>
+            <div class="col-md-2">
+                <button class="btn btn-primary-alumni " style="margin-top:10px;"
+                data-toggle="modal"
+                data-target="#alumniModal">
+            ➕ Add Alumni
+                </button></div>
+            
+                
+                </div>
+            </div>
 
     <!-- Alumni Cards Grid -->
     <div id="alumniGrid" class="row g-4">
@@ -293,9 +317,10 @@
         <div class="modal-content">
 
             <div class="modal-header">
-                <h5 class="modal-title">
+                <h5 class="modal-title text-center">
                     <i class="fas fa-user-graduate"></i> Alumni Registration
                 </h5>
+                <a href="<?php echo base_url('/edit_alumini'); ?>" class="btn btn-primary-alumni">Edit Alumni</a>
                 <button type="button" class="close" data-dismiss="modal">
                     &times;
                 </button>
@@ -367,12 +392,29 @@
         </div>
     </div>
 </div>
+
+ <div class="certificate-badge" onclick="shareOnWhatsApp()">
+    <i class="fas fa-share"></i> Share Alumni Page
+</div>
+
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 
 <script src="https://rcsindia.co.in/newcbse19/js/bootstrap.min.js"></script>
 <script>
+  function shareOnWhatsApp() {
+    var url = window.location.href; // ✅ current page URL
+    var text = "Check this page: " + url;
+
+    var isMobile = /iPhone|Android/i.test(navigator.userAgent);
+
+    var whatsappUrl = isMobile
+        ? "https://api.whatsapp.com/send?text=" + encodeURIComponent(text)
+        : "https://web.whatsapp.com/send?text=" + encodeURIComponent(text);
+
+    window.open(whatsappUrl, '_blank');
+}
     function maskPhone(phone) {
     if (!phone) return '';
     return phone.slice(0, -5).replace(/./g, 'x') + phone.slice(-5);
@@ -505,28 +547,41 @@ document.getElementById("batchFilter").addEventListener("change", function() {
             container.innerHTML = `<div class="col-12"><div class="empty-state"><i class="fas fa-users-slash fa-3x text-secondary mb-3"></i><h5><span class="english-text">No alumni found</span><span class="hindi-text">कोई पूर्व छात्र नहीं मिला</span><span class="bengali-text">কোন প্রাক্তন ছাত্র পাওয়া যায়নি</span></h5><p class="text-muted"><span class="english-text">Try different filters or join as alumni!</span><span class="hindi-text">अलग फ़िल्टर आज़माएं या पूर्व छात्र के रूप में जुड़ें!</span><span class="bengali-text">ভিন্ন ফিল্টার চেষ্টা করুন বা প্রাক্তন হিসেবে যোগ দিন!</span></p></div></div>`;
             return;
         }
-        let cardsHtml = "";
-        filtered.forEach(alumni => {
-            cardsHtml += `
-                <div class="col-md-6 col-lg-4">
-                    <div class="alumni-card">
-                        <div class="card-body-alumni">
-                            <div class="avatar-icon"><i class="fas fa-user-circle"></i></div>
-                            <h3 class="alumni-name">${escapeHtml(alumni.name)}</h3>
-                            <div class="alumni-batch"><i class="far fa-calendar-alt me-1"></i> <span class="english-text">Batch</span><span class="hindi-text">बैच</span><span class="bengali-text">ব্যাচ</span> ${escapeHtml(alumni.batch)}</div>
-                            <div class="detail-item"><i class="fas fa-briefcase"></i> ${escapeHtml(alumni.profession)}</div>
-                            <div class="detail-item"><i class="fas fa-map-marker-alt"></i> ${escapeHtml(alumni.city)}, ${escapeHtml(alumni.state)}</div>
-                            <div class="detail-item"><i class="fas fa-envelope"></i>  ${maskEmail(escapeHtml(alumni.email))}</div>
-                            <div class="detail-item"><i class="fas fa-phone-alt"></i> ${maskPhone(escapeHtml(alumni.phone_no))}</div>
-                            ${alumni.address ? `<div class="detail-item"><i class="fas fa-home"></i> ${escapeHtml(alumni.address)}</div>` : ''}
-                            <hr class="my-3">
-                            <div class="d-flex justify-content-between align-items-center"><small class="text-muted"><i class="fas fa-graduation-cap"></i> JCHS</small><span class="badge bg-light text-dark rounded-pill">#Alumni</span></div>
-                        </div>
+       let cardsHtml = "";
+
+filtered.forEach((alumni, index) => {
+
+    // ✅ Start a new row every 3 items
+    if (index % 3 === 0) {
+        cardsHtml += '<div class="clearfix visible-md-block visible-lg-block"></div>';
+    }
+
+    cardsHtml += `
+        <div class="col-md-4 col-lg-4">
+            <div class="alumni-card">
+                <div class="card-body-alumni">
+                    <div class="avatar-icon"><i class="fas fa-user-circle"></i></div>
+                    <h3 class="alumni-name">${escapeHtml(alumni.name)}</h3>
+                    <div class="alumni-batch">
+                        <i class="far fa-calendar-alt me-1"></i> Batch ${escapeHtml(alumni.batch)}
+                    </div>
+                    <div class="detail-item"><i class="fas fa-briefcase"></i> ${escapeHtml(alumni.profession)}</div>
+                    <div class="detail-item"><i class="fas fa-map-marker-alt"></i> ${escapeHtml(alumni.city)}, ${escapeHtml(alumni.state)}</div>
+                    <div class="detail-item"><i class="fas fa-envelope"></i> ${maskEmail(escapeHtml(alumni.email))}</div>
+                    <div class="detail-item"><i class="fas fa-phone-alt"></i> ${maskPhone(escapeHtml(alumni.phone_no))}</div>
+                    ${alumni.address ? `<div class="detail-item"><i class="fas fa-home"></i> ${escapeHtml(alumni.address)}</div>` : ''}
+                    <hr class="my-3">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <small class="text-muted"><i class="fas fa-graduation-cap"></i> JCHS</small>
+                        <span class="badge bg-light text-dark rounded-pill">#Alumni</span>
                     </div>
                 </div>
-            `;
-        });
-        container.innerHTML = cardsHtml;
+            </div>
+        </div>
+    `;
+});
+
+container.innerHTML = cardsHtml;
     }
     function getBatchValue() {
 

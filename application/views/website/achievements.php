@@ -791,13 +791,13 @@
         </div>
         <div class="col-md-6 facility-details">
             <h2><i class="fas fa-school-circle-check me-2"></i> Plus 2 Annex – Higher Secondary Wing</h2>
-            <p>A dedicated four-classroom higher secondary wing for grades 11 and 12 is built within the school campus in association with the <strong>Lily Foundation</strong>, adhering to JAC specification. This extension offers seamless transition from secondary to senior secondary education.</p>
+            <p>A dedicated four-classroom higher secondary wing for grades 11 and 12 is built within the school campus in association with  <strong> Mrs. Maya Sarkar and Mr. Jogeswari Prasad Sarkar</strong>, adhering to JAC specification. This extension offers seamless transition from secondary to senior secondary education.</p>
             <div class="annex-quote mt-3">
                 <i class="fas fa-quote-left text-success me-2"></i> State-of-the-art class rooms with smart boards, library corner, and career counseling zone.
             </div>
             <ul class="highlight-list mt-4">
                 <li><i class="fas fa-chalkboard"></i><strong>Smart classrooms:</strong> Interactive panels, digital resources for science & commerce streams.</li>
-                <li><i class="fas fa-hands-helping"></i><strong>Lily Foundation Partnership:</strong> Sponsorship for infrastructure & student scholarships.</li>
+                <li><i class="fas fa-hands-helping"></i><strong>Lily Foundation Partnership:</strong> Sponsorship of student scholarships.</li>
                 <li><i class="fas fa-users"></i> <strong>Student capacity:</strong> 200+ students per year, dedicated common room and staff room.</li>
                 <li><i class="fas fa-certificate"></i><strong>JAC compliant:</strong> Full adherence to Jharkhand Academic Council curriculum and examination standards.</li>
             </ul>

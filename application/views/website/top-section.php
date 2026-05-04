@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Jagadish Chandra High School | Ghatsila | English | हिंदी | বাংলা</title>
-    <meta name="description" content="CBSE School Website with English, Hindi and Bengali language support">
+    <meta name="description" content="Jharkhand Academic Council (JAC) Website with English, Hindi and Bengali language support">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="<?php echo base_url("assets\images\logo.png");  ?>" type="image/x-icon">
     <!-- all css here -->

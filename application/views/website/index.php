@@ -156,7 +156,7 @@
 
         <!-- Text -->
         <p class="modal-text">
-          For Register participation in 100 years celebrations. Be part of the legacy!
+          Register to join our centenary celebrations and be part of the legacy!
         </p>
 
         <!-- Button -->

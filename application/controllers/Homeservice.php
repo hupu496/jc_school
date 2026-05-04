@@ -149,5 +149,37 @@ public function admission_period(){
     $this->load->view('website/admission_period',$data);
     $this->load->view('website/footer');
 }
+public function contactus(){
+    $data['title'] = "Contact Us";
+    $this->load->view('website/top-section',$data);
+    $this->load->view('website/contact_us',$data);
+    $this->load->view('website/footer');
+}
+public function edit_alumini(){
+    $data['title'] = "Edit_alumini";
+    $this->load->view('website/top-section',$data);
+    $data['alumni'] = $this->db->get_where('alumini')->result_array();
+    $this->load->view('website/edit_alumni',$data);
+    $this->load->view('website/footer');
+}
+public function update_alumini(){
+    $id = $this->input->post('id');
+
+    $data = [
+        'name' => $this->input->post('name'),
+        'phone_no' => $this->input->post('phone_no'),
+        'email' => $this->input->post('email'),
+        'city' => $this->input->post('city'),
+        'state' => $this->input->post('state'),
+        'batch' => $this->input->post('batch'),
+        'profession' => $this->input->post('profession'),
+        'address' => $this->input->post('address')
+    ];
+
+    $this->db->where('id', $id);
+    $this->db->update('alumini', $data);
+
+    echo json_encode(['status' => 'success']);
+}
 }
 ?>
