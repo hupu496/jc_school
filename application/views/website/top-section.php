@@ -377,8 +377,9 @@
     font-size: 12px;
     font-weight: 700; /* BOLD */
     color: #000;
-    background: #f1f1f1;
+   
 }
+
 
 .mobile-btn i {
     font-size: 14px;
@@ -463,7 +464,6 @@
 
 /* Glass Effect Modal */
 .custom-modal {
-   
     border-radius: 20px;
     padding: 20px;
     border: none;
@@ -560,7 +560,7 @@
                         <div class="header-top-right text-right">
                             <ul>
                                 <!-- <li><a href="#"><i class="fa fa-user"></i> <span class="english-text">Admin</span><span class="hindi-text">प्रशासक</span><span class="bengali-text">প্রশাসক</span></a></li> -->
-                                <li><a href="mailto:j.c.hs.ghatsila.e.singhbhum@gmail.com"><i class="fa fa-envelope-o"></i> j.c.hs.ghatsila.e.singhbhum@gmail.com</a></li>
+                                <li><a href="mailto:j.c.hs.ghatsila.e.singhbhum@gmail.com"><i class="fa fa-envelope-o"></i>j.c.hs.ghatsila.e.singhbhum@gmail.com</a></li>
                                 <li><a href="tel:+919234676905"><i class="fa fa-phone"></i>+91 9234676905</a></li>
                                 <li>
                                     <div class="lang-selector">

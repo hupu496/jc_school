@@ -181,5 +181,42 @@ public function update_alumini(){
 
     echo json_encode(['status' => 'success']);
 }
+public function count() {
+    $this->load->database();
+
+    $input = json_decode(file_get_contents("php://input"), true);
+
+    // Check if row exists
+    $query = $this->db->get_where('visitor_counter', ['id' => 1]);
+    $result = $query->row();
+
+    // If not exists → create it
+    if (!$result) {
+        $this->db->insert('visitor_counter', [
+            'id' => 1,
+            'total_visits' => 9999
+        ]);
+
+        $total = 9999;
+    } else {
+
+        // Increment only if not counted
+        if (empty($input['counted'])) {
+            $this->db->set('total_visits', 'total_visits+1', FALSE);
+            $this->db->where('id', 1);
+            $this->db->update('visitor_counter');
+        }
+
+        // Get updated value again
+        $query = $this->db->get_where('visitor_counter', ['id' => 1]);
+        $result = $query->row();
+
+        $total = $result ? $result->total_visits : 9999;
+    }
+
+    echo json_encode([
+        'count' => $total
+    ]);
+}
 }
 ?>

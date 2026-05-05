@@ -46,9 +46,9 @@
                         <tbody>
                             <?php foreach($recent_alumni as $alumni): ?>
                             <tr>
-                                <td><?php echo $alumni['full_name']; ?></td>
-                                <td><?php echo $alumni['graduation_year']; ?></td>
-                                <td><?php echo $alumni['current_company']; ?></td>
+                                <td><?php echo $alumni['name']; ?></td>
+                                <td><?php echo $alumni['batch']; ?></td>
+                                <td><?php echo $alumni['profession']; ?></td>
                             </tr>
                             <?php endforeach; ?>
                         </tbody>

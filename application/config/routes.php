@@ -67,20 +67,16 @@ $route['achievements'] = 'homeservice/achievements';
 $route['registration'] = 'homeservice/registration';
 $route['fee_stru'] = 'homeservice/fee_stru';
 $route['edit_alumini'] = 'homeservice/edit_alumini';
+$route['count'] = 'homeservice/count';
 $route['achievements/(:any)'] = 'homeservice/achievements/$1';
 $route['404_override'] = 'comsysit/error404';
 $route['translate_uri_dashes'] = FALSE;
-
-
-
-
 // Admin routes
 $route['admin/dashboard'] = 'admin/service/dashboard';
 $route['admin/alumni'] = 'admin/service/alumni';
 $route['admin/add_alumni'] = 'admin/service/add_alumni';
 $route['admin/edit_alumni/(:num)'] = 'admin/service/edit_alumni/$1';
 $route['admin/delete_alumni/(:num)'] = 'admin/service/delete_alumni/$1';
-
 // Login routes
 $route['login'] = 'admin/login/index';
 $route['login/validatelogin'] = 'admin/login/validatelogin';

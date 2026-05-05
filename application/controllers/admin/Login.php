@@ -16,8 +16,9 @@ class Login extends CI_Controller {
     
     public function validatelogin() {
         $data = $this->input->post();
-        
+       
         if(empty($data['username']) || empty($data['password'])) {
+            
             $this->session->set_flashdata('logerr', 'Please enter username and password!');
             redirect('login');
         }

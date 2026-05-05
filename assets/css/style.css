@@ -136,11 +136,13 @@ a#scrollUp:hover{
 	background:#14a5e4;
 }
 .sticky #navigation>li>a{
-	color:white;
+	color:black;
 }
 .header-bottom.sticky {
-	background: rgba(23, 72, 115, 1) none repeat scroll 0 0;
-	color:#fff !important;
+	background: #f1f1f1 none repeat scroll 0 0;
+    color: rgb(2 2 2) !important;
+	/* background: rgba(23, 72, 115, 1) none repeat scroll 0 0;
+	color:#fff !important; */
 	left: 0;
 	position: fixed;
 	top: 0;
@@ -1155,10 +1157,7 @@ a#scrollUp:hover{
             .footer-logo-icon span {
                 font-size: 0.85rem;
             }
-            .english-text {
-                font-size: 0.8rem;
-                padding: 4px 14px;
-            }
+         
             .designer-badge {
                 padding: 4px 14px;
                 font-size: 0.75rem;

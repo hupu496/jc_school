@@ -16,18 +16,18 @@ class Service extends CI_Controller{
         $data['recent_alumni'] = $this->Account_model->getRecentAlumni(5);
         $data['year_wise'] = $this->Account_model->getYearWiseCount();
         
-        $this->load->view('admin/template/header', $data);
-        $this->load->view('admin/dashboard', $data);
-        $this->load->view('admin/template/footer');
+        $this->load->view('admin/service/top-section', $data);
+        $this->load->view('admin/service/dashboard', $data);
+        $this->load->view('admin/service/footer');
     }
     
     public function alumni() {
         $data['title'] = 'Alumni Management';
         $data['alumni_list'] = $this->Account_model->getAlumni();
         
-        $this->load->view('admin/template/header', $data);
-        $this->load->view('admin/alumni', $data);
-        $this->load->view('admin/template/footer');
+        $this->load->view('admin/service/top-section', $data);
+        $this->load->view('admin/service/alumni', $data);
+        $this->load->view('admin/service/footer');
     }
     
     public function add_alumni() {
@@ -85,7 +85,7 @@ class Service extends CI_Controller{
         
         $data['title'] = 'Edit Alumni';
         $data['alumni'] = $this->Account_model->getAlumni($id);
-        $this->load->view('admin/template/header', $data);
+        $this->load->view('admin/template/top-section', $data);
         $this->load->view('admin/edit_alumni', $data);
         $this->load->view('admin/template/footer');
     }

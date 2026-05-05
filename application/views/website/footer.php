@@ -1,5 +1,4 @@
- <!-- footer-area start -->
-    <footer>
+ <footer>
         <div class="footer-top ptb-120">
             <div class="container">
                 <div class="row">
@@ -82,67 +81,51 @@
 </style>
 
 <script>
-  
-  $(document).ready(function(){
-      $('#welcomeModal').modal('show');
-  });
+    $(document).ready(function(){ $('#welcomeModal').modal('show'); });
+$(document).ready(function(){
 
-  $(document).ready(function(){
-      if (!localStorage.getItem("modalShown")) {
-          $('#welcomeModal').modal('show');
-          localStorage.setItem("modalShown", "true");
-      }
-  });
+    if (!localStorage.getItem("modalShown")) {
+        $('#welcomeModal').modal('show');
+        localStorage.setItem("modalShown", "true");
+    }
 
-    (function() {
-        // Visitor counter functionality - increments on each page reload
-        // Starting from 9999 as requested
-        
-        // Key for localStorage
-        const STORAGE_KEY = 'jchs_visitor_count_footer';
-        
-        // Function to get current count
-        function getCurrentCount() {
-            let count = localStorage.getItem(STORAGE_KEY);
-            if (count === null) {
-                // First time - start from 9999 as specified
-                return 9999;
+    const VISITOR_KEY = 'visitor_counted';
+    const API_URL = "https://jchighschool.in/homeservice/count"; // 🔥 TEMP HARD CODE
+
+    function loadVisitorCount() {
+
+        let alreadyCounted = localStorage.getItem(VISITOR_KEY);
+
+        fetch(API_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                counted: alreadyCounted ? 1 : 0
+            })
+        })
+        .then(res => res.json())
+        .then(data => {
+
+            console.log("API DATA:", data); // 🔍 DEBUG
+
+            if (!alreadyCounted) {
+                localStorage.setItem(VISITOR_KEY, 'true');
             }
-            return parseInt(count, 10);
-        }
-        
-        // Function to update count (increment by 1)
-        function updateAndGetNewCount() {
-            let currentCount = getCurrentCount();
-            // Increment by 1 on each page load/reload
-            let newCount = currentCount + 1;
-            // Save back to localStorage
-            localStorage.setItem(STORAGE_KEY, newCount);
-            return newCount;
-        }
-        
-        // Format number with commas (e.g., 10,000)
-        function formatNumber(num) {
-            return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        }
-        
-        // Apply counter to DOM element
-        function displayCounter() {
-            const counterElement = document.getElementById('visitorNumber');
-            if (counterElement) {
-                // Increment and show
-                const newCount = updateAndGetNewCount();
-                counterElement.textContent = formatNumber(newCount);
+
+            const el = document.getElementById('visitorNumber');
+
+            if (el) {
+                el.textContent = Number(data.count || 0).toLocaleString();
             }
-        }
-        
-        // Execute when DOM is fully loaded
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', displayCounter);
-        } else {
-            displayCounter();
-        }
-    })();
+
+        })
+        .catch(err => console.error("Fetch Error:", err));
+    }
+
+    loadVisitorCount();
+});
 </script>
                     <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="footer-widget">
