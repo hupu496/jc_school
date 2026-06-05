@@ -42,7 +42,7 @@
            
             <div class="visitor-counter-box" style="margin-top: 10px;">
                 <div class="counter-display" id="visitorCounterDisplay" style="background: #df2525; padding: 8px 15px; border-radius: 30px; display: inline-block; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
-                    <span id="visitorNumber" style="font-size: 30px; font-weight: 800; color: #ffd966; font-family: monospace; letter-spacing: 2px;">9999</span>
+                    <span id="visitorNumber" style="font-size: 30px; font-weight: 800; color: #ffd966; font-family: monospace; letter-spacing: 2px;">3450</span>
                 </div>
                 <p class="mt-2 mb-0" style="font-size: 12px; color: #aaa;">
                     <span class="english-text">Total Visits</span>
@@ -89,42 +89,32 @@ $(document).ready(function(){
         localStorage.setItem("modalShown", "true");
     }
 
-    const VISITOR_KEY = 'visitor_counted';
-    const API_URL = "https://jchighschool.in/homeservice/count"; // 🔥 TEMP HARD CODE
+    const API_URL = "https://jchighschool.in/homeservice/count";
 
-    function loadVisitorCount() {
+function loadVisitorCount() {
 
-        let alreadyCounted = localStorage.getItem(VISITOR_KEY);
+    fetch(API_URL, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(res => res.json())
+    .then(data => {
 
-        fetch(API_URL, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                counted: alreadyCounted ? 1 : 0
-            })
-        })
-        .then(res => res.json())
-        .then(data => {
+        console.log("API DATA:", data);
 
-            console.log("API DATA:", data); // 🔍 DEBUG
+        const el = document.getElementById('visitorNumber');
 
-            if (!alreadyCounted) {
-                localStorage.setItem(VISITOR_KEY, 'true');
-            }
+        if (el) {
+            el.textContent = Number(data.count || 0).toLocaleString();
+        }
 
-            const el = document.getElementById('visitorNumber');
+    })
+    .catch(err => console.error("Fetch Error:", err));
+}
 
-            if (el) {
-                el.textContent = Number(data.count || 0).toLocaleString();
-            }
-
-        })
-        .catch(err => console.error("Fetch Error:", err));
-    }
-
-    loadVisitorCount();
+loadVisitorCount();
 });
 </script>
                     <div class="col-md-3 col-sm-6 col-xs-12">

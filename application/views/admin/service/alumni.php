@@ -21,38 +21,44 @@
         <?php endif; ?>
         
         <div class="table-responsive">
-            <table class="table table-bordered table-hover" id="alumniTable">
+            <table class="table table-bordered table-hover display" id="alumniTable">
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Alumni ID</th>
+                        <th>Alumini IDs</th>
+                        
                         <th>Full Name</th>
                         <th>Email</th>
                         <th>Phone</th>
                         <th>Graduation Year</th>
-                        <th>Degree</th>
-                        <th>Current Company</th>
-                        <th>Designation</th>
+                        <th>Profession</th>
+                        <th>Address</th>
+                        <th>City</th>
+                        <th>State</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach($alumni_list as $alumni): ?>
+                    <?php $i=0;
+                    foreach($alumni_list as $alumni):
+                    $i++; ?>
                     <tr>
-                        <td><?php echo $alumni['id']; ?></td>
-                        <td><?php echo $alumni['alumni_id']; ?></td>
-                        <td><?php echo $alumni['full_name']; ?></td>
+                        <td><?php echo $i; ?></td>
+                        <td><?php echo 'JCHS-'.$alumni['id']; ?></td>
+                        <td><?php echo $alumni['name']; ?></td>
                         <td><?php echo $alumni['email']; ?></td>
-                        <td><?php echo $alumni['phone']; ?></td>
-                        <td><?php echo $alumni['graduation_year']; ?></td>
-                        <td><?php echo $alumni['degree']; ?></td>
-                        <td><?php echo $alumni['current_company']; ?></td>
-                        <td><?php echo $alumni['designation']; ?></td>
+                        <td><?php echo $alumni['phone_no']; ?></td>
+                        <td><?php echo $alumni['batch']; ?></td>
+                        <td><?php echo $alumni['profession']; ?></td>
+                        <td><?php echo $alumni['address']; ?></td>
+                        <td><?php echo $alumni['city']; ?></td>
+                        <td><?php echo $alumni['state']; ?></td>
+                        <td><?php echo date('Y-m-d', strtotime($alumni['added_on'])); ?></td>
                         <td>
                             <button class="btn btn-sm btn-info" onclick="editAlumni(<?php echo $alumni['id']; ?>)">
                                 <i class="fas fa-edit"></i>
                             </button>
-                            <button class="btn btn-sm btn-danger" onclick="deleteAlumni(<?php echo $alumni['id']; ?>, '<?php echo $alumni['full_name']; ?>')">
+                            <button class="btn btn-sm btn-danger" onclick="deleteAlumni(<?php echo $alumni['id']; ?>, '<?php echo $alumni['name']; ?>')">
                                 <i class="fas fa-trash"></i>
                             </button>
                         </td>

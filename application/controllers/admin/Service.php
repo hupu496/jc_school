@@ -24,6 +24,7 @@ class Service extends CI_Controller{
     public function alumni() {
         $data['title'] = 'Alumni Management';
         $data['alumni_list'] = $this->Account_model->getAlumni();
+        // print_r($data['alumni_list']);die;
         
         $this->load->view('admin/service/top-section', $data);
         $this->load->view('admin/service/alumni', $data);

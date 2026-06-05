@@ -2,8 +2,33 @@
 <html class="no-js" lang="en">
 <head>
     <meta charset="utf-8">
+    <meta name="google-site-verification" content="uAjdcr4PcRll8ngVJGgEhsrGKs70MLGf5rmhH_RAQOE" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Jagadish Chandra High School | Ghatsila | English | हिंदी | বাংলা</title>
+    <meta name="keywords" content="
+JC SCHOOL,
+Jc High School,
+Ghatsila , jharkhand,
+ghatsila jharkhand,
+jcschool ghatsila,
+Jcschool ghatsila,
+jchighschool ghatsila,
+Jchighschool ghatsila
+jc high school ghatsila jharkhand
+Jc High School Ghatsila Jharkhand,
+school,
+best school,
+top school,
+English medium school,
+public school,
+senior secondary school,
+higher secondary school,
+primary school,
+school admission,
+academic excellence,
+Jharkhand Academic Council (JAC)
+
+">
     <meta name="description" content="Jharkhand Academic Council (JAC) Website with English, Hindi and Bengali language support">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="<?php echo base_url("assets\images\logo.png");  ?>" type="image/x-icon">
